@@ -137,5 +137,6 @@
 
 /* Native menu is drawn by Godot; leave the canvas and fullscreen exit usable. */
 .viewport.game-menu-open .fullscreen-chrome,.viewport.game-menu-open #fps-counter,.viewport.game-menu-open #embedded-fps,.viewport.game-menu-open #performance-panel,.viewport.game-menu-open #debug-view-panel,.viewport.game-menu-open #debug-visual-panel,.viewport.game-menu-open #touch-controls,.viewport.game-menu-open #quickbar-drawer{display:none!important}
+.viewport.game-menu-open canvas{touch-action:none}
 .viewport.game-menu-open .viewport-corner-controls button:not(#fullscreen),.viewport.game-menu-open .audio-controls{display:none!important}
 .viewport.game-menu-open .viewport-corner-controls{justify-content:flex-end}
