@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101719">
+  <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
+  <title>Stealth Gym · Test Levels</title>
+  <link rel="stylesheet" href="style.css?v=838fa96cc39fd74d">
+  <script src="performance-panel.js?v=314815aba93725ff" defer></script>
+  <script src="touch-controls.js?v=b599e98b43dfd568" defer></script>
+  <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
+  <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
+  <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
+  <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
+  <script src="app.js?v=0e18e91ef435904d" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="wordmark" href="./" aria-label="Stealth Gym home"><span class="mark">S/G</span> SIMULATION LAB</a><span class="build" id="selection-badge">MK 1 · SEED 39</span></header>
+    <section class="intro"><div><p class="eyebrow">GYMS & EXPERIMENTS</p><h1>Stay out of sight.</h1><p class="description" id="level-description">Choose a course and a seed. Watch the search, or take control yourself.</p></div><div class="scenario"><span id="scenario-heading">MK 1 / THE DEPOT</span><strong>Explore. Listen. Extract.</strong><small id="budget-description">240-second attempt · failure is a valid outcome</small></div></section>
+    <section class="viewer" aria-label="Stealth simulation">
+      <div class="viewport" id="viewport">
+        <div id="rotate-device" class="rotate-device hidden" role="status"><strong>Turn your phone sideways</strong><p>Full screen uses landscape.</p><button id="rotate-exit" type="button">Exit full screen</button></div>
+        <canvas id="canvas" width="1280" height="720" tabindex="0" aria-label="3D stealth course"></canvas>
+        <div class="launch" id="launch">
+          <img src="poster.jpg" alt="Overhead view of the Mk 1 stealth course with corridors, ramps, and guards" width="640" height="360">
+          <div class="shade"></div><div class="launch-content"><span class="pill">REAL SIMULATION / NOT A VIDEO</span><h2>Watch the next move.</h2><p id="download-info">Checking download size…</p><button class="primary" id="load" disabled><span>▶</span> Start now</button><small>The simulation starts automatically; audio may need a tap.</small></div>
+        </div>
+        <div class="loading hidden" id="loading" role="status"><span class="spinner"></span><strong id="load-status">Preparing demo…</strong><progress id="load-progress" max="1" value="0"></progress><small id="load-detail">First load includes the Godot engine.</small></div>
+        <span id="embedded-fps" class="embedded-fps" aria-label="Frames per second">0 FPS</span>
+        <button id="fps-counter" class="fps-counter" type="button" disabled aria-expanded="false" aria-controls="performance-panel" title="Open live FPS graph and frame statistics">FPS … ▥ Performance ▾</button>
+        <button id="debug-view-toggle" class="control-proxy" type="button" aria-expanded="false" aria-controls="debug-view-panel">Debug view</button>
+        <section id="performance-panel" class="performance-panel hidden" aria-label="Performance">
+          <div class="debug-view-heading"><strong>Performance · live</strong><button id="performance-close" type="button" aria-label="Close performance panel">✕ Close</button></div>
+          <p id="performance-stats">Waiting for active game frames…</p>
+          <canvas id="performance-graph" width="600" height="210" role="img" aria-label="Engine FPS over the last 60 seconds; time increases from left to right"></canvas>
+          <small>FPS averages each 100 ms bucket. Pauses and focus changes create gaps. Opening this panel keeps gameplay running.</small>
+          <fieldset class="performance-options"><legend>Rendering &amp; recording</legend>
+            <label>3D resolution<select id="performance-resolution"><option value="1">100% · full detail</option><option value="0.75">75% · mobile default</option><option value="0.5">50% · fastest</option></select></label>
+            <label><input id="performance-shadows" type="checkbox" checked>Render shadows</label>
+            <label><input id="performance-recording" type="checkbox" checked>Record stealth inspector history</label>
+          </fieldset>
+          <small>Lower resolution and shadows affect appearance. Stealth visibility uses the same gameplay lighting. Recording can be turned off to compare its cost.</small>
+          <pre id="performance-engine"></pre>
+          <div class="performance-actions"><button id="performance-capture" type="button">Capture CPU profile · 10s</button><button id="performance-export" type="button">Download profile JSON</button></div>
+          <small>Rows show average ms over the capture and p95 over the latest 256 ticks or frames, including idle samples. Parent totals include child scopes; do not add them together. Profiling is off outside captures.</small>
+          <pre id="performance-hotspots">Capture 10 seconds of gameplay to rank CPU hotspots.</pre>
+        </section>
+
+        <div id="quickbar-drawer" class="quickbar-drawer hidden"></div>
+        <div id="touch-controls" class="touch-controls hidden" aria-label="Touch controls">
+          <div id="touch-look" class="touch-look" aria-label="Drag to look"><span>DRAG TO LOOK</span></div>
+          <div id="touch-stick" class="touch-stick" aria-label="Drag to move"><span id="touch-knob">MOVE</span></div>
+          <div class="touch-actions">
+            <div class="touch-lean-row">
+              <button data-touch-action="lean_left" aria-label="Hold to lean left">Lean L</button>
+              <button data-touch-action="lean_right" aria-label="Hold to lean right">Lean R</button>
+            </div>
+            <button data-touch-action="crouch" aria-label="Toggle crouch">Crouch</button>
+            <button data-touch-action="sprint" aria-label="Toggle sprint" aria-pressed="false">Sprint</button>
+            <button data-touch-action="jump">Jump</button>
+            <button data-touch-action="interact">Use</button>
+            <button data-touch-action="grenade" aria-label="Tap to throw grenade; hold to aim or place mine">Grenade</button>
+            <button data-touch-action="grenade_cancel" aria-label="Cancel grenade aiming">Cancel aim</button>
+            <button data-touch-action="attack" data-lab="combat weapons" class="hidden">Fire</button>
+            <button data-touch-action="block" data-lab="combat" class="hidden">Block</button>
+            <button data-touch-action="heavy" data-lab="combat" class="hidden">Heavy</button>
+            <button data-lab-action="reload" data-lab="weapons" class="hidden">Reload</button>
+            <button data-lab-action="takedown" data-lab="takedown" class="hidden">Take down</button>
+            <button data-lab-action="distraction" data-lab="stealth" class="hidden">Throw noise</button>
+          </div>
+        </div>
+        <div class="viewport-corner-controls"><button id="play-toggle" data-command="pause" type="button" disabled aria-label="Play simulation" title="Play simulation">▶</button><div class="corner-secondary-controls"><button id="overview-reset" class="hidden" data-command="overview_reset" type="button" disabled aria-label="Reset overview camera" title="Reset overview camera"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/><circle cx="12" cy="12" r="1"/></svg></button><button id="replay" data-command="restart" type="button" disabled aria-label="Replay simulation" title="Replay simulation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.4 7.1M3 4v7h7"/></svg></button><button id="inventory-open" class="hidden" data-command="inventory" type="button" aria-label="Open inventory" title="Inventory [I]">▦</button><div class="audio-controls" role="group" aria-label="Game audio">
+          <button id="mute" type="button" aria-label="Mute game audio" aria-pressed="false" title="Mute game audio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path class="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="sound-muted" d="m16 9 5 6m0-6-5 6"/></svg></button>
+        </div><button id="fullscreen" type="button" aria-label="Enter full screen" aria-pressed="false" title="Enter full screen">⛶</button></div></div>
+        <div class="viewport-actions"><span id="interaction-prompt"></span></div>
+        <div class="fullscreen-chrome" aria-label="Game controls">
+          
+          <div class="fullscreen-top"><span class="fullscreen-brand">STEALTH GYM</span></div>
+          <div class="fullscreen-menu hidden" id="fullscreen-menu" aria-label="Game options">
+            <div class="options-heading"><strong>Game options</strong><button id="options-close" type="button" aria-label="Close game options">Close</button></div>
+            <section class="configuration" aria-label="Scenario settings">
+      <input id="level" type="hidden" value="mk1"><button id="choose-map" class="level-choice" type="button">Choose map</button>
+      <fieldset id="run-mode" class="mode-toggle"><legend>RUN MODE</legend><div><label><input id="mode-demo" type="radio" name="run-mode" value="autonomous" checked><span><strong>Demo</strong><small>Watch simulation</small></span></label><label><input id="mode-control" type="radio" name="run-mode" value="manual"><span><strong>Control</strong><small>Play it yourself</small></span></label></div></fieldset>
+      <label>SEED<div class="seed-field"><input id="seed" aria-label="Random seed" type="number" min="0" max="2147483647" step="1" value="39" inputmode="numeric"><button id="random-seed" aria-label="Choose a random seed" title="Choose a random seed"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="7.5" r="1"/><circle cx="16.5" cy="7.5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="7.5" cy="16.5" r="1"/><circle cx="16.5" cy="16.5" r="1"/></svg></button><span class="seed-steppers"><button id="seed-up" type="button" aria-label="Increase seed" title="Increase seed">&#9650;</button><button id="seed-down" type="button" aria-label="Decrease seed" title="Decrease seed">&#9660;</button></span></div></label>
+      <label>TIME LIMIT (S)<input id="budget" aria-label="Time limit in seconds" type="number" min="30" max="900" step="1" value="240" inputmode="numeric"></label>
+      <label class="wall-texture-choice">WALL TEXTURE<select id="wall-texture" aria-label="Wall texture"><option value="untextured">Untextured · default</option><option value="weathered_concrete">Weathered concrete</option><option value="concrete_blocks">Concrete blocks</option><option value="industrial_steel">Industrial steel</option></select></label>
+      <p id="config-help" role="status">Demo and Control switch live. Wall textures apply live; course settings restart on change.</p>
+    </section>
+          </div>
+          <div class="fullscreen-bottom"><div><button id="fullscreen-game-ui-toggle" class="hidden" type="button" aria-pressed="false">Show UI</button><button id="fullscreen-mute" type="button" aria-label="Mute game audio" aria-pressed="false">♫</button><div id="perspective-menu" class="perspective-menu hidden"><button id="perspective-toggle" type="button" aria-label="Perspective" title="Perspective" aria-expanded="false" aria-controls="perspective-choices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="camera-controls hidden" id="perspective-choices" role="group" aria-label="Perspective"><button type="button" data-perspective data-command="overview" aria-label="Overview" title="Overview" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m8 15 4-7 4 7Z"/></svg></button><button type="button" data-perspective data-command="follow" aria-label="Follow" title="Follow" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="6" r="3"/><path d="M9 20v-4a5 5 0 0 1 10 0v4M3 8v9m0 0 3-3m-3 3-2-3"/></svg></button><button type="button" data-perspective data-command="first_person" aria-label="First person" title="First person" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/></svg></button></div><div id="perspective-tooltip" class="perspective-tooltip hidden" role="tooltip"></div></div><button id="fullscreen-menu-toggle" type="button" aria-expanded="false" aria-controls="fullscreen-menu">Options</button></div></div>
+        </div>
+        <section id="debug-view-panel" class="debug-view-panel hidden" aria-label="Debug view settings">
+          <div class="debug-view-heading"><strong>Debug view</strong><button id="debug-view-close" aria-label="Close debug view">✕</button></div>
+          <p>Overlays only. Changes apply immediately without restarting. Alertness icons are gameplay UI and stay enabled.</p>
+          <div class="debug-view-actions"><button id="debug-show-all" disabled>Show all</button><button id="debug-hide-all" disabled>Hide all</button></div>
+          <fieldset id="debug-view-layers" aria-label="Optional debug overlays"></fieldset>
+          <small>Cones show sensor range and field of view, before wall occlusion. Arrows show requested movement.</small><small id="debug-view-hint">Load the demo to enable these controls.</small>
+        </section>
+      </div>
+
+    </section>
+    <p id="load-timings" class="load-timings" role="status">Engine pending · Game pack pending · parallel · Total loading</p>
+    <section class="stats" aria-label="Live telemetry"><article><span>RUN TIME</span><strong id="elapsed">—<em>s</em></strong><small id="status">Ready when you are</small></article><article><span>TIME UNSEEN</span><strong id="unseen">—<em>%</em></strong><small id="seen">Exposure measured live</small></article><article><span>GUARD ALERTNESS</span><strong id="alert">—<em>%</em></strong><small>Unaware → suspicious → alerted</small></article><article><span>STAMINA</span><strong id="stamina">—<em>%</em></strong><small id="posture">Walk · crouch · sprint</small></article></section>
+    <details id="debug-inspector" class="debug-inspector"><summary>Recording &amp; stealth inspector</summary>
+      <p>Pause to inspect any observer → target pair. Scrub recorded samples without changing the live world. The map and graphs show the selected time; the 3D game stays frozen at its latest state. Stealth is currently the only recorded system.</p>
+      <div class="debug-toolbar"><button id="debug-pause" disabled>Pause</button><button id="debug-back" disabled aria-label="Previous recorded sample">◀ Sample</button><button id="debug-next" disabled aria-label="Next recorded sample">Sample ▶</button><button id="debug-live" disabled>Latest sample</button><button id="debug-export" disabled>Export JSON</button><button id="debug-import" disabled>Open recording</button><input id="debug-file" type="file" accept=".json,application/json" hidden></div>
+      <p id="debug-status" role="status">Recording starts when the simulation loads. Keeps the latest 5 minutes at 10 samples/sec.</p>
+      <div class="debug-selectors"><label>SYSTEM<select id="debug-stream"></select></label><label><span id="debug-source-heading">OBSERVER</span><select id="debug-source"></select></label><label><span id="debug-target-heading">TARGET</span><select id="debug-target"></select></label></div>
+      <label class="debug-scrub">RECORDED TIME <output id="debug-time">0.00s</output><input id="debug-cursor" type="range" min="0" max="1" step="0.001" value="0" aria-label="Scrub recording"></label>
+      <div class="debug-snapshot"><div><canvas id="debug-map" width="640" height="320" aria-label="Recorded actor positions. Click a dot to select an observer; shift click selects a target."></canvas><small>Recorded top view · orange = observer · cyan = target · line = observer memory. Wall footprints are static context; height and moving gates are not replayed. Tap actors to select; Shift + click selects a target.</small></div><pre id="debug-values">No sample selected.</pre></div>
+      <div id="debug-graphs" class="debug-graphs" aria-label="Historical evidence graphs"></div>
+      <p id="debug-description"></p><ol id="debug-events" aria-label="Recorded state transitions"></ol><p id="debug-error" role="alert"></p>
+    </details>
+    <details class="query-diagnostics"><summary>Spatial query diagnostics</summary>
+      <dl><div><dt>Index p95 / physics tick</dt><dd id="query-frame">Waiting for simulation</dd></div><div><dt>Query p95</dt><dd id="query-latency">—</dd></div><div><dt>Candidates / full scan</dt><dd id="query-candidates">—</dd></div><div><dt>Cells / query</dt><dd id="query-cells">—</dd></div><div><dt>Bucket occupancy</dt><dd id="query-buckets">—</dd></div><div><dt>Maintenance / physics tick</dt><dd id="query-updates">—</dd></div><div><dt>Targets / oversized / fallbacks</dt><dd id="query-population">—</dd></div><div><dt>Replacement cost budget</dt><dd id="query-alternative">—</dd></div></dl>
+      <p>Vision target lookup only; excludes field-of-view checks and physics rays. Tick costs cover the last 120 physics ticks; query p95 covers up to 512 calls. Candidate counts cover this run. The 1 ms index budget is a development target. A replacement must beat query + maintenance cost on the same workload; tree performance has not been measured in this live session.</p>
+      <button id="download-query-stats" disabled>Download stats (.json)</button>
+    </details>
+    <section class="notes"><div><p class="eyebrow">WHAT TO WATCH</p><h3>A goal, not a route.</h3><p>The autonomous player searches for extraction without knowing its location. It reacts to visible guards, uncertain footstep directions, and rising alertness. Cyan rings are player footsteps; red rings are guards.</p><p class="hearing">LATEST HEARING <span id="hearing">No observation yet</span></p></div><div class="control-note"><h3>Make it your attempt.</h3><p>Select Control or Take control. On a computer, click the game for mouse look: WASD moves, Space jumps, C crouches, Shift sprints, Q/E lean, and F interacts with nearby covers, crates, pickups and objectives. Escape releases the mouse.</p><button data-command="play" class="manual" disabled>Take control</button><p>On a phone, use the left stick to move and drag on the right to look. Tap Sprint or Crouch to toggle them. Hold Lean L/R to peek; release to centre. Jump and Sprint exit crouch. Tap Use for covers, pickups and crates; Use again drops a held crate. Full screen is at the top right of the game; tap it again to exit. These are basic development controls.</p><small id="cache-note">Replays use the loaded files. Later visits can reuse the cached engine.</small></div></section>
+    <footer><span>STEALTH GYM / SCI-FI IMSIM</span><span>4 GYMS + 5 LABS · LOCAL SIMULATION</span></footer>
+  </main>
+</body>
+</html>

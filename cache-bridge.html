@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><title>Engine cache bridge</title><script>
+'use strict';
+const LAB_ORIGIN='https://combat-stealth-labs.honestspoon261.chatgpt.site';
+window.addEventListener('message',async event=>{
+ if(event.origin!==LAB_ORIGIN||event.source!==window.parent)return;
+ const request=event.data;
+ if(!request||request.type!=='engine-cache-request'||typeof request.id!=='string'||request.id.length>100||!/^game-[a-f0-9]{16}\.wasm\.gz$/.test(request.file))return;
+ const reply={type:'engine-cache-result',id:request.id,file:request.file,bytes:null};
+ try{
+  const cache=await caches.open('stealth-content-v1');
+  const response=await cache.match(new URL(request.file,location.origin).href);
+  if(response){const bytes=await response.arrayBuffer();if(bytes.byteLength<=16000000)reply.bytes=bytes;}
+ }catch(_){}
+ event.source.postMessage(reply,LAB_ORIGIN,reply.bytes?[reply.bytes]:[]);
+});
+</script>
