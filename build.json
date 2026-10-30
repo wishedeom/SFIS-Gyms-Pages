@@ -3,12 +3,12 @@
     "game.wasm": {
       "url": "game-e4a43dbae28662b2.wasm.gz",
       "raw_bytes": 43699190,
-      "download_bytes": 9387768
+      "download_bytes": 9402730
     },
     "game.pck": {
-      "url": "game-8974ccbcc97d5d69.pck.gz",
-      "raw_bytes": 5728384,
-      "download_bytes": 3172614
+      "url": "game-691f6ab0228b9257.pck.gz",
+      "raw_bytes": 6009584,
+      "download_bytes": 3449047
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 305.079,
+  "build_seconds": 302.384,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -34,55 +34,64 @@
       "id": "mk1",
       "label": "Mk 1 \u00b7 Depot",
       "description": "The compact depot: ramps, low cover, corridors, and three patrolling guards.",
-      "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk1.tscn"
+      "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk1.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk1.jpg"
     },
     {
       "id": "mk2",
       "label": "Mk 2 \u00b7 Expanded depot",
       "description": "A larger course with multiple elevations, longer patrols, credentials, and an extraction uplink.",
-      "autonomous_scene": "res://Root/Dev/DevStealthAutonomy.tscn"
+      "autonomous_scene": "res://Root/Dev/DevStealthAutonomy.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk2.jpg"
     },
     {
       "id": "mk3",
       "label": "Mk 3 \u00b7 Vent works",
       "description": "Two guard-patrolled floors, thick service walls and five crawl routes: straight ducts, elbows, diagonal bends and a 45 degree riser. Find the service key, then extract upstairs.",
-      "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk3.tscn"
+      "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk3.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk3.jpg"
     },
     {
       "id": "mk4",
       "label": "Mk 4 \u00b7 Cargo works",
       "description": "Move cargo with Use to uncover salvage and a vent. Stack a crate to climb the low salvage wall. Full-height partitions meet a solid ceiling: use the vents to reach the loading relay, then extract. The bench behind spawn has a pistol, rifle, shotgun and ammo; open the bag or press I to equip.",
-      "autonomous_scene": "res://Root/Dev/DevCargoGym.tscn"
+      "autonomous_scene": "res://Root/Dev/DevCargoGym.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk4.jpg"
     },
     {
       "id": "weapons",
       "label": "Weapon gym \u00b7 Arsenal",
       "description": "Pick up weapons and ammunition with Use. Fire, reload and reset the practice targets. Includes the full experimental arsenal.",
-      "lab": "weapons"
+      "lab": "weapons",
+      "preview": "res://Root/Dev/Web/Previews/weapons.jpg"
     },
     {
       "id": "combat",
       "label": "Lab \u00b7 Unarmed combat",
       "description": "Experimental boxing, stamina, blocks, parries and guard breaks. Watch the sparring or take control.",
-      "lab": "combat"
+      "lab": "combat",
+      "preview": "res://Root/Dev/Web/Previews/combat.jpg"
     },
     {
       "id": "stealth",
       "label": "Lab \u00b7 Evidence & distraction",
       "description": "Throw a noise distraction and watch guards investigate uncertain evidence.",
-      "lab": "stealth"
+      "lab": "stealth",
+      "preview": "res://Root/Dev/Web/Previews/stealth.jpg"
     },
     {
       "id": "takedown",
       "label": "Lab \u00b7 Nonlethal takedown",
       "description": "Approach from behind, restrain a guard and observe recovery. Experimental mechanics remain separate from the main gyms.",
-      "lab": "takedown"
+      "lab": "takedown",
+      "preview": "res://Root/Dev/Web/Previews/takedown.jpg"
     },
     {
       "id": "coordination",
       "label": "Lab \u00b7 Guard coordination",
       "description": "Guards share delayed and uncertain reports over a radio network.",
-      "lab": "coordination"
+      "lab": "coordination",
+      "preview": "res://Root/Dev/Web/Previews/coordination.jpg"
     }
   ]
 }
