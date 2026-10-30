@@ -30,6 +30,63 @@ let latestGameState = null;
 let perspectiveMenu = null;
 let gameMenuOpen = true;
 let acceptedRunSelection = '';
+let mapListPointer = null;
+let suppressMapClickUntil = 0;
+
+function gameCanvasMapping() {
+  const canvas = $('canvas'), bounds = canvas.getBoundingClientRect();
+  const scale = Math.min(bounds.width / canvas.width, bounds.height / canvas.height);
+  const width = canvas.width * scale, height = canvas.height * scale;
+  return {left:bounds.left + (bounds.width - width) / 2, top:bounds.top + (bounds.height - height) / 2,
+    width, height};
+}
+function insideMapList(event) {
+  const list = latestGameState?.map_list_rect;
+  if (!Array.isArray(list) || list.length !== 4 || list.some(value => !Number.isFinite(value))) return false;
+  const scene = gameCanvasMapping();
+  const x = (event.clientX - scene.left) / scene.width, y = (event.clientY - scene.top) / scene.height;
+  return x >= list[0] && x <= list[0] + list[2] && y >= list[1] && y <= list[1] + list[3];
+}
+// Scrolling is deliberately explicit: a negative finger Y delta increases
+// Godot's vertical offset, showing later map rows. This avoids browser-specific
+// touch arbitration around the WebAssembly canvas.
+document.addEventListener('pointerdown', event => {
+  if (!gameMenuOpen || event.button !== 0) return;
+  suppressMapClickUntil = 0;
+  if (!insideMapList(event)) return;
+  window.stealthControl?.('menu_pointer_begin');
+  mapListPointer = {id:event.pointerId, y:event.clientY, dragging:false};
+}, {capture:true});
+document.addEventListener('pointermove', event => {
+  const pointer = mapListPointer;
+  if (!pointer || pointer.id !== event.pointerId) return;
+  if (!pointer.dragging && Math.abs(event.clientY - pointer.y) < 8) return;
+  if (!pointer.dragging) {
+    pointer.dragging = true;
+    window.stealthControl?.('menu_scroll_begin');
+  }
+  const scene = gameCanvasMapping();
+  const deltaY = (event.clientY - pointer.y) / scene.height;
+  pointer.y = event.clientY;
+  window.stealthControl?.('menu_scroll', JSON.stringify({delta_y:deltaY}));
+  event.preventDefault();
+}, {capture:true, passive:false});
+function finishMapListPointer(event) {
+  if (!mapListPointer || mapListPointer.id !== event.pointerId) return;
+  if (mapListPointer.dragging) {
+    window.stealthControl?.('menu_scroll_end');
+    suppressMapClickUntil = performance.now() + 500;
+  }
+  mapListPointer = null;
+}
+document.addEventListener('pointerup', finishMapListPointer, {capture:true});
+document.addEventListener('pointercancel', finishMapListPointer, {capture:true});
+document.addEventListener('click', event => {
+  if (gameMenuOpen && performance.now() < suppressMapClickUntil) {
+    suppressMapClickUntil = 0;
+    event.preventDefault(); event.stopImmediatePropagation();
+  }
+}, {capture:true});
 // Browser storage is only an adapter; Godot owns menu state and validation.
 window.stealthReadLastMap = () => { try { return localStorage.getItem('stealth-last-map-v1') || ''; } catch (_) { return ''; } };
 window.stealthWriteLastMap = text => { try { localStorage.setItem('stealth-last-map-v1', String(text)); } catch (_) {} };
