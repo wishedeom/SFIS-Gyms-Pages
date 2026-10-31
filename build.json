@@ -3,12 +3,12 @@
     "game.wasm": {
       "url": "game-e4a43dbae28662b2.wasm.gz",
       "raw_bytes": 43699190,
-      "download_bytes": 9402730
+      "download_bytes": 9387768
     },
     "game.pck": {
-      "url": "game-117f02bfa0cccf5e.pck.gz",
-      "raw_bytes": 6485280,
-      "download_bytes": 3659174
+      "url": "game-bb8166dc9dcb7b07.pck.gz",
+      "raw_bytes": 6545184,
+      "download_bytes": 3716557
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 30.832,
+  "build_seconds": 19.766,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -61,6 +61,14 @@
       "description": "Move cargo with Use to uncover salvage and a vent. Stack a crate to climb the low salvage wall. Full-height partitions meet a solid ceiling: use the vents to reach the loading relay, then extract. The bench behind spawn has a pistol, rifle, shotgun and ammo; open the bag or press I to equip.",
       "autonomous_scene": "res://Root/Dev/DevCargoGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk4.jpg"
+    },
+    {
+      "id": "mk5",
+      "story_id": "",
+      "label": "Mk 5 \u00b7 Catwalk complex",
+      "description": "Two connected double-height bays, each with a recessed central pit, lower floor and raised catwalk ring. Ramps lead up to the catwalks; a bridge joins both upper levels.",
+      "autonomous_scene": "res://Root/Dev/DevCatwalkGym.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk5.svg"
     },
     {
       "id": "weapons",

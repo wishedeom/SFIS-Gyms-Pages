@@ -95,7 +95,7 @@ const wallTextureIds = ['untextured', 'weathered_concrete', 'concrete_blocks', '
 let selectedWallTexture = 'untextured';
 let wallTextureApplied = false;
 let pendingWallTexture = null;
-const touch = new WebTouchControls({root:$('viewport'), stick:$('touch-stick'), knob:$('touch-knob'), look:$('touch-look'),
+const touch = new WebTouchControls({root:$('viewport'), stick:$('touch-stick'), knob:$('touch-knob'), look:$('touch-look'), lookKnob:$('touch-look-knob'),
   buttons:[...document.querySelectorAll('[data-touch-action]')], send:(...args) => window.stealthControl?.(...args)});
 const quickbar = new QuickBarDrawer({root:$('quickbar-drawer'), send:(...args) => window.stealthControl?.(...args),
   onOpenChange:() => { touch.reset(); updateTouch(); }});

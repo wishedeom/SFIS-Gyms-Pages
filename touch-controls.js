@@ -1,10 +1,11 @@
 /* Development controls only. Pointer IDs allow moving, looking and acting together. */
 window.WebTouchControls = class {
-  constructor({root, stick, knob, look, buttons, send, lifecycle = window, visibility = document,
+  constructor({root, stick, knob, look, lookKnob, buttons, send, lifecycle = window, visibility = document,
     schedule = setInterval}) {
-    Object.assign(this, {root, stick, knob, look, buttons, send});
+    Object.assign(this, {root, stick, knob, look, lookKnob, buttons, send});
     this.enabled = false;
     this.pointers = new Map();
+    this.lookVector = {x:0, y:0};
     this.reset();
     const bind = (element, kind) => {
       const toggle = ['crouch', 'sprint'].includes(kind);
@@ -15,6 +16,7 @@ window.WebTouchControls = class {
         element.setPointerCapture(event.pointerId);
         this.pointers.set(event.pointerId, {kind, x:event.clientX, y:event.clientY});
         if (kind === 'move') this.move(event);
+        else if (kind === 'look') this.lookAt(event);
         else if (toggle) {
           this.state[kind] = !this.state[kind];
           if (kind === 'sprint' && this.state.sprint) this.state.crouch = false;
@@ -30,6 +32,7 @@ window.WebTouchControls = class {
         event.preventDefault();
         if (kind === 'move') this.move(event);
         if (kind === 'look') {
+          this.lookAt(event);
           const scale = 1280 / Math.max(1, root.getBoundingClientRect().width);
           this.state.look_x += (event.clientX - pointer.x) * scale;
           this.state.look_y += (event.clientY - pointer.y) * scale;
@@ -40,6 +43,7 @@ window.WebTouchControls = class {
       element.addEventListener('pointerup', (event) => {
         if (!this.pointers.delete(event.pointerId)) return;
         if (kind === 'move') this.state.x = this.state.y = 0;
+        else if (kind === 'look') this.lookVector = {x:0, y:0};
         else if (kind !== 'look' && !toggle) this.state[kind] = false;
         this.draw(); this.flush();
       });
@@ -63,8 +67,16 @@ window.WebTouchControls = class {
     this.state.x = length ? x / length * strength : 0;
     this.state.y = length ? y / length * strength : 0;
   }
+  lookAt(event) {
+    const rect = this.look.getBoundingClientRect(), radius = rect.width * 0.36;
+    const x = (event.clientX - rect.left - rect.width / 2) / radius;
+    const y = (event.clientY - rect.top - rect.height / 2) / radius;
+    const length = Math.hypot(x, y), strength = Math.min(1, length);
+    this.lookVector = length ? {x:x / length * strength, y:y / length * strength} : {x:0, y:0};
+  }
   draw() {
-    this.knob.style.transform = `translate(${this.state.x * 36}%, ${this.state.y * 36}%)`;
+    this.knob.style.transform = `translate(${this.state.x * 48}%, ${this.state.y * 48}%)`;
+    this.lookKnob.style.transform = `translate(${this.lookVector.x * 48}%, ${this.lookVector.y * 48}%)`;
     for (const button of this.buttons) {
       const action = button.dataset.touchAction, active = !!this.state[action];
       button.classList.toggle('held', active);
@@ -79,6 +91,7 @@ window.WebTouchControls = class {
   }
   reset() {
     this.pointers.clear();
+    this.lookVector = {x:0, y:0};
     this.state = {x:0, y:0, look_x:0, look_y:0, sprint:false, crouch:false, lean_left:false, lean_right:false, jump:false, interact:false};
     this.send('release_input');
     this.draw();

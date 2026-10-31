@@ -6,6 +6,7 @@ window.PerformancePanel = class {
     this.panel = doc.getElementById('performance-panel');
     this.canvas = doc.getElementById('performance-graph');
     this.open = false;
+    this.fps = 0;
     this.desiredScale = options.mobile ? 0.75 : 1;
     this.initialized = false;
     this.capture = doc.getElementById('performance-capture');
@@ -31,6 +32,8 @@ window.PerformancePanel = class {
     this.open = open;
     this.panel.classList.toggle('hidden', !open);
     this.button.setAttribute('aria-expanded', String(open));
+    this.button.setAttribute('aria-label', `${open ? 'Close' : 'Open'} performance metrics (${this.fps} FPS)`);
+    this.button.title = `${open ? 'Close' : 'Open'} performance metrics · ${this.fps} FPS`;
     if (open) { this.releaseInput(); this.doc.getElementById('performance-close').focus(); }
     this.send({open});
     if (open && this.state) this.render();
@@ -48,10 +51,12 @@ window.PerformancePanel = class {
       this.initialized = true;
       if (this.desiredScale !== 1) this.send({scale:this.desiredScale});
     }
-    const embedded = this.doc.getElementById('embedded-fps');
-    if (embedded) embedded.textContent = `${Number.isFinite(state.fps) ? Math.round(state.fps) : 0} FPS`;
+    const fps = Number.isFinite(state.fps) ? Math.max(0, Math.round(state.fps)) : 0;
+    this.fps = fps;
     this.button.disabled = false;
-    this.button.textContent = `${state.paused ? 'Paused' : state.fps ? state.fps.toFixed(0) + ' FPS' : 'FPS …'}  ▥ Performance ${this.open ? '▴' : '▾'}`;
+    this.button.textContent = `${fps} FPS`;
+    this.button.setAttribute('aria-label', `${this.open ? 'Close' : 'Open'} performance metrics (${fps} FPS)`);
+    this.button.title = `${this.open ? 'Close' : 'Open'} performance metrics · ${fps} FPS`;
     if (this.open) this.render();
   }
   render() {

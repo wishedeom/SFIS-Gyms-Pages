@@ -49,7 +49,7 @@
 .control-proxy{display:none!important}
 .corner-secondary-controls{display:flex;align-items:flex-start;gap:4px;pointer-events:auto}
 .corner-secondary-controls .audio-controls button{width:44px;height:44px;min-height:44px;padding:10px;background:#101719e8;border:1px solid #65776e;border-radius:3px}
-.viewport:not(:fullscreen):not(.expanded) #fps-counter,.viewport:not(:fullscreen):not(.expanded) #debug-view-toggle{display:none}
+.viewport:not(:fullscreen):not(.expanded) #debug-view-toggle{display:none}
 .stats #status{display:none}
 .fullscreen-top{justify-content:center}
 .fullscreen-bottom>div{align-items:center}
@@ -92,6 +92,24 @@
 
 .load-timings{font:11px/1.7 monospace;color:var(--muted);padding:10px 0;margin:0;overflow-wrap:anywhere}
 
+/* Touch gamepad: keep both sticks and the action pad inside clear lower-side zones. */
+.touch-controls{z-index:3;--touch-stick-size:clamp(100px,13vw,124px);--touch-edge:max(14px,env(safe-area-inset-right));}
+.touch-joystick{position:absolute;display:grid;place-items:center;width:var(--touch-stick-size);height:var(--touch-stick-size);border:2px solid #ffffff75;border-radius:50%;background:radial-gradient(circle,#17252bb3 0 30%,#081014a8 72%);box-shadow:inset 0 0 0 7px #ffffff0a,0 2px 12px #0006;pointer-events:auto;touch-action:none}
+.touch-joystick>span{position:relative;inset:auto;display:grid;place-items:center;width:50%;height:50%;border:1px solid #ffffffa6;border-radius:50%;background:#829b9880;color:#fff;font:10px monospace;letter-spacing:.04em;text-shadow:0 1px 3px #000;pointer-events:none;will-change:transform}
+.touch-stick{left:max(148px,calc(env(safe-area-inset-left) + 16px));bottom:max(14px,env(safe-area-inset-bottom));}
+.touch-look{right:var(--touch-edge);top:auto;bottom:calc(max(8px,env(safe-area-inset-bottom)) + 58px);width:var(--touch-stick-size);height:var(--touch-stick-size);}
+.touch-actions{right:calc(var(--touch-edge) + var(--touch-stick-size) + 12px);bottom:calc(max(8px,env(safe-area-inset-bottom)) + 58px);width:132px;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;align-content:end}
+.touch-actions button{min-width:0;min-height:40px;padding:3px 2px;border-color:#ffffff80;border-radius:50%;background:#101719e8;font-size:9px;line-height:1;overflow-wrap:anywhere;touch-action:none}
+.touch-actions .touch-lean-row{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.touch-actions .touch-lean-row button{border-radius:12px}
+.touch-actions .held{border-color:var(--accent);box-shadow:0 0 10px #c5ee8666}
+.viewport:has(#quickbar-drawer.is-open) #touch-controls,.viewport:has(.fullscreen-menu:not(.hidden)) #touch-controls,.viewport:has(#perspective-choices:not(.hidden)) #touch-controls,.viewport:has(#debug-view-panel:not(.hidden)) #touch-controls,.viewport:has(#debug-visual-panel:not(.hidden)) #touch-controls{display:none!important}
+@media(orientation:landscape) and (max-height:500px){.touch-controls{--touch-stick-size:clamp(92px,13vw,120px)}.touch-actions{width:132px;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.touch-actions button{min-height:40px;padding:3px 2px;font-size:9px}}
+@media(max-width:700px){.touch-controls{--touch-stick-size:clamp(88px,13vw,104px)}.touch-stick{left:max(132px,calc(env(safe-area-inset-left) + 14px))}.touch-actions{width:120px;right:calc(var(--touch-edge) + var(--touch-stick-size) + 10px)}}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{width:132px;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions button{min-height:40px;padding:3px 2px;font-size:9px}
+@media(max-width:700px){.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{width:120px}}
+
 
 
 .fullscreen-menu .level-choice{grid-column:1/-1}
@@ -108,9 +126,6 @@
 
 #replay svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* Embedded FPS is noninteractive text; fullscreen retains the optional profiler. */
-.embedded-fps{display:none;position:absolute;z-index:6;left:12px;bottom:10px;font:12px monospace;color:#e4eeeb;pointer-events:none;text-shadow:0 1px 3px #000}
-.viewport.live:not(:fullscreen):not(.expanded) .embedded-fps{display:block}
 .fullscreen-bottom{justify-content:flex-end}
 /* The handle belongs to the game; the opened equipment tray uses the screen bottom. */
 .quickbar-drawer{position:absolute;z-index:8;left:50%;bottom:calc(16% + 8px);transform:translateX(-50%);width:min(620px,96%);pointer-events:none;user-select:none;-webkit-user-select:none}
@@ -136,8 +151,17 @@
 .perspective-tooltip{position:fixed;z-index:30;pointer-events:none;white-space:nowrap;padding:9px 12px;border:1px solid var(--accent);border-radius:5px;color:var(--text);background:#101719;font-size:13px;box-shadow:0 3px 12px #000a}
 
 /* Native menu is drawn by Godot; leave the canvas and fullscreen exit usable. */
-.viewport.game-menu-open .fullscreen-chrome,.viewport.game-menu-open #fps-counter,.viewport.game-menu-open #embedded-fps,.viewport.game-menu-open #performance-panel,.viewport.game-menu-open #debug-view-panel,.viewport.game-menu-open #debug-visual-panel,.viewport.game-menu-open #touch-controls,.viewport.game-menu-open #quickbar-drawer{display:none!important}
+.viewport.game-menu-open .fullscreen-chrome,.viewport.game-menu-open #fps-counter,.viewport.game-menu-open #performance-panel,.viewport.game-menu-open #debug-view-panel,.viewport.game-menu-open #debug-visual-panel,.viewport.game-menu-open #touch-controls,.viewport.game-menu-open #quickbar-drawer{display:none!important}
 .viewport.game-menu-open canvas{touch-action:none}
 .viewport.dialogue-open #touch-controls,.viewport.dialogue-open #quickbar-drawer,.viewport.dialogue-open .fullscreen-chrome{display:none!important}
 .viewport.game-menu-open .viewport-corner-controls button:not(#fullscreen),.viewport.game-menu-open .audio-controls{display:none!important}
 .viewport.game-menu-open .viewport-corner-controls{justify-content:flex-end}
+
+/* Keep the FPS readout compact, reachable and clear of mobile action buttons. */
+.fps-counter{top:auto;right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));left:auto;z-index:15;min-height:44px;padding:6px 10px;border:1px solid #ffffff66;border-radius:4px;background:#101719d9;color:#e4eeeb;font:12px monospace;font-weight:600;box-shadow:0 2px 8px #0007}
+.fps-counter:hover:not(:disabled),.fps-counter[aria-expanded=true]{border-color:var(--accent);background:#253137;color:var(--accent)}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{bottom:calc(max(8px,env(safe-area-inset-bottom)) + 58px)}
+.viewport.manual-control #quickbar-drawer:not(.is-open){bottom:max(8px,env(safe-area-inset-bottom))}
+.viewport:has(#performance-panel:not(.hidden)) #touch-controls,.viewport:has(#performance-panel:not(.hidden)) #quickbar-drawer{display:none!important}
+@media(orientation:landscape) and (max-height:500px){.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{grid-template-columns:repeat(3,minmax(64px,1fr));width:min(46vw,360px);gap:5px}.viewport.manual-control #touch-controls:not(.hidden) .touch-actions button{min-height:40px;padding:5px 6px;font-size:11px}}
+@media(max-width:700px){.viewport.manual-control:not(:fullscreen):not(.expanded) .fullscreen-bottom{position:absolute;top:max(8px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));right:auto;bottom:auto}}
