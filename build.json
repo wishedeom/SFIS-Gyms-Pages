@@ -6,9 +6,9 @@
       "download_bytes": 9402730
     },
     "game.pck": {
-      "url": "game-240f968c37497bfe.pck.gz",
-      "raw_bytes": 6228928,
-      "download_bytes": 3652646
+      "url": "game-256e622ddb52646e.pck.gz",
+      "raw_bytes": 6484176,
+      "download_bytes": 3657965
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,12 +26,13 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 34.407,
+  "build_seconds": 35.546,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
     {
       "id": "mk1",
+      "story_id": "",
       "label": "Mk 1 \u00b7 Depot",
       "description": "The compact depot: ramps, low cover, corridors, and three patrolling guards.",
       "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk1.tscn",
@@ -39,6 +40,7 @@
     },
     {
       "id": "mk2",
+      "story_id": "",
       "label": "Mk 2 \u00b7 Expanded depot",
       "description": "A larger course with multiple elevations, longer patrols, credentials, and an extraction uplink.",
       "autonomous_scene": "res://Root/Dev/DevStealthAutonomy.tscn",
@@ -46,6 +48,7 @@
     },
     {
       "id": "mk3",
+      "story_id": "",
       "label": "Mk 3 \u00b7 Vent works",
       "description": "Two guard-patrolled floors, thick service walls and five crawl routes: straight ducts, elbows, diagonal bends and a 45 degree riser. Find the service key, then extract upstairs.",
       "autonomous_scene": "res://Root/Dev/DevStealthAutonomyMk3.tscn",
@@ -53,6 +56,7 @@
     },
     {
       "id": "mk4",
+      "story_id": "",
       "label": "Mk 4 \u00b7 Cargo works",
       "description": "Move cargo with Use to uncover salvage and a vent. Stack a crate to climb the low salvage wall. Full-height partitions meet a solid ceiling: use the vents to reach the loading relay, then extract. The bench behind spawn has a pistol, rifle, shotgun and ammo; open the bag or press I to equip.",
       "autonomous_scene": "res://Root/Dev/DevCargoGym.tscn",
@@ -60,6 +64,7 @@
     },
     {
       "id": "weapons",
+      "story_id": "",
       "label": "Weapon gym \u00b7 Arsenal",
       "description": "Pick up weapons and ammunition with Use. Fire, reload and reset the practice targets. Includes the full experimental arsenal.",
       "lab": "weapons",
@@ -67,6 +72,7 @@
     },
     {
       "id": "combat",
+      "story_id": "",
       "label": "Lab \u00b7 Unarmed combat",
       "description": "Experimental boxing, stamina, blocks, parries and guard breaks. Watch the sparring or take control.",
       "lab": "combat",
@@ -74,6 +80,7 @@
     },
     {
       "id": "stealth",
+      "story_id": "",
       "label": "Lab \u00b7 Evidence & distraction",
       "description": "Throw a noise distraction and watch guards investigate uncertain evidence.",
       "lab": "stealth",
@@ -81,6 +88,7 @@
     },
     {
       "id": "takedown",
+      "story_id": "",
       "label": "Lab \u00b7 Nonlethal takedown",
       "description": "Approach from behind, restrain a guard and observe recovery. Experimental mechanics remain separate from the main gyms.",
       "lab": "takedown",
@@ -88,6 +96,7 @@
     },
     {
       "id": "coordination",
+      "story_id": "",
       "label": "Lab \u00b7 Guard coordination",
       "description": "Guards share delayed and uncertain reports over a radio network.",
       "lab": "coordination",
@@ -95,8 +104,9 @@
     },
     {
       "id": "dialogue",
+      "story_id": "TestStory",
       "label": "Lab \u00b7 Dialogue & story",
-      "description": "Talk to friendly crew, exchange a fuse for an engineering pass, unlock the passage and claim supplies. Story choices and inventory persist locally. Story tools expose conditions, variables, traces and Reset Story.",
+      "description": "Talk to friendly crew, exchange a fuse for an engineering pass, unlock the passage and claim supplies. This test chain uses the TestStory scope and resets on reload. Story tools expose conditions, variables, traces and Reset Story.",
       "lab": "dialogue",
       "preview": "res://Root/Dev/Web/Previews/dialogue.jpg"
     }
