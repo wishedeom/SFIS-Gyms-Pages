@@ -6,9 +6,9 @@
       "download_bytes": 9387768
     },
     "game.pck": {
-      "url": "game-bb8166dc9dcb7b07.pck.gz",
-      "raw_bytes": 6545184,
-      "download_bytes": 3716557
+      "url": "game-168be0cee221329d.pck.gz",
+      "raw_bytes": 6553088,
+      "download_bytes": 3724105
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 19.766,
+  "build_seconds": 22.092,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -66,7 +66,7 @@
       "id": "mk5",
       "story_id": "",
       "label": "Mk 5 \u00b7 Catwalk complex",
-      "description": "Two connected double-height bays, each with a recessed central pit, lower floor and raised catwalk ring. Ramps lead up to the catwalks; a bridge joins both upper levels.",
+      "description": "Infiltrate two guarded double-height bays around central pits. Collect weapons and ammo, crawl through lower and upper service vents, override west security, download the catwalk uplink, then authorize extraction in the east bay and escape upstairs.",
       "autonomous_scene": "res://Root/Dev/DevCatwalkGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk5.svg"
     },
