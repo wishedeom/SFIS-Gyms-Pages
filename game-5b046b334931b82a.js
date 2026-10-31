@@ -683,10 +683,10 @@ const Engine = (function () {
 	 * @function Engine.unload
 	 */
 	Engine.loadFromBuffer = function (basePath, buffer) {
-    loadPath = basePath;
-    loadPromise = Promise.resolve(new Response(buffer, {headers: {'Content-Type': 'application/wasm'}}));
-    return loadPromise;
-};
+        loadPath = basePath;
+        loadPromise = Promise.resolve(new Response(buffer, {headers: {'Content-Type': 'application/wasm'}}));
+        return loadPromise;
+    };
 	Engine.unload = function () {
 		loadPromise = null;
 	};
