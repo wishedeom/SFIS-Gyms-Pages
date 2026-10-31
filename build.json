@@ -6,9 +6,9 @@
       "download_bytes": 9387768
     },
     "game.pck": {
-      "url": "game-70ca0e24df121f57.pck.gz",
-      "raw_bytes": 6557312,
-      "download_bytes": 3727957
+      "url": "game-8c6f2ebb8f18065a.pck.gz",
+      "raw_bytes": 7741872,
+      "download_bytes": 4633541
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 19.61,
+  "build_seconds": 324.292,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -69,6 +69,14 @@
       "description": "Infiltrate two guarded double-height bays around central pits. Collect weapons and ammo, crawl through lower and upper service vents, override west security, download the catwalk uplink, then authorize extraction in the east bay and escape upstairs.",
       "autonomous_scene": "res://Root/Dev/DevCatwalkGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk5.svg"
+    },
+    {
+      "id": "mk6",
+      "story_id": "",
+      "label": "Mk 6 \u00b7 Aquatics training",
+      "description": "Swim with NPC trainees in a deep training pool. Walk down either ramp, hold Jump to rise or Crouch to dive, and steer with your view. Surface to recover oxygen; running out damages head and chest.",
+      "autonomous_scene": "res://Root/Dev/DevWaterGym.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk6.svg"
     },
     {
       "id": "weapons",
