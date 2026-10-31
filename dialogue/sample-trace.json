@@ -1,0 +1,495 @@
+{
+  "state": {
+    "demo_type": "dialogue",
+    "dialogue": {
+      "active": false,
+      "client": "story_player",
+      "conversation": "quartermaster",
+      "error": "",
+      "node": "done",
+      "participant": "quartermaster",
+      "revision": 8
+    },
+    "dialogue_open": false,
+    "door_unlocked": true,
+    "elapsed": 7.95833333333332,
+    "manual": false,
+    "story": {
+      "engineer.trust": 1,
+      "relay.accepted": true,
+      "relay.fixed": true,
+      "supplies.claimed": true
+    }
+  },
+  "trace": [
+    {
+      "conversation": "engineer",
+      "data": {
+        "client": "story_player",
+        "node": "start",
+        "participant": "engineer"
+      },
+      "kind": "start",
+      "node": "start",
+      "sequence": 1
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "ask",
+        "results": []
+      },
+      "kind": "conditions",
+      "node": "start",
+      "sequence": 2
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "ask",
+        "effects": {
+          "accepted": true,
+          "inventory_after": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_fuse",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "inventory_before": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_fuse",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "variables_after": {
+            "engineer.trust": 0,
+            "relay.accepted": false,
+            "relay.fixed": false,
+            "supplies.claimed": false
+          },
+          "variables_before": {
+            "engineer.trust": 0,
+            "relay.accepted": false,
+            "relay.fixed": false,
+            "supplies.claimed": false
+          },
+          "world": []
+        }
+      },
+      "kind": "choice",
+      "node": "start",
+      "sequence": 3
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "node": "explanation"
+      },
+      "kind": "node",
+      "node": "explanation",
+      "sequence": 4
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "help",
+        "results": []
+      },
+      "kind": "conditions",
+      "node": "explanation",
+      "sequence": 5
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "help",
+        "effects": {
+          "accepted": true,
+          "inventory_after": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_fuse",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "inventory_before": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_fuse",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "variables_after": {
+            "engineer.trust": 0,
+            "relay.accepted": true,
+            "relay.fixed": false,
+            "supplies.claimed": false
+          },
+          "variables_before": {
+            "engineer.trust": 0,
+            "relay.accepted": false,
+            "relay.fixed": false,
+            "supplies.claimed": false
+          },
+          "world": []
+        }
+      },
+      "kind": "choice",
+      "node": "explanation",
+      "sequence": 6
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "node": "offer"
+      },
+      "kind": "node",
+      "node": "offer",
+      "sequence": 7
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "repair",
+        "results": [
+          {
+            "passed": true,
+            "reason": ""
+          },
+          {
+            "passed": true,
+            "reason": ""
+          }
+        ]
+      },
+      "kind": "conditions",
+      "node": "offer",
+      "sequence": 8
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "choice": "repair",
+        "effects": {
+          "accepted": true,
+          "inventory_after": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_pass",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "inventory_before": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_fuse",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "variables_after": {
+            "engineer.trust": 1,
+            "relay.accepted": true,
+            "relay.fixed": true,
+            "supplies.claimed": false
+          },
+          "variables_before": {
+            "engineer.trust": 0,
+            "relay.accepted": true,
+            "relay.fixed": false,
+            "supplies.claimed": false
+          },
+          "world": [
+            {
+              "id": "relay_door",
+              "value": true
+            }
+          ]
+        }
+      },
+      "kind": "choice",
+      "node": "offer",
+      "sequence": 9
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "node": "thanks"
+      },
+      "kind": "node",
+      "node": "thanks",
+      "sequence": 10
+    },
+    {
+      "conversation": "engineer",
+      "data": {
+        "reason": "completed"
+      },
+      "kind": "end",
+      "node": "thanks",
+      "sequence": 11
+    },
+    {
+      "conversation": "quartermaster",
+      "data": {
+        "client": "story_player",
+        "node": "start",
+        "participant": "quartermaster"
+      },
+      "kind": "start",
+      "node": "start",
+      "sequence": 12
+    },
+    {
+      "conversation": "quartermaster",
+      "data": {
+        "choice": "supplies",
+        "results": [
+          {
+            "passed": true,
+            "reason": ""
+          }
+        ]
+      },
+      "kind": "conditions",
+      "node": "start",
+      "sequence": 13
+    },
+    {
+      "conversation": "quartermaster",
+      "data": {
+        "choice": "supplies",
+        "effects": {
+          "accepted": true,
+          "inventory_after": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_pass",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              },
+              {
+                "item": "ammo:9mm",
+                "quantity": 12,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 1,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "inventory_before": {
+            "columns": 6,
+            "entries": [
+              {
+                "item": "relay_pass",
+                "quantity": 1,
+                "rotated": false,
+                "state": {
+
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "quick_slots": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": 4
+          },
+          "variables_after": {
+            "engineer.trust": 1,
+            "relay.accepted": true,
+            "relay.fixed": true,
+            "supplies.claimed": true
+          },
+          "variables_before": {
+            "engineer.trust": 1,
+            "relay.accepted": true,
+            "relay.fixed": true,
+            "supplies.claimed": false
+          },
+          "world": []
+        }
+      },
+      "kind": "choice",
+      "node": "start",
+      "sequence": 14
+    },
+    {
+      "conversation": "quartermaster",
+      "data": {
+        "node": "done"
+      },
+      "kind": "node",
+      "node": "done",
+      "sequence": 15
+    },
+    {
+      "conversation": "quartermaster",
+      "data": {
+        "reason": "completed"
+      },
+      "kind": "end",
+      "node": "done",
+      "sequence": 16
+    }
+  ]
+}
