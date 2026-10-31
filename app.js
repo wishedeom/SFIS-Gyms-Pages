@@ -138,8 +138,7 @@ function validateSelection(raw) {
   if (String(raw.seed).trim() === '' || !Number.isInteger(seed) || seed < 0 || seed > 2147483647) throw new Error('Seed must be a whole number from 0 to 2147483647.');
   if (String(raw.budget).trim() === '' || !Number.isInteger(budget) || budget < 30 || budget > 900) throw new Error('Time limit must be a whole number from 30 to 900 seconds.');
   if (!['autonomous', 'manual'].includes(raw.mode)) throw new Error('Choose an autonomous or manual run.');
-  const model = raw.model ?? 'human';
-  if (!['primitive', 'human'].includes(model)) throw new Error('Choose a primitive or human model.');
+  const model = 'human';
   return {level:raw.level, seed, budget, mode:raw.mode, model};
 }
 
@@ -153,7 +152,7 @@ function selectionToUI(selection) {
   $('budget').value = String(selection.budget);
   $('mode-demo').checked = selection.mode === 'autonomous';
   $('mode-control').checked = selection.mode === 'manual';
-  selectedModel = selection.model ?? 'human';
+  selectedModel = 'human';
   if ($('model')) $('model').value = selectedModel;
   modeFields();
 }
