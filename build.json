@@ -6,9 +6,9 @@
       "download_bytes": 9387768
     },
     "game.pck": {
-      "url": "game-5afc7cff6192d513.pck.gz",
-      "raw_bytes": 8290832,
-      "download_bytes": 5218981
+      "url": "game-ac87b177eab641f7.pck.gz",
+      "raw_bytes": 8364048,
+      "download_bytes": 5286182
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 273.523,
+  "build_seconds": 333.689,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -77,6 +77,14 @@
       "description": "Swim with NPC trainees in a deep training pool. Walk down either ramp, hold Jump to rise or Crouch to dive, and steer with your view. Surface to recover oxygen; running out damages head and chest.",
       "autonomous_scene": "res://Root/Dev/DevWaterGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk6.svg"
+    },
+    {
+      "id": "mk7",
+      "story_id": "",
+      "label": "Mk 7 \u00b7 Hazard works",
+      "description": "Use crates to block ruptured pipe fire before they burn away. Cut the breaker to disable live water and the service lift together. Connected water conducts electricity; immerse in the separate quench basin to extinguish burns. Watch the guard escape after cover fails, or take control and move spare cargo with Use.",
+      "autonomous_scene": "res://Root/Dev/DevHazardGym.tscn",
+      "preview": "res://Root/Dev/Web/Previews/mk7.jpg"
     },
     {
       "id": "weapons",
