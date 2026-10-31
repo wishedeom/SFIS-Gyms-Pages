@@ -119,7 +119,7 @@ window.debugDownload = json => {
 };
 function updateTouch(state = latestGameState) {
   perspectiveMenu?.update(fullscreenActive() && !!state?.ready && !state.manual && !loading && !gameMenuOpen, state?.view);
-  const orientationReady = !$('viewport').classList.contains('landscape-required') && !gameMenuOpen && !state?.dialogue_open;
+  const orientationReady = !$('viewport').classList.contains('landscape-required') && !gameMenuOpen && !state?.dialogue_open && !state?.modal_open;
   const overviewEnabled = orientationReady && !!state && !state.manual && !state.inventory_open && state.view === 'overview' && !loading;
   overviewCamera.setEnabled(overviewEnabled);
   $('overview-reset').classList.toggle('hidden', !overviewEnabled);
@@ -368,7 +368,7 @@ async function compressedAsset(asset, label) {
 window.stealthReport = (json) => {
   const state = JSON.parse(json);
   latestGameState = state;
-  $('viewport').classList.toggle('dialogue-open', !!state.dialogue_open);
+  $('viewport').classList.toggle('dialogue-open', !!state.dialogue_open || !!state.modal_open);
   if (state.menu_ready) {
     gameMenuOpen = true;
     touch.reset(); overviewCamera.reset(); quickbar.setEnabled(false);

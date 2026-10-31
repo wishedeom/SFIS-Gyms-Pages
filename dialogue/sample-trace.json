@@ -239,10 +239,20 @@
         "choice": "repair",
         "results": [
           {
+            "actual": true,
+            "comparison": "EQUAL",
+            "expected": true,
+            "key": "relay.accepted",
+            "kind": "VARIABLE",
             "passed": true,
             "reason": ""
           },
           {
+            "actual": 1,
+            "comparison": "AT_LEAST",
+            "expected": 1,
+            "key": "relay_fuse",
+            "kind": "ITEM_COUNT",
             "passed": true,
             "reason": ""
           }
@@ -373,6 +383,11 @@
         "choice": "supplies",
         "results": [
           {
+            "actual": true,
+            "comparison": "EQUAL",
+            "expected": true,
+            "key": "relay.fixed",
+            "kind": "VARIABLE",
             "passed": true,
             "reason": ""
           }
