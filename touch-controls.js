@@ -31,12 +31,7 @@ window.WebTouchControls = class {
         if (!pointer || !this.enabled) return;
         event.preventDefault();
         if (kind === 'move') this.move(event);
-        if (kind === 'look') {
-          this.lookAt(event);
-          const scale = 1280 / Math.max(1, root.getBoundingClientRect().width);
-          this.state.look_x += (event.clientX - pointer.x) * scale;
-          this.state.look_y += (event.clientY - pointer.y) * scale;
-        }
+        if (kind === 'look') this.lookAt(event);
         pointer.x = event.clientX; pointer.y = event.clientY;
         this.draw();
       });
@@ -81,11 +76,18 @@ window.WebTouchControls = class {
       const action = button.dataset.touchAction, active = !!this.state[action];
       button.classList.toggle('held', active);
       if (['crouch', 'sprint'].includes(action)) button.setAttribute('aria-pressed', String(active));
-      if (action === 'sprint') button.textContent = active ? 'Sprint ON' : 'Sprint';
+      if (action === 'sprint') {
+        const label = button.querySelector('.touch-label');
+        if (label) label.textContent = active ? 'Sprint ON' : 'Sprint';
+        else button.textContent = active ? 'Sprint ON' : 'Sprint';
+      }
     }
   }
   flush() {
     if (!this.enabled) return;
+    // Each heartbeat turns in proportion to stick deflection, like a gamepad axis.
+    this.state.look_x = this.lookVector.x * 40;
+    this.state.look_y = this.lookVector.y * 40;
     this.send('touch', JSON.stringify(this.state));
     this.state.look_x = this.state.look_y = 0;
   }

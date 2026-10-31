@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=2c9a3bff9f7fc57c">
+  <link rel="stylesheet" href="style.css?v=970342d810dadd33">
   <script src="performance-panel.js?v=588a2bffebfc18ab" defer></script>
-  <script src="touch-controls.js?v=f91034c5426fb0f5" defer></script>
+  <script src="touch-controls.js?v=9bcafd2445a90298" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
   <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
   <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
-  <script src="app.js?v=1f41f43e3cd4ad0f" defer></script>
+  <script src="app.js?v=2e3a695729afd01b" defer></script>
 </head>
 <body>
   <main>
@@ -49,25 +49,25 @@
 
         <div id="quickbar-drawer" class="quickbar-drawer hidden"></div>
         <div id="touch-controls" class="touch-controls hidden" aria-label="Touch controls">
-          <div id="touch-look" class="touch-look touch-joystick" role="img" aria-label="Look joystick; drag to look"><span id="touch-look-knob">LOOK</span></div>
+          <div id="touch-look" class="touch-look touch-joystick" role="img" aria-label="Look joystick; hold a direction to turn"><span id="touch-look-knob">LOOK</span></div>
           <div id="touch-stick" class="touch-stick touch-joystick" role="img" aria-label="Movement joystick; drag to move"><span id="touch-knob">MOVE</span></div>
           <div class="touch-actions">
             <div class="touch-lean-row">
-                <button data-touch-action="lean_left" aria-label="Hold to lean left" title="Lean left">Lean ◀</button>
-                <button data-touch-action="lean_right" aria-label="Hold to lean right" title="Lean right">Lean ▶</button>
+                <button data-touch-action="lean_left" aria-label="Hold to lean left" title="Lean left"><span class="touch-icon">◀</span><small class="touch-label">Lean</small></button>
+                <button data-touch-action="lean_right" aria-label="Hold to lean right" title="Lean right"><span class="touch-icon">▶</span><small class="touch-label">Lean</small></button>
             </div>
-            <button data-touch-action="jump">Jump</button>
-            <button data-touch-action="interact">Use</button>
-            <button data-touch-action="attack" data-lab="combat weapons" class="hidden" aria-label="Fire weapon">Fire</button>
-            <button data-touch-action="crouch" aria-label="Toggle crouch">Crouch</button>
-            <button data-touch-action="sprint" aria-label="Toggle sprint" aria-pressed="false">Sprint</button>
-            <button data-touch-action="grenade" aria-label="Tap to throw grenade; hold to aim or place mine" title="Grenade">Frag</button>
-            <button data-touch-action="block" data-lab="combat" class="hidden" aria-label="Block">Block</button>
-            <button data-touch-action="heavy" data-lab="combat" class="hidden" aria-label="Heavy attack">Heavy</button>
-            <button data-lab-action="reload" data-lab="weapons" class="hidden" aria-label="Reload weapon">Reload</button>
-            <button data-touch-action="grenade_cancel" aria-label="Cancel grenade aiming" title="Cancel grenade aim">Cancel</button>
-            <button data-lab-action="takedown" data-lab="takedown" class="hidden" aria-label="Take down target">Takedown</button>
-            <button data-lab-action="distraction" data-lab="stealth" class="hidden" aria-label="Throw noise distraction">Noise</button>
+            <button data-touch-action="jump" aria-label="Jump"><span class="touch-icon">↑</span><small class="touch-label">Jump</small></button>
+            <button data-touch-action="interact" aria-label="Use or interact"><span class="touch-icon">⌖</span><small class="touch-label">Use</small></button>
+            <button data-touch-action="attack" data-lab="combat weapons" class="hidden" aria-label="Fire weapon"><span class="touch-icon">✦</span><small class="touch-label">Fire</small></button>
+            <button data-touch-action="crouch" aria-label="Toggle crouch"><span class="touch-icon">↓</span><small class="touch-label">Crouch</small></button>
+            <button data-touch-action="sprint" aria-label="Toggle sprint" aria-pressed="false"><span class="touch-icon">»</span><small class="touch-label">Sprint</small></button>
+            <button data-touch-action="grenade" aria-label="Tap to throw grenade; hold to aim or place mine" title="Grenade"><span class="touch-icon">✹</span><small class="touch-label">Frag</small></button>
+            <button data-touch-action="block" data-lab="combat" class="hidden" aria-label="Block"><span class="touch-icon">⬡</span><small class="touch-label">Block</small></button>
+            <button data-touch-action="heavy" data-lab="combat" class="hidden" aria-label="Heavy attack"><span class="touch-icon">◆</span><small class="touch-label">Heavy</small></button>
+            <button data-lab-action="reload" data-lab="weapons" class="hidden" aria-label="Reload weapon"><span class="touch-icon">↻</span><small class="touch-label">Reload</small></button>
+            <button data-touch-action="grenade_cancel" aria-label="Cancel grenade aiming" title="Cancel grenade aim"><span class="touch-icon">×</span><small class="touch-label">Cancel</small></button>
+            <button data-lab-action="takedown" data-lab="takedown" class="hidden" aria-label="Take down target"><span class="touch-icon">⊗</span><small class="touch-label">Take down</small></button>
+            <button data-lab-action="distraction" data-lab="stealth" class="hidden" aria-label="Throw noise distraction"><span class="touch-icon">)))</span><small class="touch-label">Noise</small></button>
           </div>
         </div>
         <div class="viewport-corner-controls"><button id="play-toggle" data-command="pause" type="button" disabled aria-label="Play simulation" title="Play simulation">▶</button><div class="corner-secondary-controls"><button id="overview-reset" class="hidden" data-command="overview_reset" type="button" disabled aria-label="Reset overview camera" title="Reset overview camera"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/><circle cx="12" cy="12" r="1"/></svg></button><button id="replay" data-command="restart" type="button" disabled aria-label="Replay simulation" title="Replay simulation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.4 7.1M3 4v7h7"/></svg></button><button id="inventory-open" class="hidden" data-command="inventory" type="button" aria-label="Open inventory" title="Inventory [I]">▦</button><div class="audio-controls" role="group" aria-label="Game audio">
@@ -117,7 +117,7 @@
       <p>Vision target lookup only; excludes field-of-view checks and physics rays. Tick costs cover the last 120 physics ticks; query p95 covers up to 512 calls. Candidate counts cover this run. The 1 ms index budget is a development target. A replacement must beat query + maintenance cost on the same workload; tree performance has not been measured in this live session.</p>
       <button id="download-query-stats" disabled>Download stats (.json)</button>
     </details>
-    <section class="notes"><div><p class="eyebrow">WHAT TO WATCH</p><h3>A goal, not a route.</h3><p>The autonomous player searches for extraction without knowing its location. It reacts to visible guards, uncertain footstep directions, and rising alertness. Cyan rings are player footsteps; red rings are guards.</p><p class="hearing">LATEST HEARING <span id="hearing">No observation yet</span></p></div><div class="control-note"><h3>Make it your attempt.</h3><p>Select Control or Take control. On a computer, click the game for mouse look: WASD moves, Space jumps, C crouches, Shift sprints, Q/E lean, and F interacts with nearby covers, crates, pickups and objectives. Escape releases the mouse.</p><button data-command="play" class="manual" disabled>Take control</button><p>On a phone, use the left stick to move and drag on the right to look. Tap Sprint or Crouch to toggle them. Hold Lean L/R to peek; release to centre. Jump and Sprint exit crouch. Tap Use for covers, pickups and crates; Use again drops a held crate. Full screen is at the top right of the game; tap it again to exit. These are basic development controls.</p><small id="cache-note">Replays use the loaded files. Later visits can reuse the cached engine.</small></div></section>
+    <section class="notes"><div><p class="eyebrow">WHAT TO WATCH</p><h3>A goal, not a route.</h3><p>The autonomous player searches for extraction without knowing its location. It reacts to visible guards, uncertain footstep directions, and rising alertness. Cyan rings are player footsteps; red rings are guards.</p><p class="hearing">LATEST HEARING <span id="hearing">No observation yet</span></p></div><div class="control-note"><h3>Make it your attempt.</h3><p>Select Control or Take control. On a computer, click the game for mouse look: WASD moves, Space jumps, C crouches, Shift sprints, Q/E lean, and F interacts with nearby covers, crates, pickups and objectives. Escape releases the mouse.</p><button data-command="play" class="manual" disabled>Take control</button><p>On a phone, use the lower-left stick to move and hold the right look stick off-centre to turn; turn speed follows its deflection. The action pad sits above the look stick. Tap Sprint or Crouch to toggle them. Hold Lean L/R to peek; release to centre. Jump and Sprint exit crouch. Tap Use for covers, pickups and crates; Use again drops a held crate. Full screen is at the top right of the game; tap it again to exit. These are basic development controls.</p><small id="cache-note">Replays use the loaded files. Later visits can reuse the cached engine.</small></div></section>
     <footer><span>STEALTH GYM / SCI-FI IMSIM</span><span>4 GYMS + 5 LABS · LOCAL SIMULATION</span></footer>
   </main>
 </body>

@@ -117,6 +117,12 @@ window.debugDownload = json => {
   const url = URL.createObjectURL(new Blob([json], {type:'application/json'})), anchor = document.createElement('a');
   anchor.href = url; anchor.download = 'stealth-debug-recording.json'; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
+function setTouchActionLabel(button, label) {
+  const caption = button.querySelector('.touch-label');
+  if (caption) caption.textContent = label;
+  else button.textContent = label;
+}
+
 function updateTouch(state = latestGameState) {
   perspectiveMenu?.update(fullscreenActive() && !!state?.ready && !state.manual && !loading && !gameMenuOpen, state?.view);
   const orientationReady = !$('viewport').classList.contains('landscape-required') && !gameMenuOpen && !state?.dialogue_open && !state?.modal_open;
@@ -401,7 +407,7 @@ window.stealthReport = (json) => {
   $('inventory-open')?.classList.toggle('hidden', !state.inventory_available || !!state.inventory_open);
   document.querySelectorAll('[data-lab]').forEach(button => {
     button.classList.toggle('hidden', !button.dataset.lab.split(' ').includes(state.lab));
-    if (button.dataset.touchAction === 'attack') button.textContent = state.lab === 'weapons' ? 'Fire' : 'Punch';
+    if (button.dataset.touchAction === 'attack') setTouchActionLabel(button, state.lab === 'weapons' ? 'Fire' : 'Punch');
   });
   const armed = !!state.weapon?.equipped && !!state.weapon?.drawn;
   const fire = document.querySelector('[data-touch-action="attack"]');
@@ -409,7 +415,7 @@ window.stealthReport = (json) => {
   if (!state.lab || state.lab === 'weapons') {
     fire?.classList.toggle('hidden', !armed);
     reload?.classList.toggle('hidden', !armed);
-    if (fire) fire.textContent = state.weapon?.kind === 'melee' ? 'Strike' : 'Fire';
+    if (fire) setTouchActionLabel(fire, state.weapon?.kind === 'melee' ? 'Strike' : 'Fire');
     reload?.classList.toggle('hidden', !armed || state.weapon?.kind === 'melee');
   }
   $('wall-texture').disabled = !!state.lab;

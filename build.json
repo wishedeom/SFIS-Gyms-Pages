@@ -6,9 +6,9 @@
       "download_bytes": 9387768
     },
     "game.pck": {
-      "url": "game-10da42ca531b25d1.pck.gz",
-      "raw_bytes": 8592128,
-      "download_bytes": 5465709
+      "url": "game-f3ea174ab04f5e23.pck.gz",
+      "raw_bytes": 8592208,
+      "download_bytes": 5465792
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 69.157,
+  "build_seconds": 18.532,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [

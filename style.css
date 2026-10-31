@@ -165,3 +165,24 @@
 .viewport:has(#performance-panel:not(.hidden)) #touch-controls,.viewport:has(#performance-panel:not(.hidden)) #quickbar-drawer{display:none!important}
 @media(orientation:landscape) and (max-height:500px){.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{grid-template-columns:repeat(3,minmax(64px,1fr));width:min(46vw,360px);gap:5px}.viewport.manual-control #touch-controls:not(.hidden) .touch-actions button{min-height:40px;padding:5px 6px;font-size:11px}}
 @media(max-width:700px){.viewport.manual-control:not(:fullscreen):not(.expanded) .fullscreen-bottom{position:absolute;top:max(8px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));right:auto;bottom:auto}}
+
+/* Phone gamepad: free the lower-left corner, and group actions above the look stick. */
+.touch-controls{--touch-left-edge:max(14px,env(safe-area-inset-left));--touch-action-size:112px;}
+.touch-controls .touch-stick{left:var(--touch-left-edge);}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{right:calc(var(--touch-edge) + (var(--touch-action-size) - var(--touch-stick-size))/2);bottom:calc(max(8px,env(safe-area-inset-bottom)) + 66px + var(--touch-stick-size) + 8px);width:var(--touch-action-size);height:150px;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(4,36px);gap:2px;align-content:center;justify-content:center;}
+#touch-controls .touch-actions .touch-lean-row{display:contents;}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:36px;min-width:36px;height:36px;min-height:36px;padding:1px;border-radius:50%;background:#101719e8;line-height:1;overflow:visible;}
+#touch-controls .touch-actions .touch-icon{font:16px/16px Arial,sans-serif;text-shadow:0 1px 3px #000;}
+#touch-controls .touch-actions .touch-label{font:6px/7px Arial,sans-serif;white-space:nowrap;color:#e4eeeb;}
+#touch-controls [data-touch-action="jump"]{grid-area:1/2}
+#touch-controls [data-touch-action="lean_left"]{grid-area:1/1}
+#touch-controls [data-touch-action="lean_right"]{grid-area:1/3}
+#touch-controls [data-touch-action="interact"]{grid-area:2/1}
+#touch-controls [data-touch-action="sprint"]{grid-area:2/2}
+#touch-controls [data-touch-action="attack"]{grid-area:2/3}
+#touch-controls [data-touch-action="grenade"]{grid-area:3/1}
+#touch-controls [data-touch-action="crouch"]{grid-area:3/2}
+#touch-controls [data-touch-action="grenade_cancel"]{grid-area:3/3}
+#touch-controls [data-touch-action="block"]{grid-area:4/1}
+#touch-controls [data-touch-action="heavy"]{grid-area:4/2}
+#touch-controls [data-lab-action="reload"],#touch-controls [data-lab-action="takedown"],#touch-controls [data-lab-action="distraction"]{grid-area:4/3}
