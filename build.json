@@ -3,17 +3,17 @@
     "game.wasm": {
       "url": "game-e4a43dbae28662b2.wasm.gz",
       "raw_bytes": 43699190,
-      "download_bytes": 9387768
+      "download_bytes": 9402730
     },
     "game.pck": {
-      "url": "game-ac87b177eab641f7.pck.gz",
-      "raw_bytes": 8364048,
-      "download_bytes": 5286182
+      "url": "game-7acb6a3452d269a4.pck.gz",
+      "raw_bytes": 8403936,
+      "download_bytes": 5320435
     },
     "game.js": {
-      "url": "game-5b046b334931b82a.js",
-      "raw_bytes": 317426,
-      "download_bytes": 317426
+      "url": "game-71af9b5324b7fb95.js",
+      "raw_bytes": 317410,
+      "download_bytes": 317410
     },
     "game.audio.worklet.js": {
       "url": "game.audio.worklet.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 333.689,
+  "build_seconds": 1.262,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -82,7 +82,7 @@
       "id": "mk7",
       "story_id": "",
       "label": "Mk 7 \u00b7 Hazard works",
-      "description": "Use crates to block ruptured pipe fire before they burn away. Cut the breaker to disable live water and the service lift together. Connected water conducts electricity; immerse in the separate quench basin to extinguish burns. Watch the guard escape after cover fails, or take control and move spare cargo with Use.",
+      "description": "Keep the classic fire-cover, burn/quench and live-water breaker trial, then explore 14 more hazards: steam, flammable gas and ventilation, toxic coolant, a cargo-jammable press, hot and cold surfaces, ignitable oil, rising electrified water, conductive cargo, a falling load, a laser alarm, decompression and cumulative radiation. Counter each source with valves, breakers, cargo, water, shielding or a safer route.",
       "autonomous_scene": "res://Root/Dev/DevHazardGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk7.jpg"
     },
