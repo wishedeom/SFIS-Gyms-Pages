@@ -26,6 +26,7 @@ updateAudio(false);
 let manifest, engine, bytesFetched = 0, bytesCached = 0;
 let loading = false, startupTimer;
 const mobileTouch = window.matchMedia('(pointer: coarse)').matches || !!window.navigator?.maxTouchPoints || new URL(location.href).searchParams.get('dev_touch') === '1';
+if (mobileTouch) $('viewport').classList.add('mobile-touch');
 let latestGameState = null;
 let perspectiveMenu = null;
 let gameMenuOpen = true;
@@ -125,7 +126,7 @@ function setTouchActionLabel(button, label) {
 
 function updateTouch(state = latestGameState) {
   perspectiveMenu?.update(fullscreenActive() && !!state?.ready && !state.manual && !loading && !gameMenuOpen, state?.view);
-  const orientationReady = !$('viewport').classList.contains('landscape-required') && !gameMenuOpen && !state?.dialogue_open && !state?.modal_open;
+  const orientationReady = !$('viewport').classList.contains('landscape-required') && !$('viewport').classList.contains('fullscreen-required') && !gameMenuOpen && !state?.dialogue_open && !state?.modal_open;
   const overviewEnabled = orientationReady && !!state && !state.manual && !state.inventory_open && state.view === 'overview' && !loading;
   overviewCamera.setEnabled(overviewEnabled);
   $('overview-reset').classList.toggle('hidden', !overviewEnabled);
@@ -380,6 +381,7 @@ window.stealthReport = (json) => {
     loading = false; clearTimeout(startupTimer);
     $('loading').classList.add('hidden'); $('launch').classList.add('hidden');
     $('viewport').classList.add('live'); $('viewport').classList.add('game-menu-open');
+    syncFullscreen();
     setFullscreenMenu(false); controlsEnabled(false);
     if (!window.stealthMetrics.readyAt) {
       window.stealthMetrics.readyAt = performance.now();
@@ -458,6 +460,7 @@ window.stealthReport = (json) => {
     $('loading').classList.add('hidden');
     $('live')?.classList.remove('hidden');
     $('viewport').classList.add('live');
+    syncFullscreen();
     controlsEnabled(true);
     $('cache-note').textContent = `${mb(bytesFetched)} MB fetched; ${mb(bytesCached)} MB reused from cache. Replays need no game download.`;
   }
@@ -705,8 +708,15 @@ function syncFullscreen() {
   const active = nativeFullscreen() === $('viewport') || $('viewport').classList.contains('expanded');
   if (!active) releaseLandscapeLock();
   const rotate = active && mobileTouch && window.matchMedia('(orientation: portrait)').matches;
+  const fullscreenRequired = mobileTouch && $('viewport').classList.contains('live') && !active;
   $('viewport').classList.toggle('landscape-required', rotate);
-  $('rotate-device').classList.toggle('hidden', !rotate);
+  $('viewport').classList.toggle('fullscreen-required', fullscreenRequired);
+  const playPrompt = $('mobile-play-prompt');
+  playPrompt.classList.toggle('hidden', !fullscreenRequired && !rotate);
+  playPrompt.querySelector('strong').textContent = rotate ? 'Landscape required' : 'Full screen required';
+  playPrompt.querySelector('p').textContent = rotate
+    ? 'Rotate your phone sideways to continue.'
+    : 'Tap the full-screen button to switch to landscape.';
   $('fullscreen').textContent = active ? '⤢' : '⛶';
   $('fullscreen').setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');
   $('fullscreen').title = active ? 'Exit full screen' : 'Enter full screen';
@@ -721,7 +731,6 @@ function syncFullscreen() {
   updateTouch();
 }
 async function exitGameFullscreen() {
-  phoneFullscreenTapPending = false;
   releaseLandscapeLock();
   touch.reset();
   $('viewport').classList.remove('expanded');
@@ -751,13 +760,11 @@ async function enterGameFullscreen() {
   syncFullscreen();
 }
 async function toggleFullscreen() {
-  phoneFullscreenTapPending = false;
   if (fullscreenActive()) await exitGameFullscreen();
   else await enterGameFullscreen();
   syncFullscreen();
 }
 $('fullscreen').addEventListener('click', toggleFullscreen);
-$('rotate-exit').addEventListener('click', exitGameFullscreen);
 const fullscreenMenu = $('fullscreen-menu');
 function setFullscreenMenu(open) {
   if (open) perspectiveMenu?.close();
@@ -792,39 +799,11 @@ syncFullscreen = function() {
   syncFullscreenControls();
   $('fullscreen-menu-toggle').setAttribute('aria-expanded', String(!fullscreenMenu.classList.contains('hidden')));
 };
-function isPhoneLandscape() {
-  const shortSide = Math.min(window.innerWidth || Infinity, window.innerHeight || Infinity);
-  return mobileTouch && shortSide <= 600 && window.matchMedia('(orientation: landscape)').matches;
-}
-let phoneLandscapeWasActive = isPhoneLandscape();
-let phoneFullscreenTapPending = phoneLandscapeWasActive;
-if (phoneLandscapeWasActive && !nativeFullscreen()) $('viewport').classList.add('expanded');
 syncFullscreen();
-if (phoneLandscapeWasActive && !nativeFullscreen()) enterGameFullscreen();
-async function syncPhoneLandscapeFullscreen() {
-  const active = isPhoneLandscape();
-  if (active !== phoneLandscapeWasActive) {
-    phoneLandscapeWasActive = active;
-    phoneFullscreenTapPending = active;
-    if (!nativeFullscreen()) $('viewport').classList.toggle('expanded', active);
-    if (active && !nativeFullscreen()) await enterGameFullscreen();
-    else if (!active && nativeFullscreen() && !landscapeLockOwned) await exitGameFullscreen();
-  }
-  syncFullscreen();
-}
-// Touch activation is available on click/touch release, rather than touch
-// pointerdown. Request synchronously in capture, before any async game work.
-$('viewport').addEventListener('click', async event => {
-  if (!event.isTrusted || !phoneFullscreenTapPending || !isPhoneLandscape()) return;
-  phoneFullscreenTapPending = false;
-  if (nativeFullscreen() || event.target.closest?.('#fullscreen')) return;
-  const viewport = $('viewport');
-  await enterGameFullscreen();
-}, {capture:true});
 for (const event of ['fullscreenchange', 'webkitfullscreenchange']) document.addEventListener(event, () => {touch.reset(); syncFullscreen();});
-window.addEventListener('resize', syncPhoneLandscapeFullscreen);
-window.addEventListener('orientationchange', syncPhoneLandscapeFullscreen);
-window.matchMedia('(orientation: landscape)').addEventListener?.('change', syncPhoneLandscapeFullscreen);
+window.addEventListener('resize', syncFullscreen);
+window.addEventListener('orientationchange', syncFullscreen);
+window.matchMedia('(orientation: portrait)').addEventListener?.('change', syncFullscreen);
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && $('viewport').classList.contains('expanded')) {
     exitGameFullscreen();
