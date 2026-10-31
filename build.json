@@ -6,9 +6,9 @@
       "download_bytes": 9402730
     },
     "game.pck": {
-      "url": "game-4e9a8004fb60ca22.pck.gz",
-      "raw_bytes": 8641936,
-      "download_bytes": 5511351
+      "url": "game-2d111d5a62ffa30b.pck.gz",
+      "raw_bytes": 8662416,
+      "download_bytes": 5527821
     },
     "game.js": {
       "url": "game-5b046b334931b82a.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 20.908,
+  "build_seconds": 22.609,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -139,7 +139,7 @@
       "category": "story",
       "story_id": "MainStory",
       "label": "Hydroponics \u00b7 The Understory",
-      "description": "PROTO geometry study. Three cavernous brutalist halls with a 21-metre ascent, deep algae reservoirs, sagging timber suspension bridges, collapsed galleries and hidden crouch-only service passages. Player Control explores freely; Demo follows the original ascent. Crew access remains sealed.",
+      "description": "PROTO story area. Three cavernous brutalist halls with a 21-metre ascent, deep algae reservoirs, timber suspension bridges, collapsed galleries and hidden crouch-only passages. Two hunched, rag-robed cannibal spear carriers patrol the cultivation hall. Player Control explores freely; Demo follows the original ascent. Crew access remains sealed.",
       "autonomous_scene": "res://Root/Story/Hydroponics/Hydroponics.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics.jpg"
     }
