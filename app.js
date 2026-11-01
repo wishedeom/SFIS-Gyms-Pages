@@ -26,6 +26,7 @@ updateAudio(false);
 let manifest, engine, bytesFetched = 0, bytesCached = 0;
 let loading = false, startupTimer;
 const mobileTouch = window.matchMedia('(pointer: coarse)').matches || !!window.navigator?.maxTouchPoints || new URL(location.href).searchParams.get('dev_touch') === '1';
+const directLaunch = new URL(location.href).searchParams.get('launch') === '1';
 if (mobileTouch) $('viewport').classList.add('mobile-touch');
 let latestGameState = null;
 let perspectiveMenu = null;
@@ -568,6 +569,7 @@ async function startGame() {
     });
     $('load-status').textContent = 'Starting the simulation…';
     const args = ['--main-pack', 'game.pck', '--', '--disable-input-server', ...Object.entries(selected).map(([key,value]) => `--demo-${key}=${value}`)];
+    if (directLaunch) args.push('--demo-launch=1');
     window.stealthMetrics.sceneStartedAt = performance.now();
     await engine.start({args});
   } catch (error) {
