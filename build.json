@@ -1,19 +1,19 @@
 {
   "assets": {
     "game.wasm": {
-      "url": "game-e4a43dbae28662b2.wasm.gz",
-      "raw_bytes": 43699190,
-      "download_bytes": 9402730
+      "url": "game-b3f7b2304ebe8da6.wasm.gz",
+      "raw_bytes": 41940295,
+      "download_bytes": 9288506
     },
     "game.pck": {
-      "url": "game-633b63e1e177e231.pck.gz",
-      "raw_bytes": 14663088,
-      "download_bytes": 6775217
+      "url": "game-009f6b51b1698d1a.pck.gz",
+      "raw_bytes": 14710480,
+      "download_bytes": 6802207
     },
     "game.js": {
-      "url": "game-5b046b334931b82a.js",
-      "raw_bytes": 317426,
-      "download_bytes": 317426
+      "url": "game-70e67d29f2171143.js",
+      "raw_bytes": 318412,
+      "download_bytes": 318412
     },
     "game.audio.worklet.js": {
       "url": "game.audio.worklet.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 28.657,
+  "build_seconds": 21.599,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
