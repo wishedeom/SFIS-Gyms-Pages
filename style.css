@@ -168,9 +168,9 @@
 @media(max-width:700px){.viewport.manual-control:not(:fullscreen):not(.expanded) .fullscreen-bottom{position:absolute;top:max(8px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));right:auto;bottom:auto}}
 
 /* Phone gamepad: free the lower-left corner, and group actions above the look stick. */
-.touch-controls{--touch-left-edge:max(14px,env(safe-area-inset-left));--touch-action-size:112px;}
+.touch-controls{--touch-left-edge:max(14px,env(safe-area-inset-left));--touch-action-size:150px;}
 .touch-controls .touch-stick{left:var(--touch-left-edge);}
-.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{right:calc(var(--touch-edge) + (var(--touch-action-size) - var(--touch-stick-size))/2);bottom:calc(max(8px,env(safe-area-inset-bottom)) + 28px + var(--touch-stick-size) + 8px);width:var(--touch-action-size);height:150px;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(4,36px);gap:2px;align-content:center;justify-content:center;}
+.viewport.manual-control #touch-controls:not(.hidden) .touch-actions{right:calc(var(--touch-edge) + (var(--touch-action-size) - var(--touch-stick-size))/2);bottom:calc(max(8px,env(safe-area-inset-bottom)) + 28px + var(--touch-stick-size) + 8px);width:var(--touch-action-size);height:150px;grid-template-columns:repeat(4,36px);grid-template-rows:repeat(4,36px);gap:2px;align-content:center;justify-content:center;}
 #touch-controls .touch-actions .touch-lean-row{display:contents;}
 .viewport.manual-control #touch-controls:not(.hidden) .touch-actions button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:36px;min-width:36px;height:36px;min-height:36px;padding:1px;border-radius:50%;background:#101719e8;line-height:1;overflow:visible;}
 #touch-controls .touch-actions .touch-icon{font:16px/16px Arial,sans-serif;text-shadow:0 1px 3px #000;}
@@ -194,6 +194,7 @@
 #touch-controls [data-touch-action="block"]{grid-area:4/1}
 #touch-controls [data-touch-action="heavy"]{grid-area:4/2}
 #touch-controls [data-lab-action="reload"],#touch-controls [data-lab-action="takedown"],#touch-controls [data-lab-action="distraction"]{grid-area:4/3}
+#touch-controls [data-touch-action="ads"]{grid-area:4/4}
 .performance-panel #performance-copy-status{font:12px/1.5 Arial,sans-serif;color:#c5ee86;margin:6px 0}
 .performance-panel #performance-report-output{box-sizing:border-box;width:100%;background:#0b1216;color:#e8f1f5;border:1px solid #718b50;border-radius:4px;padding:8px;font:11px/1.4 monospace;white-space:pre;overflow:auto;user-select:text}
 

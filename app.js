@@ -413,6 +413,13 @@ window.stealthReport = (json) => {
     if (button.dataset.touchAction === 'attack') setTouchActionLabel(button, state.lab === 'weapons' ? 'Fire' : 'Punch');
   });
   const armed = !!state.weapon?.equipped && !!state.weapon?.drawn;
+  const ads = document.querySelector('[data-touch-action="ads"]');
+  const canAimDownSights = armed && state.weapon?.kind !== 'melee';
+  ads?.classList.toggle('hidden', !canAimDownSights);
+  if (!canAimDownSights && touch.state.ads) {
+    touch.state.ads = false;
+    touch.draw();
+  }
   const fire = document.querySelector('[data-touch-action="attack"]');
   const reload = document.querySelector('[data-lab-action="reload"]');
   if (!state.lab || state.lab === 'weapons') {

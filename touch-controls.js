@@ -8,7 +8,7 @@ window.WebTouchControls = class {
     this.lookVector = {x:0, y:0};
     this.reset();
     const bind = (element, kind) => {
-      const toggle = ['crouch', 'sprint'].includes(kind);
+      const toggle = ['crouch', 'sprint', 'ads'].includes(kind);
       element.addEventListener('pointerdown', (event) => {
         if (!this.enabled || (event.pointerType === 'mouse' && event.button !== 0)) return;
         event.preventDefault();
@@ -75,11 +75,12 @@ window.WebTouchControls = class {
     for (const button of this.buttons) {
       const action = button.dataset.touchAction, active = !!this.state[action];
       button.classList.toggle('held', active);
-      if (['crouch', 'sprint'].includes(action)) button.setAttribute('aria-pressed', String(active));
-      if (action === 'sprint') {
+      if (['crouch', 'sprint', 'ads'].includes(action)) button.setAttribute('aria-pressed', String(active));
+      if (action === 'sprint' || action === 'ads') {
         const label = button.querySelector('.touch-label');
-        if (label) label.textContent = active ? 'Sprint ON' : 'Sprint';
-        else button.textContent = active ? 'Sprint ON' : 'Sprint';
+        const name = action === 'ads' ? 'Aim' : 'Sprint';
+        if (label) label.textContent = active ? `${name} ON` : name;
+        else button.textContent = active ? `${name} ON` : name;
       }
     }
   }
@@ -94,7 +95,7 @@ window.WebTouchControls = class {
   reset() {
     this.pointers.clear();
     this.lookVector = {x:0, y:0};
-    this.state = {x:0, y:0, look_x:0, look_y:0, sprint:false, crouch:false, lean_left:false, lean_right:false, jump:false, interact:false};
+    this.state = {x:0, y:0, look_x:0, look_y:0, sprint:false, crouch:false, ads:false, lean_left:false, lean_right:false, jump:false, interact:false};
     this.send('release_input');
     this.draw();
   }
