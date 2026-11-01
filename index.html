@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=0d47d4ca8e307e49">
+  <link rel="stylesheet" href="style.css?v=0e8ff5590b4a85db">
   <script src="performance-panel.js?v=b39f58f7b31f2b00" defer></script>
   <script src="touch-controls.js?v=9bcafd2445a90298" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
   <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
   <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
-  <script src="app.js?v=61869039678b2dc1" defer></script>
+  <script src="app.js?v=8d2aa06c644d13b5" defer></script>
 </head>
 <body>
   <main>
@@ -76,7 +76,7 @@
             <button data-lab-action="distraction" data-lab="stealth" class="hidden" aria-label="Throw noise distraction"><span class="touch-icon">)))</span><small class="touch-label">Noise</small></button>
           </div>
         </div>
-        <div class="viewport-corner-controls"><button id="play-toggle" data-command="pause" type="button" disabled aria-label="Play simulation" title="Play simulation">▶</button><div class="corner-secondary-controls"><button id="overview-reset" class="hidden" data-command="overview_reset" type="button" disabled aria-label="Reset overview camera" title="Reset overview camera"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/><circle cx="12" cy="12" r="1"/></svg></button><button id="replay" data-command="restart" type="button" disabled aria-label="Replay simulation" title="Replay simulation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.4 7.1M3 4v7h7"/></svg></button><button id="inventory-open" class="hidden" data-command="inventory" type="button" aria-label="Open inventory" title="Inventory [I]">▦</button><div class="audio-controls" role="group" aria-label="Game audio">
+        <div class="viewport-corner-controls"><button id="play-toggle" data-command="pause" type="button" disabled aria-label="Play simulation" title="Play simulation">▶</button><div class="corner-secondary-controls"><button id="choose-map" class="map-return" type="button" disabled aria-label="Back to maps" title="Back to maps">‹ Maps</button><button id="overview-reset" class="hidden" data-command="overview_reset" type="button" disabled aria-label="Reset overview camera" title="Reset overview camera"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/><circle cx="12" cy="12" r="1"/></svg></button><button id="replay" data-command="restart" type="button" disabled aria-label="Replay simulation" title="Replay simulation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.4 7.1M3 4v7h7"/></svg></button><button id="inventory-open" class="hidden" data-command="inventory" type="button" aria-label="Open inventory" title="Inventory [I]">▦</button><div class="audio-controls" role="group" aria-label="Game audio">
           <button id="mute" type="button" aria-label="Mute game audio" aria-pressed="false" title="Mute game audio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path class="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="sound-muted" d="m16 9 5 6m0-6-5 6"/></svg></button>
         </div><button id="fullscreen" type="button" aria-label="Enter full screen" aria-pressed="false" title="Enter full screen">⛶</button></div></div>
         <div class="viewport-actions"><span id="interaction-prompt"></span></div>
@@ -86,7 +86,7 @@
           <div class="fullscreen-menu hidden" id="fullscreen-menu" aria-label="Game options">
             <div class="options-heading"><strong>Game options</strong><button id="options-close" type="button" aria-label="Close game options">Close</button></div>
             <section class="configuration" aria-label="Scenario settings">
-      <input id="level" type="hidden" value="mk1"><button id="choose-map" class="level-choice" type="button">Choose map</button>
+      <input id="level" type="hidden" value="mk1">
       <fieldset id="run-mode" class="mode-toggle"><legend>RUN MODE</legend><div><label><input id="mode-demo" type="radio" name="run-mode" value="autonomous" checked><span><strong>Demo</strong><small>Watch simulation</small></span></label><label><input id="mode-control" type="radio" name="run-mode" value="manual"><span><strong>Control</strong><small>Play it yourself</small></span></label></div></fieldset>
       <label>SEED<div class="seed-field"><input id="seed" aria-label="Random seed" type="number" min="0" max="2147483647" step="1" value="39" inputmode="numeric"><button id="random-seed" aria-label="Choose a random seed" title="Choose a random seed"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="7.5" r="1"/><circle cx="16.5" cy="7.5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="7.5" cy="16.5" r="1"/><circle cx="16.5" cy="16.5" r="1"/></svg></button><span class="seed-steppers"><button id="seed-up" type="button" aria-label="Increase seed" title="Increase seed">&#9650;</button><button id="seed-down" type="button" aria-label="Decrease seed" title="Decrease seed">&#9660;</button></span></div></label>
       <label>TIME LIMIT (S)<input id="budget" aria-label="Time limit in seconds" type="number" min="30" max="900" step="1" value="240" inputmode="numeric"></label>

@@ -48,6 +48,7 @@
 .viewport-corner-controls #play-toggle{font-size:18px}
 .control-proxy{display:none!important}
 .corner-secondary-controls{display:flex;align-items:flex-start;gap:4px;pointer-events:auto}
+.viewport-corner-controls .map-return{width:auto;min-width:64px;padding:0 8px;font-size:13px}
 .corner-secondary-controls .audio-controls button{width:44px;height:44px;min-height:44px;padding:10px;background:#101719e8;border:1px solid #65776e;border-radius:3px}
 .viewport:not(:fullscreen):not(.expanded) #debug-view-toggle{display:none}
 .stats #status{display:none}
@@ -154,7 +155,7 @@
 .viewport.game-menu-open .fullscreen-chrome,.viewport.game-menu-open #fps-counter,.viewport.game-menu-open #performance-panel,.viewport.game-menu-open #debug-view-panel,.viewport.game-menu-open #debug-visual-panel,.viewport.game-menu-open #touch-controls,.viewport.game-menu-open #quickbar-drawer{display:none!important}
 .viewport.game-menu-open canvas{touch-action:none}
 .viewport.dialogue-open #touch-controls,.viewport.dialogue-open #quickbar-drawer,.viewport.dialogue-open .fullscreen-chrome{display:none!important}
-.viewport.game-menu-open .viewport-corner-controls button:not(#fullscreen),.viewport.game-menu-open .audio-controls{display:none!important}
+.viewport.game-menu-open .viewport-corner-controls button:not(#fullscreen):not(#choose-map),.viewport.game-menu-open .audio-controls{display:none!important}
 .viewport.game-menu-open .viewport-corner-controls{justify-content:flex-end}
 
 /* Keep the FPS readout compact, reachable and clear of mobile action buttons. */

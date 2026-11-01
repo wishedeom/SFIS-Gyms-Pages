@@ -176,7 +176,7 @@ function modeFields() {
 
 function showSelection(selection) {
   const level = manifest.levels.find((entry) => entry.id === selection.level);
-  $('choose-map').textContent = 'Choose map · ' + level.label;
+  $('choose-map').textContent = '‹ Maps';
   $('selection-badge').textContent = `${level.id.toUpperCase()} · ${selection.mode === 'autonomous' ? 'DEMO' : 'CONTROL'} · SEED ${selection.seed}`;
   $('scenario-heading').textContent = level.label.toUpperCase();
   $('level-description').textContent = level.description;
