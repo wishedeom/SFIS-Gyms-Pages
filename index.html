@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=b699b94f7da87d24">
-  <script src="performance-panel.js?v=f0af00a753586e9c" defer></script>
+  <link rel="stylesheet" href="style.css?v=0d47d4ca8e307e49">
+  <script src="performance-panel.js?v=b39f58f7b31f2b00" defer></script>
   <script src="touch-controls.js?v=9bcafd2445a90298" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
@@ -31,18 +31,21 @@
         <button id="fps-counter" class="fps-counter" type="button" disabled aria-label="Open performance metrics" aria-expanded="false" aria-controls="performance-panel" title="Open performance metrics">0 FPS</button>
         <button id="debug-view-toggle" class="control-proxy" type="button" aria-expanded="false" aria-controls="debug-view-panel">Debug view</button>
         <section id="performance-panel" class="performance-panel hidden" aria-label="Performance">
+          <div class="performance-toolbar">
           <div class="debug-view-heading"><strong>Performance · live</strong><button id="performance-close" type="button" aria-label="Close performance panel">✕ Close</button></div>
+          <div class="performance-actions"><button id="performance-copy" type="button">Copy report</button><button id="performance-capture" type="button">Capture 10s</button><button id="performance-export" type="button">Download JSON</button></div>
+          </div>
           <p id="performance-stats">Waiting for active game frames…</p>
           <canvas id="performance-graph" width="600" height="210" role="img" aria-label="Engine FPS over the last 60 seconds; time increases from left to right"></canvas>
           <small>FPS averages each 100 ms bucket. Pauses and focus changes create gaps. Opening this panel keeps gameplay running.</small>
           <fieldset class="performance-options"><legend>Rendering &amp; recording</legend>
-            <label>3D resolution<select id="performance-resolution"><option value="1">100% · full detail</option><option value="0.75">75%</option><option value="0.5">50% · mobile default</option></select></label>
+            <label>3D resolution<select id="performance-resolution"><option value="1">100% · full detail</option><option value="0.75">75%</option><option value="0.5" selected>50% default</option></select></label>
             <label><input id="performance-shadows" type="checkbox" checked>Render shadows</label>
             <label><input id="performance-recording" type="checkbox" checked>Record stealth inspector history</label>
           </fieldset>
           <small>Lower resolution and shadows affect appearance. Stealth visibility uses the same gameplay lighting. Recording can be turned off to compare its cost.</small>
           <pre id="performance-engine"></pre>
-          <div class="performance-actions"><button id="performance-capture" type="button">Capture CPU + GPU profile · 10s</button><button id="performance-copy" type="button">Copy perf report</button><button id="performance-export" type="button">Download full profile JSON</button></div>
+
           <small>Capture for 10 seconds, then copy the short report. GPU timing depends on WebGL timer-query support; Download saves the full profile.</small>
           <p id="performance-copy-status" role="status" aria-live="polite"></p>
           <textarea id="performance-report-output" class="hidden" readonly rows="8" aria-label="Performance report text"></textarea>

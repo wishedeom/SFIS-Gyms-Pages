@@ -8,7 +8,7 @@ window.PerformancePanel = class {
     this.open = false;
     this.fps = 0;
     this.mobile = !!options.mobile;
-    this.desiredScale = this.mobile ? 0.5 : 1;
+    this.desiredScale = 0.5;
     this.desiredShadows = !this.mobile;
     this.mobileDefaultsPending = this.mobile;
     this.initialized = false;
@@ -96,7 +96,7 @@ window.PerformancePanel = class {
     if (s.profile) {
       const p = s.profile;
       this.capture.disabled = p.active;
-      this.capture.textContent = p.active ? `Capturing… ${p.elapsed.toFixed(1)} / 10s` : 'Capture CPU + GPU profile · 10s';
+      this.capture.textContent = p.active ? `Capturing… ${p.elapsed.toFixed(1)} / 10s` : 'Capture 10s';
       const lines = p.rows.slice(0, 28).map(r => `${r.scope} [${r.domain === 'physics' ? 'tick' : 'frame'}]\n  avg ${r.avg_ms.toFixed(3)} ms · p95 ${r.p95_ms.toFixed(3)} ms · max call ${r.max_call_ms.toFixed(3)} ms · ${r.calls} calls`);
       const actors = p.actors.slice(0, 8).map(a => `${a.actor} [${a.domain}] ${a.avg_ms.toFixed(3)} ms`);
       const frames = p.frame_stats;
