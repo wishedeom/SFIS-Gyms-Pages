@@ -6,9 +6,9 @@
       "download_bytes": 9288506
     },
     "game.pck": {
-      "url": "game-ed4a330b091f6e75.pck.gz",
-      "raw_bytes": 14722800,
-      "download_bytes": 6805779
+      "url": "game-09f975009e7aa647.pck.gz",
+      "raw_bytes": 14771472,
+      "download_bytes": 6834445
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 22.215,
+  "build_seconds": 23.863,
   "seed": 39,
   "budget_seconds": 240,
   "levels": [
@@ -139,7 +139,7 @@
       "category": "story",
       "story_id": "MainStory",
       "label": "Hydroponics \u00b7 The Understory",
-      "description": "PROTO first level. Escape a palisaded settlement with victims and sealed hypersleep sacks. The opening introduces walking, jumping, crouching and covered stealth before a pistol cache and spear-carrier combat. Beyond it: three cavernous growing halls, deep reservoirs, timber bridges and hidden passages. Player Control explores freely; Demo follows the opening and ascent. Crew access remains sealed.",
+      "description": "PROTO first level. Escape a palisaded settlement with victims and sealed hypersleep sacks. Learn movement, crouching and covered stealth, find an upper-level raid recorder by the pistol cache, and decide whether to free a captured soldier. A journal keeps recovered notes and conversation history. Beyond: cavernous growing halls, reservoirs, timber bridges and hidden passages.",
       "autonomous_scene": "res://Root/Story/Hydroponics/Hydroponics.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics.jpg"
     }

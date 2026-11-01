@@ -495,6 +495,7 @@ window.stealthReport = (json) => {
   playToggle.setAttribute('aria-label', state.paused ? 'Play simulation' : 'Pause simulation');
   playToggle.title = state.paused ? 'Play simulation' : 'Pause simulation';
   $('interaction-prompt').textContent = state.interaction || '';
+  $('journal-open')?.classList.toggle('hidden', state.selection?.level !== 'hydroponics');
   if ($('mode-label')) $('mode-label').textContent = state.completed ? state.state.toUpperCase() : (state.manual ? 'CONTROL' : 'DEMO');
   document.querySelectorAll('.camera-controls button').forEach((button) => button.classList.toggle('selected', button.dataset.command === state.view));
   const playerUiVisible = !!state.player_ui_visible;
