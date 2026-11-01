@@ -1,0 +1,1 @@
+PROTO gameplay capture. New machinery, gas visuals and respirator are AI-generated code-built placeholders; prototype only. Existing environment and character asset provenance remains in the private source project. Silent 22.5-second mobile demonstration; 768x432 H.264.
