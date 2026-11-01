@@ -198,3 +198,6 @@
 .performance-panel #performance-report-output{box-sizing:border-box;width:100%;background:#0b1216;color:#e8f1f5;border:1px solid #718b50;border-radius:4px;padding:8px;font:11px/1.4 monospace;white-space:pre;overflow:auto;user-select:text}
 
 .performance-toolbar{position:sticky;top:-14px;z-index:3;background:#10191e;padding:8px 0}.performance-toolbar .debug-view-heading{position:static}.performance-toolbar .performance-actions{margin:8px 0 0;flex-wrap:nowrap}.performance-toolbar .performance-actions button{min-width:0;padding:10px 6px;font-size:12px}#performance-copy{border-color:#c5ee86;color:#c5ee86}
+
+/* Keep the light gem bottom-centre and the equipment handle clear to its right. */
+.viewport.mobile-touch #quickbar-drawer:not(.is-open){left:calc(50% + 48px);right:auto;bottom:max(8px,env(safe-area-inset-bottom));width:max-content;transform:none}
