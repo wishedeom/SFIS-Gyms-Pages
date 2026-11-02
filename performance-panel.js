@@ -237,7 +237,7 @@ window.PerformancePanel = class {
     const gpu = s.gpu_capture || {};
     return {
       format: 'imsim.perf',
-      version: 4,
+      version: 5,
       at: new Date().toISOString(),
       run: {
         map: sel.level ?? null,
@@ -248,7 +248,8 @@ window.PerformancePanel = class {
         test_end_reason: window.stealthTestOptions?.endReason || null,
         automated_capture: !!window.stealthTestOptions?.capture,
         model: sel.model ?? null,
-        view: s.view ?? null
+        view: s.view ?? null,
+        scene: s.scene_context || null
       },
       device: {
         browser,
