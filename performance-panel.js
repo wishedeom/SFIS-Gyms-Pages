@@ -154,8 +154,13 @@ window.PerformancePanel = class {
       const bodies = scene.colliders || {}, shapes = scene.shapes || {};
       const zeroShapeBodies = scene.zero_shape_bodies || {};
       const rayNodes = scene.ray_nodes || {}, shapeCastNodes = scene.shape_cast_nodes || {};
+      const staticSources = Array.isArray(scene.static_sources) ? scene.static_sources : [];
+      const staticSourceText = staticSources.slice(0, 8).map(row => {
+        const types = Object.entries(row.shape_types || {}).map(([type, count]) => `${type} ${count}`).join(', ');
+        return `${row.source}: ${row.bodies} bodies / ${row.enabled_shapes} shapes${types ? ` (${types})` : ''}`;
+      }).join('\n') || 'none';
       const gpuMs = Number.isFinite(e.gpu_ms) && e.gpu_ms > 0 ? `${e.gpu_ms.toFixed(2)} ms` : 'unavailable';
-      this.doc.getElementById('performance-engine').textContent = `Latest: frame ${e.process_ms.toFixed(2)} ms · physics ${e.physics_ms.toFixed(2)} ms · GPU ${gpuMs}\n${e.draw_calls} draws · ${e.primitives} primitives · ${e.nodes} nodes\n3D: ${Math.round(e.width * e.scale)} × ${Math.round(e.height * e.scale)} (${Math.round(e.scale * 100)}%) · ${e.renderer}\nPhysics: ${ph.tick_hz ?? '—'} Hz configured · ${ph.max_steps_per_frame ?? '—'} catch-up steps max · ${ph.active_rigid_bodies ?? '—'} active rigid bodies · ${ph.collision_pairs ?? '—'} pairs / ${ph.islands ?? '—'} islands\nBodies S${bodies.static ?? '—'} C${bodies.character ?? '—'} R${bodies.rigid ?? '—'} A${bodies.animatable ?? '—'} Areas ${bodies.area ?? '—'} · shapes ${shapes.enabled ?? '—'} enabled / ${shapes.disabled ?? '—'} disabled (+ ${shapes.polygons_enabled ?? '—'} / ${shapes.polygons_disabled ?? '—'} polygons)\nZero-enabled-shape bodies: ${Object.entries(zeroShapeBodies).map(([kind, count]) => `${kind} ${count}`).join(', ') || 'none'}\nQuery nodes: RayCast3D ${rayNodes.enabled ?? '—'} enabled / ${rayNodes.disabled ?? '—'} disabled · ShapeCast3D ${shapeCastNodes.enabled ?? '—'} enabled / ${shapeCastNodes.disabled ?? '—'} disabled\nVision last sample: ${s.vision_rays ?? 0} direct rays / ${s.vision_candidates ?? 0} candidates across actors · recording ${((s.capture_us || 0) / 1000).toFixed(2)} ms`;
+      this.doc.getElementById('performance-engine').textContent = `Latest: frame ${e.process_ms.toFixed(2)} ms · physics ${e.physics_ms.toFixed(2)} ms · GPU ${gpuMs}\n${e.draw_calls} draws · ${e.primitives} primitives · ${e.nodes} nodes\n3D: ${Math.round(e.width * e.scale)} × ${Math.round(e.height * e.scale)} (${Math.round(e.scale * 100)}%) · ${e.renderer}\nPhysics: ${ph.tick_hz ?? '—'} Hz configured · ${ph.max_steps_per_frame ?? '—'} catch-up steps max · ${ph.active_rigid_bodies ?? '—'} active rigid bodies · ${ph.collision_pairs ?? '—'} pairs / ${ph.islands ?? '—'} islands\nBodies S${bodies.static ?? '—'} C${bodies.character ?? '—'} R${bodies.rigid ?? '—'} A${bodies.animatable ?? '—'} Areas ${bodies.area ?? '—'} · shapes ${shapes.enabled ?? '—'} enabled / ${shapes.disabled ?? '—'} disabled (+ ${shapes.polygons_enabled ?? '—'} / ${shapes.polygons_disabled ?? '—'} polygons)\nStatic collision sources:\n${staticSourceText}\nZero-enabled-shape bodies: ${Object.entries(zeroShapeBodies).map(([kind, count]) => `${kind} ${count}`).join(', ') || 'none'}\nQuery nodes: RayCast3D ${rayNodes.enabled ?? '—'} enabled / ${rayNodes.disabled ?? '—'} disabled · ShapeCast3D ${shapeCastNodes.enabled ?? '—'} enabled / ${shapeCastNodes.disabled ?? '—'} disabled\nVision last sample: ${s.vision_rays ?? 0} direct rays / ${s.vision_candidates ?? 0} candidates across actors · recording ${((s.capture_us || 0) / 1000).toFixed(2)} ms`;
       if (this.mobileDefaultsPending && Math.abs(Number(e.scale) - this.desiredScale) < 0.001 && s.shadows === this.desiredShadows) this.mobileDefaultsPending = false;
       this.resolution.value = String(this.mobileDefaultsPending ? this.desiredScale : e.scale);
       this.shadows.checked = this.mobileDefaultsPending ? this.desiredShadows : s.shadows;
@@ -232,7 +237,7 @@ window.PerformancePanel = class {
     const gpu = s.gpu_capture || {};
     return {
       format: 'imsim.perf',
-      version: 3,
+      version: 4,
       at: new Date().toISOString(),
       run: {
         map: sel.level ?? null,
@@ -295,6 +300,9 @@ window.PerformancePanel = class {
           polygons_enabled: shapes.polygons_enabled ?? null,
           polygons_disabled: shapes.polygons_disabled ?? null
         },
+        shape_types: scene.shape_types || {},
+        static_sources: (Array.isArray(scene.static_sources) ? scene.static_sources : []).slice(0, 12)
+          .map(row => [row.source, row.bodies, row.enabled_shapes, row.disabled_shapes, row.zero_shape_bodies, row.shape_types || {}]),
         ray_nodes: [rayNodes.enabled ?? 0, rayNodes.disabled ?? 0],
         shape_cast_nodes: [shapeCastNodes.enabled ?? 0, shapeCastNodes.disabled ?? 0],
         layer_masks: Array.isArray(scene.collision_masks) ? scene.collision_masks : []
