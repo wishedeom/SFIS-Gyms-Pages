@@ -6,9 +6,9 @@
       "download_bytes": 9288506
     },
     "game.pck": {
-      "url": "game-39c32771fc0d7fc0.pck.gz",
-      "raw_bytes": 20401760,
-      "download_bytes": 12042222
+      "url": "game-cd450e505898dc3b.pck.gz",
+      "raw_bytes": 20436640,
+      "download_bytes": 12068180
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 240.209,
+  "build_seconds": 30.717,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -146,6 +146,14 @@
       "description": "PROTO first level. Escape a palisaded settlement with victims and sealed hypersleep sacks. Learn movement, crouching and covered stealth, find an upper-level raid recorder by the pistol cache, and decide whether to free a captured soldier. A journal keeps recovered notes and conversation history. Beyond: cavernous growing halls, reservoirs, timber bridges and hidden passages.",
       "autonomous_scene": "res://Root/Story/Hydroponics/Hydroponics.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics.jpg"
+    },
+    {
+      "id": "streaming",
+      "story_id": "",
+      "label": "Streaming gym \u00b7 Zone handoffs",
+      "description": "[PROTO] Compare all-resident, synchronous, threaded-load and budgeted activation across a 240 m course: two large zones plus a sparse connector, three equal zones, or six smaller zones. Code-built geometry is merged by zone. Threaded resource loading is unavailable in the current single-thread Web build; its report separates manifest load time from main-thread geometry activation.",
+      "autonomous_scene": "res://Root/Dev/DevStreamingGym.tscn",
+      "preview": "res://Root/Dev/Web/Previews/streaming.svg"
     }
   ]
 }
