@@ -97,11 +97,15 @@ window.PerformancePanel = class {
     if (profile?.active) this.copyStatus.textContent = 'CPU + GPU capture running. Copy the report after it finishes.';
     else if (previous.profile?.active && profile) {
       this.captureReadyToCopy = true;
-      this.copyStatus.textContent = `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`;
+      this.copyStatus.textContent = this.captureComplete(profile)
+        ? `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`
+        : `Capture stopped early after ${profile.elapsed.toFixed(1)}s. The report will be marked incomplete.`;
     }
     if (!profile?.active && window.stealthTestOptions?.capture && window.stealthTestOptions?.endReason) {
       this.captureReadyToCopy = true;
-      this.copyStatus.textContent = `Test ${window.stealthTestOptions.endReason} after ${Number(profile?.elapsed || 0).toFixed(1)}s. Tap Copy report to copy it.`;
+      this.copyStatus.textContent = this.captureComplete(profile)
+        ? `Test ${window.stealthTestOptions.endReason} after ${Number(profile?.elapsed || 0).toFixed(1)}s. Tap Copy report to copy it.`
+        : `Test timer ended after ${Number(profile?.elapsed || 0).toFixed(1)}s, but profiling stopped before the requested duration.`;
     }
     if (this.urlCapture && profile) {
       if (profile.active) {
@@ -112,7 +116,9 @@ window.PerformancePanel = class {
         this.urlCaptureComplete = true;
         this.runStatus.disabled = false;
         this.runStatus.textContent = 'COPY PERF REPORT';
-        this.copyStatus.textContent = `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`;
+        this.copyStatus.textContent = this.captureComplete(profile)
+          ? `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`
+          : `Capture stopped early after ${profile.elapsed.toFixed(1)}s. The report will be marked incomplete.`;
       }
     }
     if (!this.initialized) {
@@ -127,6 +133,15 @@ window.PerformancePanel = class {
     this.button.setAttribute('aria-label', `${this.open ? 'Close' : 'Open'} performance metrics (${fps} FPS)`);
     this.button.title = `${this.open ? 'Close' : 'Open'} performance metrics · ${fps} FPS`;
     if (this.open) this.render();
+  }
+  captureComplete(profile) {
+    if (!profile || profile.active) return false;
+    const options = window.stealthTestOptions || {};
+    if (options.endReason === 'completed') return true;
+    const expectedSeconds = options.capture
+      ? Number(options.timeoutSeconds)
+      : (Number(profile.duration) > 0 ? Number(profile.duration) : 10);
+    return expectedSeconds > 0 && Number(profile.elapsed) >= expectedSeconds - 0.5;
   }
   render() {
     const s = this.state;
@@ -290,7 +305,7 @@ window.PerformancePanel = class {
       },
       capture: {
         elapsed_s: finite(p.elapsed, 1),
-        complete: !p.active && (Number(p.elapsed) >= 9.5 || ['timeout', 'completed'].includes(window.stealthTestOptions?.endReason)),
+        complete: this.captureComplete(p),
         fps: finite(captureFrames.fps, 1),
         frames: p.render_frames ?? null,
         ticks: p.physics_ticks ?? null,
