@@ -202,6 +202,7 @@ window.PerformancePanel = class {
       },
       engine: {
         renderer: e.renderer || p.renderer || null,
+        occlusion: e.occlusion_culling ?? null,
         frame_ms: finite(e.process_ms, 2),
         physics_ms: finite(e.physics_ms, 2),
         gpu_ms: finite(e.gpu_ms > 0 ? e.gpu_ms : null, 2),

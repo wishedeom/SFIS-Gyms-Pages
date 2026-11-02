@@ -492,9 +492,9 @@ window.stealthReport = (json) => {
     $('query-latency').textContent = `${q.query_p95_us} µs`;
     $('query-candidates').textContent = `${q.candidates_per_query.toFixed(1)} / ${(q.queries ? q.linear_candidates / q.queries : 0).toFixed(1)} (${(q.candidate_fraction * 100).toFixed(1)}%)`;
     $('query-cells').textContent = `${q.cells_per_query.toFixed(1)} · ${(q.empty_cell_fraction * 100).toFixed(0)}% empty`;
-    $('query-buckets').textContent = `${q.mean_bucket_occupancy.toFixed(1)} mean / ${q.max_bucket_occupancy} max`;
+    $('query-buckets').textContent = Number.isFinite(q.mean_bucket_occupancy) ? `${q.mean_bucket_occupancy.toFixed(1)} mean / ${q.max_bucket_occupancy} max` : 'N/A (no buckets)';
     $('query-updates').textContent = `${q.window_update_ms_per_frame.toFixed(3)} ms`;
-    $('query-population').textContent = `${q.entities} / ${q.oversized_entities} / ${q.fallback_queries}`;
+    $('query-population').textContent = `${q.entities} / ${q.oversized_entities ?? 0} / ${q.fallback_queries}`;
     $('query-alternative').textContent = `${q.window_alternative_budget_us_per_query.toFixed(1)} µs / query, including maintenance`;
     $('download-query-stats').disabled = false;
   }
