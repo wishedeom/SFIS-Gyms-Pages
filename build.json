@@ -1,14 +1,14 @@
 {
   "assets": {
     "game.wasm": {
-      "url": "game-b3f7b2304ebe8da6.wasm.gz",
-      "raw_bytes": 41940295,
-      "download_bytes": 9268718
+      "url": "game-0f09ecee706f5db3.wasm.gz",
+      "raw_bytes": 41967531,
+      "download_bytes": 9279586
     },
     "game.pck": {
-      "url": "game-3e4210a265674597.pck.gz",
-      "raw_bytes": 20383120,
-      "download_bytes": 12078309
+      "url": "game-41eba00d7023f77f.pck.gz",
+      "raw_bytes": 20469968,
+      "download_bytes": 12094550
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,11 +26,12 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 206.27,
+  "build_seconds": 181.323,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
     "occlusion_culling": true,
+    "occlusion_rays_per_thread": 4096,
     "template": "web_nothreads_raycast_release.zip"
   },
   "levels": [
