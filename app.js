@@ -563,9 +563,11 @@ function applyUrlLaunchOptions(state) {
     void enterGameFullscreen(true);
   }
   if (!options.enabled || configuredRunStarted || configuredRunFinished) return;
+  const seconds = Number(options.timeoutSeconds || state.selection?.budget || manifest?.budget_seconds || 240);
   if (options.fullscreen && mobileTouch && !fullscreenActive()) {
     if (!configuredRunWaitPaused) {
       configuredRunWaitPaused = true;
+      if (options.capture) performancePanel.setUrlCapturePending(seconds);
       if (!state.paused) window.stealthControl?.('pause');
     }
     return;
@@ -575,7 +577,6 @@ function applyUrlLaunchOptions(state) {
     configuredRunWaitPaused = false;
     window.stealthControl?.('pause');
   }
-  const seconds = Number(options.timeoutSeconds || state.selection?.budget || manifest?.budget_seconds || 240);
   if (options.capture) {
     performancePanel.setUrlCapture(seconds);
     window.stealthControl?.('performance', JSON.stringify({capture:true, duration:seconds}));
@@ -802,8 +803,9 @@ function syncFullscreen() {
   playPrompt.querySelector('p').textContent = rotate
     ? 'Rotate your phone sideways to continue.'
     : (window.stealthTestOptions?.fullscreen && configuredRunWaitPaused
-      ? 'Tap the full-screen button to enter and start the timed test.'
+      ? 'Your browser requires a tap. Use the button below to enter full screen and start the timed test.'
       : 'Tap the full-screen button to switch to landscape.');
+  $('test-fullscreen-start').classList.toggle('hidden', !(fullscreenRequired && configuredRunWaitPaused && window.stealthTestOptions?.fullscreen));
   $('fullscreen').textContent = active ? '⤢' : '⛶';
   $('fullscreen').setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');
   $('fullscreen').title = active ? 'Exit full screen' : 'Enter full screen';
@@ -853,6 +855,7 @@ async function toggleFullscreen() {
   syncFullscreen();
 }
 $('fullscreen').addEventListener('click', toggleFullscreen);
+$('test-fullscreen-start').addEventListener('click', async () => { await enterGameFullscreen(); });
 const fullscreenMenu = $('fullscreen-menu');
 function setFullscreenMenu(open) {
   if (open) perspectiveMenu?.close();

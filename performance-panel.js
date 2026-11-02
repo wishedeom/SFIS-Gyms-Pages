@@ -16,6 +16,7 @@ window.PerformancePanel = class {
     this.captureReadyToCopy = false;
     this.captureMaximum = 10;
     this.urlCapture = false;
+    this.urlCaptureWaiting = false;
     this.urlCaptureComplete = false;
     this.runStatus = doc.getElementById('performance-run-status');
     this.runStatus.addEventListener('click', () => {
@@ -67,8 +68,19 @@ window.PerformancePanel = class {
     this.captureMaximum = Number(maximumSeconds) > 0 ? Number(maximumSeconds) : 10;
     this.captureReadyToCopy = false;
     this.urlCapture = true;
+    this.urlCaptureWaiting = false;
     this.urlCaptureComplete = false;
     this.runStatus.textContent = `PROFILE 0.0 / ${this.captureMaximum.toFixed(0)}s`;
+    this.runStatus.disabled = true;
+    this.runStatus.classList.remove('hidden');
+  }
+  setUrlCapturePending(maximumSeconds) {
+    this.captureMaximum = Number(maximumSeconds) > 0 ? Number(maximumSeconds) : 10;
+    this.captureReadyToCopy = false;
+    this.urlCapture = true;
+    this.urlCaptureWaiting = true;
+    this.urlCaptureComplete = false;
+    this.runStatus.textContent = `WAIT · 0.0 / ${this.captureMaximum.toFixed(0)}s`;
     this.runStatus.disabled = true;
     this.runStatus.classList.remove('hidden');
   }
@@ -93,6 +105,7 @@ window.PerformancePanel = class {
     }
     if (this.urlCapture && profile) {
       if (profile.active) {
+        this.urlCaptureWaiting = false;
         const maximum = Number(profile.duration) > 0 ? Number(profile.duration) : this.captureMaximum;
         this.runStatus.textContent = `PROFILE ${profile.elapsed.toFixed(1)} / ${maximum.toFixed(0)}s`;
       } else if (previous.profile?.active || window.stealthTestOptions?.endReason) {

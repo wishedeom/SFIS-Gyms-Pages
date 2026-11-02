@@ -191,6 +191,7 @@
 .mobile-play-prompt{position:absolute;z-index:11;top:50%;left:50%;display:grid;gap:6px;width:min(380px,calc(100% - 32px));padding:13px 16px;transform:translate(-50%,-50%);border:1px solid #91ac6b;border-radius:6px;background:#101719ed;box-shadow:0 4px 18px #0009;text-align:center;pointer-events:none}
 .mobile-play-prompt strong{color:var(--accent);font:bold 12px monospace;letter-spacing:1px;text-transform:uppercase}
 .mobile-play-prompt p{margin:0;color:var(--text);font-size:12px;line-height:1.4}
+.mobile-play-prompt button{justify-self:center;min-height:42px;margin-top:4px;padding:10px 16px;border:1px solid var(--accent);border-radius:4px;background:#253522;color:var(--accent);font-weight:700;pointer-events:auto;touch-action:manipulation}
 #touch-controls [data-touch-action="block"]{grid-area:4/1}
 #touch-controls [data-touch-action="heavy"]{grid-area:4/2}
 #touch-controls [data-lab-action="reload"],#touch-controls [data-lab-action="takedown"],#touch-controls [data-lab-action="distraction"]{grid-area:4/3}

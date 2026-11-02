@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=3b443c34821d202a">
-  <script src="performance-panel.js?v=47a9888efb051ebe" defer></script>
+  <link rel="stylesheet" href="style.css?v=986651c945bdf0cf">
+  <script src="performance-panel.js?v=a32857f4fa497008" defer></script>
   <script src="touch-controls.js?v=0182d5096c4bc957" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
   <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
   <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
-  <script src="app.js?v=d93dba16420e6fdd" defer></script>
+  <script src="app.js?v=95acbea2584d005f" defer></script>
 </head>
 <body>
   <main>
@@ -21,7 +21,7 @@
     <section class="intro"><div><p class="eyebrow">GYMS & EXPERIMENTS</p><h1>Stay out of sight.</h1><p class="description" id="level-description">Choose a course and a seed. Watch the search, or take control yourself.</p></div><div class="scenario"><span id="scenario-heading">MK 1 / THE DEPOT</span><strong>Explore. Listen. Extract.</strong><small id="budget-description">240-second attempt · failure is a valid outcome</small></div></section>
     <section class="viewer" aria-label="Stealth simulation">
       <div class="viewport" id="viewport">
-        <div id="mobile-play-prompt" class="mobile-play-prompt hidden" role="status" aria-live="polite"><strong>Full screen required</strong><p>Tap the full-screen button to switch to landscape.</p></div>
+        <div id="mobile-play-prompt" class="mobile-play-prompt hidden" role="status" aria-live="polite"><strong>Full screen required</strong><p>Tap the full-screen button to switch to landscape.</p><button id="test-fullscreen-start" class="hidden" type="button">Enter full screen &amp; start test</button></div>
         <canvas id="canvas" width="1280" height="720" tabindex="0" aria-label="3D stealth course"></canvas>
         <div class="launch" id="launch">
           <img src="poster.jpg" alt="Overhead view of the Mk 1 stealth course with corridors, ramps, and guards" width="640" height="360">
