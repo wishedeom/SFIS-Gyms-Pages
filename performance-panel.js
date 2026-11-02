@@ -13,7 +13,18 @@ window.PerformancePanel = class {
     this.mobileDefaultsPending = this.mobile;
     this.initialized = false;
     this.capture = doc.getElementById('performance-capture');
-    this.capture.addEventListener('click', () => this.send({capture:true}));
+    this.captureReadyToCopy = false;
+    this.captureMaximum = 10;
+    this.urlCapture = false;
+    this.urlCaptureComplete = false;
+    this.runStatus = doc.getElementById('performance-run-status');
+    this.runStatus.addEventListener('click', () => {
+      if (this.urlCaptureComplete) void this.copyReport();
+    });
+    this.capture.addEventListener('click', () => {
+      if (this.captureReadyToCopy) void this.copyReport();
+      else this.send({capture:true});
+    });
     this.copyButton = doc.getElementById('performance-copy');
     this.copyStatus = doc.getElementById('performance-copy-status');
     this.reportOutput = doc.getElementById('performance-report-output');
@@ -52,6 +63,15 @@ window.PerformancePanel = class {
     this.send({open});
     if (open && this.state) this.render();
   }
+  setUrlCapture(maximumSeconds) {
+    this.captureMaximum = Number(maximumSeconds) > 0 ? Number(maximumSeconds) : 10;
+    this.captureReadyToCopy = false;
+    this.urlCapture = true;
+    this.urlCaptureComplete = false;
+    this.runStatus.textContent = `PROFILE 0.0 / ${this.captureMaximum.toFixed(0)}s`;
+    this.runStatus.disabled = true;
+    this.runStatus.classList.remove('hidden');
+  }
   update(state) {
     if (!state) return;
     const previous = this.state || {};
@@ -63,9 +83,25 @@ window.PerformancePanel = class {
     this.state = {...previous, ...state, history};
     const profile = this.state.profile;
     if (profile?.active) this.copyStatus.textContent = 'CPU + GPU capture running. Copy the report after it finishes.';
-    else if (previous.profile?.active && profile) this.copyStatus.textContent = profile.elapsed >= 9.5
-      ? 'Capture complete. Tap Copy perf report to share it.'
-      : `Capture ended after ${profile.elapsed.toFixed(1)}s. You can still copy the report.`;
+    else if (previous.profile?.active && profile) {
+      this.captureReadyToCopy = true;
+      this.copyStatus.textContent = `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`;
+    }
+    if (!profile?.active && window.stealthTestOptions?.capture && window.stealthTestOptions?.endReason) {
+      this.captureReadyToCopy = true;
+      this.copyStatus.textContent = `Test ${window.stealthTestOptions.endReason} after ${Number(profile?.elapsed || 0).toFixed(1)}s. Tap Copy report to copy it.`;
+    }
+    if (this.urlCapture && profile) {
+      if (profile.active) {
+        const maximum = Number(profile.duration) > 0 ? Number(profile.duration) : this.captureMaximum;
+        this.runStatus.textContent = `PROFILE ${profile.elapsed.toFixed(1)} / ${maximum.toFixed(0)}s`;
+      } else if (previous.profile?.active || window.stealthTestOptions?.endReason) {
+        this.urlCaptureComplete = true;
+        this.runStatus.disabled = false;
+        this.runStatus.textContent = 'COPY PERF REPORT';
+        this.copyStatus.textContent = `Capture ended after ${profile.elapsed.toFixed(1)}s. Tap Copy report to copy it.`;
+      }
+    }
     if (!this.initialized) {
       this.initialized = true;
       if (this.mobileDefaultsPending) this.send({scale:this.desiredScale, shadows:this.desiredShadows});
@@ -100,7 +136,10 @@ window.PerformancePanel = class {
     if (s.profile) {
       const p = s.profile;
       this.capture.disabled = p.active;
-      this.capture.textContent = p.active ? `Capturing… ${p.elapsed.toFixed(1)} / 10s` : 'Capture 10s';
+      const duration = Number(p.duration) > 0 ? Number(p.duration) : this.captureMaximum;
+      this.capture.textContent = p.active
+        ? `Capturing… ${p.elapsed.toFixed(1)} / ${duration.toFixed(0)}s`
+        : (this.captureReadyToCopy ? 'Copy report' : 'Capture 10s');
       const lines = p.rows.slice(0, 28).map(r => `${r.scope} [${r.domain === 'physics' ? 'tick' : 'frame'}]\n  avg ${r.avg_ms.toFixed(3)} ms · p95 ${r.p95_ms.toFixed(3)} ms · max call ${r.max_call_ms.toFixed(3)} ms · ${r.calls} calls`);
       const actors = p.actors.slice(0, 8).map(a => `${a.actor} [${a.domain}] ${a.avg_ms.toFixed(3)} ms`);
       const frames = p.frame_stats;
@@ -172,6 +211,9 @@ window.PerformancePanel = class {
         brain: sel.mode ?? null,
         seed: sel.seed ?? null,
         limit_s: sel.budget ?? null,
+        timeout_s: window.stealthTestOptions?.timeoutSeconds ?? null,
+        test_end_reason: window.stealthTestOptions?.endReason || null,
+        automated_capture: !!window.stealthTestOptions?.capture,
         model: sel.model ?? null,
         view: s.view ?? null
       },
@@ -235,7 +277,7 @@ window.PerformancePanel = class {
       },
       capture: {
         elapsed_s: finite(p.elapsed, 1),
-        complete: !p.active && Number(p.elapsed) >= 9.5,
+        complete: !p.active && (Number(p.elapsed) >= 9.5 || ['timeout', 'completed'].includes(window.stealthTestOptions?.endReason)),
         fps: finite(captureFrames.fps, 1),
         frames: p.render_frames ?? null,
         ticks: p.physics_ticks ?? null,

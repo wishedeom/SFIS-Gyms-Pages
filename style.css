@@ -199,6 +199,7 @@
 .performance-panel #performance-report-output{box-sizing:border-box;width:100%;background:#0b1216;color:#e8f1f5;border:1px solid #718b50;border-radius:4px;padding:8px;font:11px/1.4 monospace;white-space:pre;overflow:auto;user-select:text}
 
 .performance-toolbar{position:sticky;top:-14px;z-index:3;background:#10191e;padding:8px 0}.performance-toolbar .debug-view-heading{position:static}.performance-toolbar .performance-actions{margin:8px 0 0;flex-wrap:nowrap}.performance-toolbar .performance-actions button{min-width:0;padding:10px 6px;font-size:12px}#performance-copy{border-color:#c5ee86;color:#c5ee86}
+.performance-run-status{position:absolute;z-index:6;top:62px;left:12px;min-height:34px;padding:7px 10px;background:#142127f5;border:1px solid var(--cyan);border-radius:6px;color:var(--cyan);font:10px monospace;box-shadow:0 3px 12px #0008}.performance-run-status:not(:disabled){border-color:var(--accent);color:var(--accent)}.performance-run-status:disabled{opacity:1;cursor:default}@media(max-width:500px){.performance-run-status{top:54px;left:8px;min-height:32px;padding:6px 8px;font-size:9px}}
 
 /* Keep the light gem bottom-centre and the equipment handle clear to its right. */
 .viewport.mobile-touch #quickbar-drawer:not(.is-open){left:calc(50% + 48px);right:auto;bottom:max(8px,env(safe-area-inset-bottom));width:max-content;transform:none}

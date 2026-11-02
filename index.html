@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=4bb2fa0563a5134a">
-  <script src="performance-panel.js?v=97bfc939c32cfdc0" defer></script>
+  <link rel="stylesheet" href="style.css?v=3b443c34821d202a">
+  <script src="performance-panel.js?v=47a9888efb051ebe" defer></script>
   <script src="touch-controls.js?v=0182d5096c4bc957" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
   <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
   <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
-  <script src="app.js?v=e824332977cab2fe" defer></script>
+  <script src="app.js?v=d93dba16420e6fdd" defer></script>
 </head>
 <body>
   <main>
@@ -29,6 +29,7 @@
         </div>
         <div class="loading hidden" id="loading" role="status"><span class="spinner"></span><strong id="load-status">Preparing demo…</strong><progress id="load-progress" max="1" value="0"></progress><small id="load-detail">First load includes the Godot engine.</small></div>
         <button id="fps-counter" class="fps-counter" type="button" disabled aria-label="Open performance metrics" aria-expanded="false" aria-controls="performance-panel" title="Open performance metrics">0 FPS</button>
+        <button id="performance-run-status" class="performance-run-status hidden" type="button" disabled aria-live="polite">PROFILE 0.0 / 0s</button>
         <button id="debug-view-toggle" class="control-proxy" type="button" aria-expanded="false" aria-controls="debug-view-panel">Debug view</button>
         <section id="performance-panel" class="performance-panel hidden" aria-label="Performance">
           <div class="performance-toolbar">
@@ -46,7 +47,7 @@
           <small>Lower resolution and shadows affect appearance. Stealth visibility uses the same gameplay lighting. Recording can be turned off to compare its cost.</small>
           <pre id="performance-engine"></pre>
 
-          <small>Capture for 10 seconds, then copy the short report. GPU timing depends on WebGL timer-query support; Download saves the full profile.</small>
+          <small>Capture for 10 seconds, then use Copy report. URL-started tests show elapsed time against their timeout and offer the completed report on this button. GPU timing depends on WebGL timer-query support; Download saves the full profile.</small>
           <p id="performance-copy-status" role="status" aria-live="polite"></p>
           <textarea id="performance-report-output" class="hidden" readonly rows="8" aria-label="Performance report text"></textarea>
           <small>Rows show average ms over the capture and p95 over the latest 256 ticks or frames, including idle samples. Parent totals include child scopes; do not add them together. CPU/GPU profiling is off outside the panel and captures.</small>

@@ -25,8 +25,32 @@ $('mute').addEventListener('click', () => {
 updateAudio(false);
 let manifest, engine, bytesFetched = 0, bytesCached = 0;
 let loading = false, startupTimer;
+function queryFlag(params, name, fallback = false) {
+  const value = params.get(name);
+  if (value === null) return fallback;
+  return ['1', 'true', 'yes', 'on'].includes(value.trim().toLowerCase());
+}
+function parseUrlTestOptions(href = location.href) {
+  const params = new URL(href).searchParams;
+  const firstPerson = params.get('view') === 'first_person' || queryFlag(params, 'first_person');
+  const capture = queryFlag(params, 'capture') || queryFlag(params, 'perf_capture');
+  const timeoutText = params.get('timeout');
+  const timeoutSeconds = timeoutText === null ? null : Number(timeoutText);
+  return {
+    firstPerson,
+    fullscreen: queryFlag(params, 'fullscreen'),
+    capture,
+    timeoutSeconds,
+    timeoutInvalid: timeoutText !== null && (!Number.isInteger(timeoutSeconds) || timeoutSeconds < 1 || timeoutSeconds > 900),
+    timeoutProvided: timeoutText !== null
+  };
+}
+window.parseUrlTestOptions = parseUrlTestOptions;
+window.stealthTestOptions = parseUrlTestOptions(location.href);
 const mobileTouch = window.matchMedia('(pointer: coarse)').matches || !!window.navigator?.maxTouchPoints || new URL(location.href).searchParams.get('dev_touch') === '1';
 const directLaunch = new URL(location.href).searchParams.get('launch') === '1';
+let configuredRunStarted = false, configuredRunFinished = false, configuredRunWaitPaused = false, firstPersonAutoApplied = false;
+let configuredRunTimeout = 0, fullscreenAutoAttempted = false;
 if (mobileTouch) $('viewport').classList.add('mobile-touch');
 let latestGameState = null;
 let perspectiveMenu = null;
@@ -232,6 +256,12 @@ async function prepare() {
     catch (error) { initial = defaults; configurationError(error); }
     selectionToUI(initial);
     showSelection(initial);
+    const testOptions = window.stealthTestOptions;
+    if (testOptions.timeoutInvalid) configurationError(new Error('URL timeout must be a whole number from 1 to 900 seconds.'));
+    testOptions.timeoutSeconds = testOptions.timeoutProvided && !testOptions.timeoutInvalid
+      ? testOptions.timeoutSeconds : Number(initial.budget);
+    testOptions.enabled = testOptions.capture || (testOptions.timeoutProvided && !testOptions.timeoutInvalid);
+    testOptions.endReason = '';
     const total = Object.values(manifest.assets).reduce((sum, asset) => sum + asset.download_bytes, 0);
     $('download-info').textContent = `${mb(total)} MB first load · replay without another download`;
     $('load').disabled = false;
@@ -395,6 +425,7 @@ window.stealthReport = (json) => {
     return;
   }
   if (!state.ready) return;
+  applyUrlLaunchOptions(state);
   if (gameMenuOpen) controlsEnabled(true);
   gameMenuOpen = false;
   $('viewport').classList.remove('game-menu-open');
@@ -516,8 +547,52 @@ window.stealthReport = (json) => {
   }
   window.stealthState = state;
   updateTouch(state);
+  if (state.completed && configuredRunStarted) finishConfiguredRun('completed');
 
 };
+
+function applyUrlLaunchOptions(state) {
+  if (!state?.ready) return;
+  const options = window.stealthTestOptions || {};
+  if (options.firstPerson && !firstPersonAutoApplied) {
+    firstPersonAutoApplied = true;
+    if (state.view !== 'first_person') window.stealthControl?.('first_person');
+  }
+  if (options.fullscreen && !fullscreenAutoAttempted && !fullscreenActive()) {
+    fullscreenAutoAttempted = true;
+    void enterGameFullscreen(true);
+  }
+  if (!options.enabled || configuredRunStarted || configuredRunFinished) return;
+  if (options.fullscreen && mobileTouch && !fullscreenActive()) {
+    if (!configuredRunWaitPaused) {
+      configuredRunWaitPaused = true;
+      if (!state.paused) window.stealthControl?.('pause');
+    }
+    return;
+  }
+  configuredRunStarted = true;
+  if (configuredRunWaitPaused) {
+    configuredRunWaitPaused = false;
+    window.stealthControl?.('pause');
+  }
+  const seconds = Number(options.timeoutSeconds || state.selection?.budget || manifest?.budget_seconds || 240);
+  if (options.capture) {
+    performancePanel.setUrlCapture(seconds);
+    window.stealthControl?.('performance', JSON.stringify({capture:true, duration:seconds}));
+  }
+  configuredRunTimeout = setTimeout(() => finishConfiguredRun('timeout'), seconds * 1000);
+}
+
+function finishConfiguredRun(reason) {
+  if (!configuredRunStarted || configuredRunFinished) return;
+  configuredRunFinished = true;
+  clearTimeout(configuredRunTimeout);
+  const options = window.stealthTestOptions || {};
+  options.endReason = reason;
+  if (options.capture) window.stealthControl?.('end_test', JSON.stringify({reason}));
+  else if (reason === 'timeout') window.stealthControl?.('pause');
+}
+window.finishConfiguredRun = finishConfiguredRun;
 
 $('download-query-stats').addEventListener('click', () => {
   const state = latestGameState;
@@ -726,7 +801,9 @@ function syncFullscreen() {
   playPrompt.querySelector('strong').textContent = rotate ? 'Landscape required' : 'Full screen required';
   playPrompt.querySelector('p').textContent = rotate
     ? 'Rotate your phone sideways to continue.'
-    : 'Tap the full-screen button to switch to landscape.';
+    : (window.stealthTestOptions?.fullscreen && configuredRunWaitPaused
+      ? 'Tap the full-screen button to enter and start the timed test.'
+      : 'Tap the full-screen button to switch to landscape.');
   $('fullscreen').textContent = active ? '⤢' : '⛶';
   $('fullscreen').setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');
   $('fullscreen').title = active ? 'Exit full screen' : 'Enter full screen';
@@ -749,7 +826,7 @@ async function exitGameFullscreen() {
   } catch (_) {}
   syncFullscreen();
 }
-async function enterGameFullscreen() {
+async function enterGameFullscreen(automatic = false) {
   if (fullscreenEntryPending) return;
   fullscreenEntryPending = true;
   touch.reset();
@@ -762,12 +839,13 @@ async function enterGameFullscreen() {
     }
     if (nativeFullscreen() === viewport) viewport.classList.remove('expanded');
   } catch (_) {
-    // Embedded/mobile browsers may deny fullscreen; retain a page-filling option.
-    if (!nativeFullscreen()) viewport.classList.add('expanded');
+    // Preserve the fallback for explicit taps; a URL-only request waits for activation.
+    if (!nativeFullscreen() && !automatic) viewport.classList.add('expanded');
   }
   fullscreenEntryPending = false;
   await lockLandscape();
   syncFullscreen();
+  applyUrlLaunchOptions(latestGameState);
 }
 async function toggleFullscreen() {
   if (fullscreenActive()) await exitGameFullscreen();
