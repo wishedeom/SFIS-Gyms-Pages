@@ -1,0 +1,285 @@
+{
+  "captures": [
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.719534, 2.023556, 2.564924)",
+          "screen": "(473.5975, 482.2019)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.080466, 2.023556, 2.564924)",
+          "screen": "(806.4025, 482.2018)"
+        }
+      },
+      "left_pixels": 25350,
+      "name": "vault-reach",
+      "playing_clip": "traversal_PROTO/vault",
+      "right_pixels": 25350,
+      "state": "vault",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.635039, 2.028075, 2.559222)",
+          "screen": "(143.9999, 851.3693)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.164961, 2.028075, 2.559222)",
+          "screen": "(575.9999, 851.3695)"
+        }
+      },
+      "left_pixels": 36971,
+      "name": "vault-reach-portrait",
+      "playing_clip": "traversal_PROTO/vault",
+      "right_pixels": 36971,
+      "state": "vault",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.741344, 2.339445, 2.306873)",
+          "screen": "(447.6663, 520.7431)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.064626, 2.33883, 2.306881)",
+          "screen": "(832.3337, 520.743)"
+        }
+      },
+      "left_pixels": 23772,
+      "name": "vault-push",
+      "playing_clip": "traversal_PROTO/vault",
+      "right_pixels": 23771,
+      "state": "vault",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.607198, 2.316024, 2.338062)",
+          "screen": "(144.0003, 964.1931)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.198815, 2.315653, 2.338067)",
+          "screen": "(576.0, 964.1927)"
+        }
+      },
+      "left_pixels": 45218,
+      "name": "vault-push-portrait",
+      "playing_clip": "traversal_PROTO/vault",
+      "right_pixels": 45218,
+      "state": "vault",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.670699, 2.673902, -0.450815)",
+          "screen": "(499.0295, 395.7336)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.129301, 2.673902, -0.450815)",
+          "screen": "(780.9707, 395.7335)"
+        }
+      },
+      "left_pixels": 35908,
+      "name": "mantle-reach",
+      "playing_clip": "traversal_PROTO/mantle",
+      "right_pixels": 35908,
+      "state": "mantle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.635039, 2.682368, -0.456632)",
+          "screen": "(144.0002, 695.1396)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.164961, 2.682367, -0.456632)",
+          "screen": "(576.0, 695.1398)"
+        }
+      },
+      "left_pixels": 37899,
+      "name": "mantle-reach-portrait",
+      "playing_clip": "traversal_PROTO/mantle",
+      "right_pixels": 37899,
+      "state": "mantle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.702422, 3.209876, -0.614717)",
+          "screen": "(469.5651, 446.2868)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.102753, 3.209384, -0.614709)",
+          "screen": "(810.4349, 446.2869)"
+        }
+      },
+      "left_pixels": 32090,
+      "name": "mantle-push",
+      "playing_clip": "traversal_PROTO/mantle",
+      "right_pixels": 32090,
+      "state": "mantle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-2.606813, 3.169072, -0.583206)",
+          "screen": "(144.0, 844.1526)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(-2.198429, 3.168736, -0.583201)",
+          "screen": "(576.0, 844.153)"
+        }
+      },
+      "left_pixels": 42901,
+      "name": "mantle-push-portrait",
+      "playing_clip": "traversal_PROTO/mantle",
+      "right_pixels": 42901,
+      "state": "mantle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.405386, -1.539062, -1.15169)",
+          "screen": "(382.5202, 503.1158)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.405387, -1.539062, -1.15169)",
+          "screen": "(897.4799, 503.1156)"
+        }
+      },
+      "left_pixels": 29757,
+      "name": "swim-underwater",
+      "playing_clip": "swim",
+      "right_pixels": 29754,
+      "state": "swim",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.191294, -1.539062, -1.15169)",
+          "screen": "(144.0002, 894.428)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.191294, -1.539062, -1.15169)",
+          "screen": "(575.9999, 894.428)"
+        }
+      },
+      "left_pixels": 46108,
+      "name": "swim-underwater-portrait",
+      "playing_clip": "swim",
+      "right_pixels": 46121,
+      "state": "swim",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.28904, -0.071239, -1.691424)",
+          "screen": "(479.0895, 468.7104)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.28904, -0.071239, -1.691424)",
+          "screen": "(800.9105, 468.7104)"
+        }
+      },
+      "left_pixels": 28351,
+      "name": "swim-tread",
+      "playing_clip": "swim_idle",
+      "right_pixels": 28339,
+      "state": "swim_idle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.218248, -0.071239, -1.691424)",
+          "screen": "(144.0, 833.263)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.218248, -0.071239, -1.691424)",
+          "screen": "(576.0, 833.2629)"
+        }
+      },
+      "left_pixels": 39712,
+      "name": "swim-tread-portrait",
+      "playing_clip": "swim_idle",
+      "right_pixels": 39741,
+      "state": "swim_idle",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.349115, -0.101761, -1.866704)",
+          "screen": "(347.2388, 547.2)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.349115, -0.101761, -1.866704)",
+          "screen": "(932.7611, 547.1998)"
+        }
+      },
+      "left_pixels": 35281,
+      "name": "swim-surface",
+      "playing_clip": "swim",
+      "right_pixels": 35339,
+      "state": "swim",
+      "visible": true
+    },
+    {
+      "hands": {
+        "L": {
+          "behind_camera": false,
+          "position": "(-0.144888, -0.101761, -1.866704)",
+          "screen": "(143.9999, 972.8002)"
+        },
+        "R": {
+          "behind_camera": false,
+          "position": "(0.144887, -0.101761, -1.866704)",
+          "screen": "(575.9999, 972.7996)"
+        }
+      },
+      "left_pixels": 67052,
+      "name": "swim-surface-portrait",
+      "playing_clip": "swim",
+      "right_pixels": 67091,
+      "state": "swim",
+      "visible": true
+    }
+  ],
+  "passed": true
+}

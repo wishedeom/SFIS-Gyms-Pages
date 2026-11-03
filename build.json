@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-34ed8e8fe2bcf68d.pck.gz",
-      "raw_bytes": 20533904,
-      "download_bytes": 12179847
+      "url": "game-7a7e4796d0f933a9.pck.gz",
+      "raw_bytes": 20917440,
+      "download_bytes": 12220414
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 52.321,
+  "build_seconds": 59.731,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
