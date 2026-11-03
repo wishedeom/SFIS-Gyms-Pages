@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-eace35e7cd15cc0b.pck.gz",
-      "raw_bytes": 20997168,
-      "download_bytes": 12297629
+      "url": "game-eda9d1d776bc295b.pck.gz",
+      "raw_bytes": 21051984,
+      "download_bytes": 12349940
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 26.064,
+  "build_seconds": 403.547,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -157,6 +157,16 @@
       "featured": true,
       "autonomous_scene": "res://Root/Story/SilentRelay/SilentRelay.tscn",
       "preview": "res://Root/Dev/Web/Previews/silent-relay.jpg"
+    },
+    {
+      "id": "ration-engine",
+      "category": "story",
+      "story_id": "",
+      "label": "NEW \u00b7 The Ration Engine [PROTO]",
+      "description": "Naya's farm runs on Anahita's old power grid. Divert the west grow lights to power a real crew lift, or find a spare feeder link in the east workshop and repair the reserve without darkening the crops. A longer west service ramp needs no power. Restore the grow lights from the crew gallery, recover the service dispatch, then depart north. Machinery uses the ordinary Use button on mobile and desktop. All new geometry and story text are PROTO.",
+      "featured": true,
+      "autonomous_scene": "res://Root/Story/RationEngine/RationEngine.tscn",
+      "preview": "res://Root/Dev/Web/Previews/ration-engine.jpg"
     },
     {
       "id": "streaming",
