@@ -3,12 +3,12 @@
     "game.wasm": {
       "url": "game-0f09ecee706f5db3.wasm.gz",
       "raw_bytes": 41967531,
-      "download_bytes": 9279586
+      "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-654d136eb4fc303b.pck.gz",
-      "raw_bytes": 20926768,
-      "download_bytes": 12214611
+      "url": "game-157de8e147aeea69.pck.gz",
+      "raw_bytes": 20997056,
+      "download_bytes": 12297530
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 195.778,
+  "build_seconds": 303.943,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -147,6 +147,16 @@
       "description": "PROTO first level. Escape a palisaded settlement with victims and sealed hypersleep sacks. Learn movement, crouching and covered stealth, find an upper-level raid recorder by the pistol cache, and decide whether to free a captured soldier. A journal keeps recovered notes and conversation history. Beyond: cavernous growing halls, reservoirs, timber bridges and hidden passages.",
       "autonomous_scene": "res://Root/Story/Hydroponics/Hydroponics.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics.jpg"
+    },
+    {
+      "id": "silent-relay",
+      "category": "story",
+      "story_id": "",
+      "label": "NEW \u00b7 Silent Relay [PROTO]",
+      "description": "A candidate sector beyond the Understory. Restore a crew neural relay, borrow real camera sight, release a gate with an implant impulse, and lure a sentinel with a service chime. Neural strain limits remote use and handshakes reveal your body's position. A shielded chamber blocks the link: use its local latch. A crouch-only service duct offers a route without powers. Recover the crew transit record, then leave north. All new lore and geometry are PROTO.",
+      "featured": true,
+      "autonomous_scene": "res://Root/Story/SilentRelay/SilentRelay.tscn",
+      "preview": "res://Root/Dev/Web/Previews/silent-relay.jpg"
     },
     {
       "id": "streaming",

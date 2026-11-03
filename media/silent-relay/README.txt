@@ -1,0 +1,1 @@
+SILENT RELAY: AI-GENERATED PROTOTYPE PRESENTATION ONLY. Rendered gameplay captures of code-built prototype geometry and existing prototype human assets. New procedural audio is AI-GENERATED AUDIO - PROTO ONLY. No final-use approval. AI names selected by the user: Mithra (mission), Anahita (habitat), Sraosha (custody).
