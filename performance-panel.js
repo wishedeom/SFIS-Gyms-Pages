@@ -161,6 +161,8 @@ window.PerformancePanel = class {
       }).join('\n') || 'none';
       const gpuMs = Number.isFinite(e.gpu_ms) && e.gpu_ms > 0 ? `${e.gpu_ms.toFixed(2)} ms` : 'unavailable';
       this.doc.getElementById('performance-engine').textContent = `Godot 1s peaks: process/render ${e.process_ms.toFixed(2)} ms · physics tick ${e.physics_ms.toFixed(2)} ms · GPU ${gpuMs}\n${e.draw_calls} draws · ${e.primitives} primitives · ${e.nodes} nodes\n3D: ${Math.round(e.width * e.scale)} × ${Math.round(e.height * e.scale)} (${Math.round(e.scale * 100)}%) · ${e.renderer}\nPhysics: ${ph.tick_hz ?? '—'} Hz configured · ${ph.max_steps_per_frame ?? '—'} catch-up steps max · ${ph.active_rigid_bodies ?? '—'} active rigid bodies · ${ph.collision_pairs ?? '—'} pairs / ${ph.islands ?? '—'} islands\nBodies S${bodies.static ?? '—'} C${bodies.character ?? '—'} R${bodies.rigid ?? '—'} A${bodies.animatable ?? '—'} Areas ${bodies.area ?? '—'} · shapes ${shapes.enabled ?? '—'} enabled / ${shapes.disabled ?? '—'} disabled (+ ${shapes.polygons_enabled ?? '—'} / ${shapes.polygons_disabled ?? '—'} polygons)\nStatic collision sources:\n${staticSourceText}\nZero-enabled-shape bodies: ${Object.entries(zeroShapeBodies).map(([kind, count]) => `${kind} ${count}`).join(', ') || 'none'}\nQuery nodes: RayCast3D ${rayNodes.enabled ?? '—'} enabled / ${rayNodes.disabled ?? '—'} disabled · ShapeCast3D ${shapeCastNodes.disabled ?? '—'} disabled / ${shapeCastNodes.enabled ?? '—'} enabled\nVision last sample: ${s.vision_rays ?? 0} direct rays / ${s.vision_candidates ?? 0} candidates across actors · recording ${((s.capture_us || 0) / 1000).toFixed(2)} ms`;
+      const ri = s.scene_context?.render_inventory;
+      if (ri) this.doc.getElementById('performance-engine').textContent += `\nRender scene: ${ri.scene_visible_mesh_nodes} scene-visible mesh nodes / ${ri.scene_visible_shadow_casters} shadow casters · ${ri.scene_visible_multimeshes} MultiMeshes (${ri.multimesh_instances} instances) · ${ri.active_lights} lights / ${ri.shadow_lights.length} shadow lights. Scene-visible does not mean in camera view.`;
       if (this.mobileDefaultsPending && Math.abs(Number(e.scale) - this.desiredScale) < 0.001 && s.shadows === this.desiredShadows) this.mobileDefaultsPending = false;
       this.resolution.value = String(this.mobileDefaultsPending ? this.desiredScale : e.scale);
       this.shadows.checked = this.mobileDefaultsPending ? this.desiredShadows : s.shadows;
@@ -237,7 +239,7 @@ window.PerformancePanel = class {
     const gpu = s.gpu_capture || {};
     return {
       format: 'imsim.perf',
-      version: 5,
+      version: 6,
       at: new Date().toISOString(),
       run: {
         map: sel.level ?? null,
