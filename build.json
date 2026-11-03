@@ -3,12 +3,12 @@
     "game.wasm": {
       "url": "game-0f09ecee706f5db3.wasm.gz",
       "raw_bytes": 41967531,
-      "download_bytes": 9279586
+      "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-b19599353bca0e48.pck.gz",
-      "raw_bytes": 20475280,
-      "download_bytes": 12100630
+      "url": "game-34ed8e8fe2bcf68d.pck.gz",
+      "raw_bytes": 20533904,
+      "download_bytes": 12179847
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 319.987,
+  "build_seconds": 52.321,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -155,6 +155,15 @@
       "description": "[PROTO] Compare all-resident, synchronous, threaded-load and budgeted activation across a 240 m course: two large zones plus a sparse connector, three equal zones, or six smaller zones. Code-built geometry is merged by zone. Threaded resource loading is unavailable in the current single-thread Web build; its report separates manifest load time from main-thread geometry activation.",
       "autonomous_scene": "res://Root/Dev/DevStreamingGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/streaming.svg"
+    },
+    {
+      "id": "vault",
+      "story_id": "",
+      "label": "NEW \u00b7 Vault & mantle gym",
+      "description": "Two lit training lanes: vault teal low rails, mantle amber ledges, and test the red blocked-clearance station. Watch both trainees complete real traversal, or take player control while the NPC continues. Move toward a lit edge and press Jump / Space.",
+      "featured": true,
+      "lab": "vault",
+      "preview": "res://Root/Dev/Web/Previews/vault.jpg"
     }
   ]
 }
