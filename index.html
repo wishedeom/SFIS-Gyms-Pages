@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#101719">
   <meta name="description" content="Choose a stealth test level, configure a seed, and watch or play an attempt.">
   <title>Stealth Gym · Test Levels</title>
-  <link rel="stylesheet" href="style.css?v=986651c945bdf0cf">
+  <link rel="stylesheet" href="style.css?v=767d114f46fa79ba">
   <script src="performance-panel.js?v=c912e007c16de70a" defer></script>
   <script src="touch-controls.js?v=0182d5096c4bc957" defer></script>
   <script src="quickbar.js?v=6be242fc9a9ba0c8" defer></script>
   <script src="perspective-menu.js?v=d79db37d63f3ac1d" defer></script>
   <script src="debug-inspector.js?v=f3e230a470df4aca" defer></script>
   <script src="debug-visuals.js?v=fcf3aa32fe4e8c78" defer></script>
-  <script src="app.js?v=95acbea2584d005f" defer></script>
+  <script src="app.js?v=d956d8cc852317ee" defer></script>
 </head>
 <body>
   <main>
@@ -67,6 +67,7 @@
             <button data-touch-action="interact" aria-label="Use or interact"><span class="touch-icon">⌖</span><small class="touch-label">Use</small></button>
             <button data-touch-action="attack" data-lab="combat weapons" class="hidden" aria-label="Fire weapon"><span class="touch-icon">✦</span><small class="touch-label">Fire</small></button>
             <button data-touch-action="crouch" aria-label="Toggle crouch"><span class="touch-icon">↓</span><small class="touch-label">Crouch</small></button>
+            <button id="flashlight-toggle" type="button" class="hidden" aria-label="Toggle flashlight" aria-pressed="false" title="Flashlight"><span class="touch-icon">◉</span><small class="touch-label">Light</small></button>
             <button data-touch-action="sprint" aria-label="Toggle sprint" aria-pressed="false"><span class="touch-icon">»</span><small class="touch-label">Sprint</small></button>
             <button data-touch-action="grenade" aria-label="Tap to throw grenade; hold to aim or place mine" title="Grenade"><span class="touch-icon">✹</span><small class="touch-label">Frag</small></button>
             <button data-touch-action="block" data-lab="combat" class="hidden" aria-label="Block"><span class="touch-icon">⬡</span><small class="touch-label">Block</small></button>

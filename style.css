@@ -183,6 +183,7 @@
 #touch-controls [data-touch-action="attack"]{grid-area:2/3}
 #touch-controls [data-touch-action="grenade"]{grid-area:3/1}
 #touch-controls [data-touch-action="crouch"]{grid-area:3/2}
+#touch-controls #flashlight-toggle{grid-area:3/4}
 #touch-controls [data-touch-action="grenade_cancel"]{grid-area:3/3}
 
 /* Keep the mobile utility row clear of both the corner controls and the action pad. */

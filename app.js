@@ -435,6 +435,15 @@ window.stealthReport = (json) => {
     selectionToUI(state.selection); rememberSelection(state.selection);
   }
   quickbar.update(state.quickbar);
+  const flashlightButton = $('flashlight-toggle');
+  flashlightButton?.classList.toggle('hidden', !state.flashlight?.owned);
+  flashlightButton?.classList.toggle('held', !!state.flashlight?.on);
+  flashlightButton?.setAttribute('aria-pressed', String(!!state.flashlight?.on));
+  if (flashlightButton && state.flashlight?.owned) {
+    const percent = Math.round((state.flashlight.charge || 0) * 100);
+    flashlightButton.title = `Flashlight · ${percent}% battery`;
+    flashlightButton.querySelector('.touch-label').textContent = `${percent}%`;
+  }
   document.querySelector('[data-touch-action="grenade"]')?.classList.toggle('hidden', !(state.grenade?.count > 0));
   document.querySelector('[data-touch-action="grenade_cancel"]')?.classList.toggle('hidden', !state.grenade?.aiming);
   if (mobileTouch && state.quickbar && !state.quickbar.external_touch) window.stealthControl?.('quickbar', JSON.stringify({touch_host:true}));
@@ -757,6 +766,7 @@ function togglePlayerUi() {
   window.stealthControl?.('player_ui', JSON.stringify({visible}));
 }
 $('game-ui-toggle')?.addEventListener('click', togglePlayerUi);
+$('flashlight-toggle')?.addEventListener('pointerdown', event => { event.preventDefault(); window.stealthControl?.('flashlight'); });
 $('fullscreen-game-ui-toggle').addEventListener('click', togglePlayerUi);
 $('canvas').addEventListener('pointerdown', (event) => {
   if (event.pointerType !== 'touch' && window.stealthState?.manual && !loading) {
