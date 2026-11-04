@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-984acc3ac851da92.pck.gz",
-      "raw_bytes": 21115600,
-      "download_bytes": 12411934
+      "url": "game-575dfffd4a045858.pck.gz",
+      "raw_bytes": 21185552,
+      "download_bytes": 12479673
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 551.21,
+  "build_seconds": 427.637,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -78,10 +78,10 @@
     {
       "id": "mk6",
       "story_id": "",
-      "label": "Mk 6 \u00b7 Aquatics training",
-      "description": "Swim with NPC trainees in a deep training pool. Walk down either ramp, hold Jump to rise or Crouch to dive, and steer with your view. Surface to recover oxygen; running out damages head and chest.",
+      "label": "Mk 6 \u00b7 Swimming skills [PROTO]",
+      "description": "[PROTO] Compare swimming grades 0\u20133 at the four starting-deck stations: faster strokes, longer breath and quieter splashes. Time the submerged 9 m ring lane. NPCs compare grades 0 and 3; Demo cycles all four. Jump rises, Crouch dives. Comparison resets on replay; campaign training remains open.",
       "autonomous_scene": "res://Root/Dev/DevWaterGym.tscn",
-      "preview": "res://Root/Dev/Web/Previews/mk6.svg"
+      "preview": "res://Root/Dev/Web/Previews/mk6.jpg"
     },
     {
       "id": "mk7",
@@ -173,7 +173,7 @@
       "category": "story",
       "story_id": "AdvancementPROTO",
       "label": "NEW \u00b7 Recommissioning [PROTO]",
-      "description": "Recover a core and procedure, then fit an active implant. Impulse Tendons give a powered leap; Rebreather gives an underwater jet. The upper cache, also reached by ramp, unlocks Induction Grip: refit at the east bench, pull compatible cargo and release it onto the rear weight plate to open the lock. Ordinary carrying also works. Z / the mobile Augment button operates all three, with costs and cooldowns. Sprint the circuit to learn Paced Recovery. Gains survive visits this session; reload starts fresh. PROTO.",
+      "description": "Recover a compatible core and procedures, then fit one active configuration: Impulse Leap, Dive Jet, Induction Grip or Optical Veil. Earn Paced Recovery through practice, operate the physical cargo lock, then cross Mir\u2019s optical calibration gap quietly. Each challenge has an unaugmented route. PROTO gains persist only this session.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/Recommissioning/Recommissioning.tscn",
       "preview": "res://Root/Dev/Web/Previews/recommissioning.jpg"
