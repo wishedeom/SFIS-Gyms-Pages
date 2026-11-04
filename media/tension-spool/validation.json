@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "pack": {
+    "url": "game-a79a93a2206cfde1.pck.gz",
+    "raw_bytes": 21351872,
+    "download_bytes": 12638803
+  },
+  "native_spool_checks": 50,
+  "mobile_checks": 16,
+  "full_exported_suites": 95,
+  "catalog_entries": 22,
+  "build_seconds": 649.766,
+  "video_bytes": 766726,
+  "prototype_status": "AI-GENERATED \u2014 PROTO ONLY; see README.md"
+}

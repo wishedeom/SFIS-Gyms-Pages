@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-ed512d87191f60e9.pck.gz",
-      "raw_bytes": 21292112,
-      "download_bytes": 12583181
+      "url": "game-a79a93a2206cfde1.pck.gz",
+      "raw_bytes": 21351872,
+      "download_bytes": 12638803
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 787.256,
+  "build_seconds": 649.766,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -181,7 +181,7 @@
       "category": "story",
       "story_id": "AdvancementPROTO",
       "label": "NEW \u00b7 Recommissioning [PROTO]",
-      "description": "Recover a compatible core and procedures, then fit one active configuration: Impulse Leap, Dive Jet, Induction Grip Optical Veil or Echo Lattice after its annex procedure. Earn Paced Recovery through practice, operate the physical cargo lock, then cross Mir\u2019s optical calibration gap quietly. Each challenge has an unaugmented route. PROTO gains persist only this session.",
+      "description": "Recover a compatible core and procedures, then fit one active configuration: Impulse Leap, Dive Jet, Induction Grip, Optical Veil, Echo Lattice or Tension Spool after discovering their procedures. Earn Paced Recovery through practice, operate the physical cargo lock, then cross Mir\u2019s optical calibration gap quietly. Each challenge has an unaugmented route. PROTO gains persist only this session.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/Recommissioning/Recommissioning.tscn",
       "preview": "res://Root/Dev/Web/Previews/recommissioning.jpg"
@@ -195,6 +195,14 @@
       "featured": true,
       "autonomous_scene": "res://Root/Story/EchoAnnex/EchoAnnex.tscn",
       "preview": "res://Root/Dev/Web/Previews/echo-annex.jpg"
+    },
+    {
+      "id": "tension-loft",
+      "story_id": "AdvancementPROTO",
+      "label": "NEW \u00b7 Tension Loft [PROTO]",
+      "description": "Recover Mir\u2019s transit rigging procedure and fit Tension Spool. Aim at the marked overhead anchor, then tap Augment to pull the real body onto a high gallery. Tap again to release; normal falling resumes. Coupling costs 20 stamina plus 6/s, lasts up to four seconds and respects physical obstruction. The west service ramp reaches the same rigging archive without an implant. Gains share this session with Recommissioning and Echo Annex.",
+      "autonomous_scene": "res://Root/Story/TensionLoft/TensionLoft.tscn",
+      "preview": "res://Root/Dev/Web/Previews/tension-loft.jpg"
     },
     {
       "id": "streaming",
