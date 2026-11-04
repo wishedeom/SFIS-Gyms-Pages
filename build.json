@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-88039b88657cbdfd.pck.gz",
-      "raw_bytes": 21501152,
-      "download_bytes": 12777320
+      "url": "game-98d87acde760b3e5.pck.gz",
+      "raw_bytes": 21515520,
+      "download_bytes": 12793256
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 343.253,
+  "build_seconds": 565.791,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -159,9 +159,9 @@
     {
       "id": "hydroponics-blockout",
       "category": "story",
-      "story_id": "",
-      "label": "NEW \u00b7 Hydroponics campaign blockout [PROTO]",
-      "description": "Fresh connected blockout from the level plan. A short movement and stealth opening leads to a scarce pistol cache and a vertical garden. Reach crew access by the settlement ascent, irrigation works or a concealed service climb inside the growing structure. Release the cross-passage, lower a maintenance span, and unlock the freight lift from above to reconnect with the early store. Augment alcoves and optional discoveries reserve space for later gameplay passes. The old Hydroponics remains the practice build.",
+      "story_id": "PairidaezaPROTO",
+      "label": "NEW \u00b7 Pairidaeza \u00b7 Living gardens [PROTO]",
+      "description": "The fresh Hydroponics area: inhabited terraces, hanging crops, timber shelters, waterworks and recent raid remnants. A short movement/stealth opening leads to a scarce pistol cache and visible crew access. Choose settlement, irrigation or concealed wall routes; release shortcuts and a freight lift back to the early store. Optional discoveries unlock Impulse Tendons, Rebreather with inhaled-gas protection, and Induction Grip. Find PROTO records and physical cargo. Discoveries persist for this host session; reload starts fresh. Pairidaeza is the working name.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/HydroponicsBlockout/HydroponicsBlockout.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics-blockout.jpg"
