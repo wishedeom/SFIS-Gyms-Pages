@@ -1,0 +1,1 @@
+PROTO — CODE-BUILT BLOCKOUT, with AI coding assistance. Engine-rendered captures of the fresh Hydroponics campaign blockout. The 22-second 960x540 H.264 video is an architectural tour, not a recorded player walkthrough. Shared actor and presentation assets retain their existing prototype provenance. No final-use art approval. No image-generated concept artwork is included.

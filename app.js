@@ -402,6 +402,7 @@ async function compressedAsset(asset, label) {
   return buffer;
 }
 
+let lastControlIdentity = null;
 window.stealthReport = (json) => {
   const state = JSON.parse(json);
   latestGameState = state;
@@ -433,6 +434,12 @@ window.stealthReport = (json) => {
   if (state.selection && accepted !== acceptedRunSelection) {
     acceptedRunSelection = accepted;
     selectionToUI(state.selection); rememberSelection(state.selection);
+  }
+  const controlIdentity = state.control_identity ?? state.quickbar?.actor ?? "";
+  if (controlIdentity !== lastControlIdentity) {
+    // Commit before reset crosses the synchronous bridge and can report again.
+    lastControlIdentity = controlIdentity;
+    touch.reset();
   }
   quickbar.update(state.quickbar);
   const flashlightButton = $('flashlight-toggle');

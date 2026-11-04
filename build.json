@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-73a3ca34ae881e99.pck.gz",
-      "raw_bytes": 21362256,
-      "download_bytes": 12645409
+      "url": "game-88039b88657cbdfd.pck.gz",
+      "raw_bytes": 21501152,
+      "download_bytes": 12777320
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 374.92,
+  "build_seconds": 343.253,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -157,6 +157,16 @@
       "preview": "res://Root/Dev/Web/Previews/hydroponics.jpg"
     },
     {
+      "id": "hydroponics-blockout",
+      "category": "story",
+      "story_id": "",
+      "label": "NEW \u00b7 Hydroponics campaign blockout [PROTO]",
+      "description": "Fresh connected blockout from the level plan. A short movement and stealth opening leads to a scarce pistol cache and a vertical garden. Reach crew access by the settlement ascent, irrigation works or a concealed service climb inside the growing structure. Release the cross-passage, lower a maintenance span, and unlock the freight lift from above to reconnect with the early store. Augment alcoves and optional discoveries reserve space for later gameplay passes. The old Hydroponics remains the practice build.",
+      "featured": true,
+      "autonomous_scene": "res://Root/Story/HydroponicsBlockout/HydroponicsBlockout.tscn",
+      "preview": "res://Root/Dev/Web/Previews/hydroponics-blockout.jpg"
+    },
+    {
       "id": "silent-relay",
       "category": "story",
       "story_id": "",
@@ -203,6 +213,14 @@
       "description": "Recover Mir\u2019s transit rigging procedure and fit Tension Spool. Aim at the marked overhead anchor, then tap Augment to pull the real body onto a high gallery. Tap again to release; normal falling resumes. Coupling costs 20 stamina plus 6/s, lasts up to four seconds and respects physical obstruction. The west service ramp reaches the same rigging archive without an implant. Gains share this session with Recommissioning and Echo Annex.",
       "autonomous_scene": "res://Root/Story/TensionLoft/TensionLoft.tscn",
       "preview": "res://Root/Dev/Web/Previews/tension-loft.jpg"
+    },
+    {
+      "id": "borrowed-reach",
+      "story_id": "AdvancementPROTO",
+      "label": "NEW \u00b7 Borrowed Reach [PROTO]",
+      "description": "Recover Rosh\u2019s utility service permit and restore a local relay. T / Neural pilot transfers control to a real maintenance crawler while the crew body remains behind. Drive through a 0.8 m crawlway and use a service-side latch, then return and walk the crew to its archive. Focus, body damage, power, coverage, shielding at either end and crawler failure limit the link. The west service loop works without any permit or relay power. Seven fitted augments retain their existing body controls. Prototype gains persist only for this host session.",
+      "autonomous_scene": "res://Root/Story/BorrowedReach/BorrowedReach.tscn",
+      "preview": "res://Root/Dev/Web/Previews/borrowed-reach.jpg"
     },
     {
       "id": "streaming",
