@@ -1,0 +1,104 @@
+{
+  "checks": 13,
+  "passed": true,
+  "errors": [],
+  "state": {
+    "ability": {
+      "ability": "No implant",
+      "cooldown": 0,
+      "implant": "",
+      "inductive_holding": false,
+      "jet_remaining": 0,
+      "last_reason": "implant_required",
+      "leap_requested": false,
+      "lure_active": false,
+      "optical_veil": false,
+      "ready": false,
+      "reason": "implant_required",
+      "resonance": {
+        "active": false,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "pulses": 0,
+        "remaining": 0,
+        "sequence": 0,
+        "total_pulses": 0
+      },
+      "sequence": 0,
+      "spool": {
+        "active": false,
+        "last_release": "",
+        "remaining": 0,
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "spool_active": false,
+      "veil_remaining": 0
+    },
+    "ability_input": {
+      "disabled": true,
+      "rect": [
+        0.0109375,
+        0.305555555555556,
+        0.1953125,
+        0.144444444444444
+      ],
+      "visible": true
+    },
+    "archive_recovered": false,
+    "cargo_record": false,
+    "core": false,
+    "demo_step": 0,
+    "echo": {
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "range": 12,
+      "remaining": 0,
+      "returns": 0,
+      "segments": 0,
+      "sequence": 0,
+      "sound_event": 0
+    },
+    "echo_protocol": false,
+    "echo_record": false,
+    "eye_height": 1.6,
+    "facing": [
+      0,
+      0,
+      -1
+    ],
+    "feeder_on": false,
+    "heard_pings": 0,
+    "implant": "",
+    "induction_protocol": false,
+    "lure_calibrated": false,
+    "paced_recovery": false,
+    "position": [
+      0,
+      0.0000867992639541626,
+      18
+    ],
+    "procedure": false,
+    "spool_protocol": false,
+    "spool_record": false,
+    "stamina": {
+      "can_sprint": true,
+      "capacity": 100,
+      "fraction": 1,
+      "recovery_delay": 0.85,
+      "recovery_wait": 0,
+      "sprinting": false,
+      "value": 100
+    },
+    "veil_calibrated": false
+  }
+}

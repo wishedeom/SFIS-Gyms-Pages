@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-a79a93a2206cfde1.pck.gz",
-      "raw_bytes": 21351872,
-      "download_bytes": 12638803
+      "url": "game-73a3ca34ae881e99.pck.gz",
+      "raw_bytes": 21362256,
+      "download_bytes": 12645409
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 649.766,
+  "build_seconds": 374.92,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -181,7 +181,7 @@
       "category": "story",
       "story_id": "AdvancementPROTO",
       "label": "NEW \u00b7 Recommissioning [PROTO]",
-      "description": "Recover a compatible core and procedures, then fit one active configuration: Impulse Leap, Dive Jet, Induction Grip, Optical Veil, Echo Lattice or Tension Spool after discovering their procedures. Earn Paced Recovery through practice, operate the physical cargo lock, then cross Mir\u2019s optical calibration gap quietly. Each challenge has an unaugmented route. PROTO gains persist only this session.",
+      "description": "Recover a compatible core and procedures, then fit one active configuration: Impulse Leap, Dive Jet, Induction Grip, Optical Veil, Echo Lattice, Tension Spool or Resonance Lure after discovering their procedures. Earn Paced Recovery through practice, operate the physical cargo lock, then cross Mir\u2019s optical calibration gap quietly. Each challenge has an unaugmented route. PROTO gains persist only this session. Recover the Echo survey record to unlock Resonance Lure: place a finite audible source and test its effect on a real investigating walker in the northwest acoustic station.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/Recommissioning/Recommissioning.tscn",
       "preview": "res://Root/Dev/Web/Previews/recommissioning.jpg"
