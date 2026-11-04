@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-575dfffd4a045858.pck.gz",
-      "raw_bytes": 21185552,
-      "download_bytes": 12479673
+      "url": "game-ff1fca07e9862da7.pck.gz",
+      "raw_bytes": 21250560,
+      "download_bytes": 12546173
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 427.637,
+  "build_seconds": 27.574,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -82,6 +82,14 @@
       "description": "[PROTO] Compare swimming grades 0\u20133 at the four starting-deck stations: faster strokes, longer breath and quieter splashes. Time the submerged 9 m ring lane. NPCs compare grades 0 and 3; Demo cycles all four. Jump rises, Crouch dives. Comparison resets on replay; campaign training remains open.",
       "autonomous_scene": "res://Root/Dev/DevWaterGym.tscn",
       "preview": "res://Root/Dev/Web/Previews/mk6.jpg"
+    },
+    {
+      "id": "human-skills",
+      "story_id": "",
+      "label": "Human skills \u00b7 Practical grades [PROTO]",
+      "description": "Compare Neophyte, Technite, Acolyte and Paragon in seven natural skills: weapon handling, close combat, athletics, stealth, combined Engineering, Medicine and Persuasion. Cycle individual skills or set all at the spawn consoles. Practice on real targets and ledges, repair service gates, treat injured crew and negotiate evidence-based agreements. Parts and kits are finite; moving or damage interrupts work. Replay resets comparisons. Swimming remains in Mk 6.",
+      "autonomous_scene": "res://Root/Dev/DevHumanSkills.tscn",
+      "preview": "res://Root/Dev/Web/Previews/human-skills.jpg"
     },
     {
       "id": "mk7",
