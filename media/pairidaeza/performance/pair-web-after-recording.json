@@ -1,0 +1,971 @@
+{
+  "label": "pair-web-after-recording",
+  "level": "hydroponics-blockout",
+  "kind": "desktop-web-diagnostic",
+  "mode": "manual",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002503) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "requested_gpu": "hardware",
+  "cpu_slowdown": 1,
+  "recording": true,
+  "shadows": false,
+  "occlusion_rays_per_thread": null,
+  "viewport": "780x360",
+  "note": "Not a real mobile GPU, device emulation, or S24 FPS prediction.",
+  "manifest": {
+    "url": "game-a0c025181326882c.pck.gz",
+    "raw_bytes": 21758048,
+    "download_bytes": 13016271
+  },
+  "frames": {
+    "fps": 60.26804295442396,
+    "samples": 362,
+    "p50_ms": 16.69999999999709,
+    "p95_ms": 16.799999999999272,
+    "p99_ms": 16.80000000000291,
+    "max_ms": 16.80000000000291
+  },
+  "engine": {
+    "draw_calls": 325,
+    "gpu_ms": -1,
+    "height": 720,
+    "nodes": 2267,
+    "occlusion_culling": true,
+    "physics_ms": 10.2,
+    "platform": "Web",
+    "primitives": 96660,
+    "process_ms": 10.9,
+    "renderer": "gl_compatibility",
+    "scale": 0.5,
+    "timing_window": "last_1s_peak",
+    "width": 1280
+  },
+  "capture": {
+    "fps": 60.4351329572925,
+    "max_ms": 168.5,
+    "measurement_windows": {
+      "engine": "latest_snapshot",
+      "fps": "last_1s",
+      "frame_stats": "last_10s"
+    },
+    "now": 43.778,
+    "p50_ms": 16.6,
+    "p95_ms": 54.7,
+    "p99_ms": 73.3,
+    "paused": false,
+    "samples": 482,
+    "slow": 231,
+    "very_slow": 42,
+    "capture_us": 3200,
+    "engine": {
+      "draw_calls": 324,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 2267,
+      "occlusion_culling": true,
+      "physics_ms": 9.8,
+      "platform": "Web",
+      "primitives": 96828,
+      "process_ms": 16.1,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    },
+    "gpu_capture": {
+      "active": false,
+      "avg_ms": null,
+      "elapsed": 10.0069380000001,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples": 0
+    },
+    "history": [
+      {
+        "fps": 60.2409638554217,
+        "gap": false,
+        "max_ms": 19.4,
+        "time": 32.8763
+      },
+      {
+        "fps": 59.2885375494071,
+        "gap": false,
+        "max_ms": 20.2,
+        "time": 32.9775
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.4,
+        "time": 33.0776
+      },
+      {
+        "fps": 59.9828620394173,
+        "gap": false,
+        "max_ms": 19.6,
+        "time": 33.1943
+      },
+      {
+        "fps": 59.7014925373134,
+        "gap": false,
+        "max_ms": 19.1,
+        "time": 33.2948
+      }
+    ],
+    "history_reset": false,
+    "physics": {
+      "active_rigid_bodies": 9,
+      "collision_pairs": 30,
+      "islands": 9,
+      "max_steps_per_frame": 8,
+      "scene": {
+        "colliders": {
+          "animatable": 1,
+          "area": 0,
+          "character": 13,
+          "other": 0,
+          "rigid": 11,
+          "static": 230
+        },
+        "collision_masks": [
+          [
+            "animatable",
+            1,
+            1,
+            1
+          ],
+          [
+            "character",
+            0,
+            0,
+            4
+          ],
+          [
+            "character",
+            2,
+            7,
+            9
+          ],
+          [
+            "rigid",
+            1,
+            3,
+            11
+          ],
+          [
+            "static",
+            1,
+            0,
+            7
+          ],
+          [
+            "static",
+            1,
+            1,
+            223
+          ]
+        ],
+        "ray_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_cast_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_types": {
+          "BoxShape3D": 233,
+          "CapsuleShape3D": 17,
+          "ConvexPolygonShape3D": 5
+        },
+        "shapes": {
+          "disabled": 5,
+          "enabled": 250,
+          "polygons_disabled": 0,
+          "polygons_enabled": 0
+        },
+        "static_sources": [
+          {
+            "bodies": 35,
+            "disabled_shapes": 1,
+            "enabled_shapes": 34,
+            "shape_types": {
+              "BoxShape3D": 34
+            },
+            "source": "HydroponicsBlockout_CODE_BUILT_PROTO",
+            "zero_shape_bodies": 1
+          },
+          {
+            "bodies": 4,
+            "disabled_shapes": 0,
+            "enabled_shapes": 4,
+            "shape_types": {
+              "CapsuleShape3D": 4
+            },
+            "source": "PairidaezaDressing_CODE_BUILT_PROTO",
+            "zero_shape_bodies": 0
+          },
+          {
+            "bodies": 191,
+            "disabled_shapes": 0,
+            "enabled_shapes": 191,
+            "shape_types": {
+              "BoxShape3D": 186,
+              "ConvexPolygonShape3D": 5
+            },
+            "source": "course_root",
+            "zero_shape_bodies": 0
+          }
+        ],
+        "zero_shape_bodies": {
+          "character": 4,
+          "static": 1
+        }
+      },
+      "tick_hz": 60
+    },
+    "profile": {
+      "active": false,
+      "actors": [
+        {
+          "actor": "player",
+          "avg_ms": 0.914975041597338,
+          "domain": "physics"
+        },
+        {
+          "actor": "pair_gallery_scavenger",
+          "avg_ms": 0.838269550748752,
+          "domain": "physics"
+        },
+        {
+          "actor": "blockout_overlook",
+          "avg_ms": 0.831281198003328,
+          "domain": "physics"
+        },
+        {
+          "actor": "pair_bank_hunter",
+          "avg_ms": 0.830116472545757,
+          "domain": "physics"
+        },
+        {
+          "actor": "blockout_settlement",
+          "avg_ms": 0.771048252911814,
+          "domain": "physics"
+        },
+        {
+          "actor": "pair_beetle_a",
+          "avg_ms": 0.663893510815308,
+          "domain": "physics"
+        },
+        {
+          "actor": "pair_beetle_b",
+          "avg_ms": 0.521131447587354,
+          "domain": "physics"
+        },
+        {
+          "actor": "pair_graft_hound",
+          "avg_ms": 0.46738768718802,
+          "domain": "physics"
+        },
+        {
+          "actor": "player",
+          "avg_ms": 0.433887733887734,
+          "domain": "render"
+        },
+        {
+          "actor": "blockout_overlook",
+          "avg_ms": 0.386070686070686,
+          "domain": "render"
+        },
+        {
+          "actor": "pair_gallery_scavenger",
+          "avg_ms": 0.376091476091476,
+          "domain": "render"
+        },
+        {
+          "actor": "blockout_settlement",
+          "avg_ms": 0.351767151767152,
+          "domain": "render"
+        },
+        {
+          "actor": "pair_bank_hunter",
+          "avg_ms": 0.334927234927235,
+          "domain": "render"
+        },
+        {
+          "actor": "pair_beetle_a",
+          "avg_ms": 0.072972972972973,
+          "domain": "render"
+        },
+        {
+          "actor": "pair_beetle_b",
+          "avg_ms": 0.0632016632016632,
+          "domain": "render"
+        },
+        {
+          "actor": "pair_graft_hound",
+          "avg_ms": 0.056964656964657,
+          "domain": "render"
+        }
+      ],
+      "bookkeeping_ms": 464.7,
+      "clock_probe_reads": 128,
+      "clock_step_observed_us": 0,
+      "debug_build": false,
+      "duration": 10,
+      "elapsed": 10.0009,
+      "frame_stats": {
+        "fps": 48.1956623903849,
+        "max_ms": 168.5,
+        "p50_ms": 16.6,
+        "p95_ms": 54.7,
+        "p99_ms": 73.3,
+        "samples": 482
+      },
+      "measurement_windows": {
+        "averages": "whole_capture",
+        "frame_stats": "whole_capture",
+        "p95": "last_256_ticks_or_frames"
+      },
+      "p95_window": 256,
+      "physics_ticks": 601,
+      "platform": "Web",
+      "render_frames": 481,
+      "renderer": "gl_compatibility",
+      "rows": [
+        {
+          "avg_ms": 5.83810316139767,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 1.9,
+          "p95_ms": 5.3,
+          "scope": "actor_physics"
+        },
+        {
+          "avg_ms": 2.07588357588358,
+          "calls": 3848,
+          "domain": "render",
+          "max_call_ms": 1.6,
+          "p95_ms": 2.2,
+          "scope": "actor_present"
+        },
+        {
+          "avg_ms": 0.613643926788686,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 1.4,
+          "p95_ms": 0.7,
+          "scope": "course_metrics"
+        },
+        {
+          "avg_ms": 0.581863560732113,
+          "calls": 100,
+          "domain": "physics",
+          "max_call_ms": 5.3,
+          "p95_ms": 3,
+          "scope": "debug_recording"
+        },
+        {
+          "avg_ms": 0.511813643926789,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.5,
+          "p95_ms": 0.7,
+          "scope": "brain"
+        },
+        {
+          "avg_ms": 0.401830282861897,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.4,
+          "p95_ms": 0.6,
+          "scope": "simulate/motor"
+        },
+        {
+          "avg_ms": 0.401497504159734,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.5,
+          "p95_ms": 0.5,
+          "scope": "sense/perception"
+        },
+        {
+          "avg_ms": 0.292723492723493,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.5,
+          "p95_ms": 0.5,
+          "scope": "present/animation"
+        },
+        {
+          "avg_ms": 0.282861896838602,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.5,
+          "scope": "assess/alertness"
+        },
+        {
+          "avg_ms": 0.27287853577371,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.4,
+          "scope": "observe/firearm"
+        },
+        {
+          "avg_ms": 0.227787021630616,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.4,
+          "scope": "sense/sound_perception"
+        },
+        {
+          "avg_ms": 0.21018711018711,
+          "calls": 20,
+          "domain": "render",
+          "max_call_ms": 11.8,
+          "p95_ms": 0,
+          "scope": "browser_report"
+        },
+        {
+          "avg_ms": 0.201871101871102,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.4,
+          "scope": "present/human_pose"
+        },
+        {
+          "avg_ms": 0.198003327787022,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.4,
+          "p95_ms": 0.4,
+          "scope": "simulate/perceivable"
+        },
+        {
+          "avg_ms": 0.19002079002079,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.4,
+          "scope": "present/actor_audio_feedback"
+        },
+        {
+          "avg_ms": 0.175467775467775,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.3,
+          "scope": "present/world_weapon"
+        },
+        {
+          "avg_ms": 0.173044925124792,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "simulate/melee"
+        },
+        {
+          "avg_ms": 0.172212978369384,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.4,
+          "p95_ms": 0.3,
+          "scope": "simulate/loadout"
+        },
+        {
+          "avg_ms": 0.141787941787942,
+          "calls": 3848,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.3,
+          "scope": "present/swimming_audio"
+        },
+        {
+          "avg_ms": 0.138877338877339,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "present/melee_view"
+        },
+        {
+          "avg_ms": 0.132432432432432,
+          "calls": 3848,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "present/body"
+        },
+        {
+          "avg_ms": 0.122245322245322,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "present/camera"
+        },
+        {
+          "avg_ms": 0.11846921797005,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "observe/perception"
+        },
+        {
+          "avg_ms": 0.116638935108153,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "observe/body"
+        },
+        {
+          "avg_ms": 0.0948419301164725,
+          "calls": 2404,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/alertness_indicator"
+        },
+        {
+          "avg_ms": 0.0936772046589018,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "observe/alertness"
+        },
+        {
+          "avg_ms": 0.0926788685524126,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.3,
+          "scope": "simulate/body"
+        },
+        {
+          "avg_ms": 0.0911813643926789,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.4,
+          "p95_ms": 0.2,
+          "scope": "observe/swimming"
+        },
+        {
+          "avg_ms": 0.0900166389351082,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.2,
+          "scope": "observe/interaction"
+        },
+        {
+          "avg_ms": 0.0888519134775374,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/footsteps"
+        },
+        {
+          "avg_ms": 0.0848232848232848,
+          "calls": 482,
+          "domain": "render",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.2,
+          "scope": "course_present"
+        },
+        {
+          "avg_ms": 0.0844074844074844,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.9,
+          "p95_ms": 0.4,
+          "scope": "present/footstep_audio"
+        },
+        {
+          "avg_ms": 0.0805324459234609,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "sense/swimming"
+        },
+        {
+          "avg_ms": 0.0798668885191348,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/navigation"
+        },
+        {
+          "avg_ms": 0.0756756756756757,
+          "calls": 1924,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "present/alertness_indicator"
+        },
+        {
+          "avg_ms": 0.0717138103161398,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/unarmed"
+        },
+        {
+          "avg_ms": 0.0715474209650582,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.2,
+          "scope": "observe/unarmed"
+        },
+        {
+          "avg_ms": 0.06738768718802,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/animation"
+        },
+        {
+          "avg_ms": 0.0627287853577371,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.2,
+          "scope": "simulate/inventory"
+        },
+        {
+          "avg_ms": 0.0587354409317804,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/lean"
+        },
+        {
+          "avg_ms": 0.0554076539101497,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.2,
+          "scope": "simulate/posture"
+        },
+        {
+          "avg_ms": 0.0545757071547421,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.2,
+          "scope": "assess/perception"
+        },
+        {
+          "avg_ms": 0.053910149750416,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.2,
+          "scope": "observe/navigation"
+        },
+        {
+          "avg_ms": 0.0517470881863561,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.2,
+          "scope": "simulate/firearm"
+        },
+        {
+          "avg_ms": 0.0439267886855241,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.1,
+          "scope": "observe/condition"
+        },
+        {
+          "avg_ms": 0.0405990016638935,
+          "calls": 4808,
+          "domain": "physics",
+          "max_call_ms": 0.3,
+          "p95_ms": 0.1,
+          "scope": "simulate/swimming"
+        },
+        {
+          "avg_ms": 0.0397670549084859,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.1,
+          "scope": "simulate/stamina"
+        },
+        {
+          "avg_ms": 0.0367720465890183,
+          "calls": 3005,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.1,
+          "scope": "simulate/interaction"
+        },
+        {
+          "avg_ms": 0.0291060291060291,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.1,
+          "scope": "present/grenade_view"
+        },
+        {
+          "avg_ms": 0.0234927234927235,
+          "calls": 1924,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "present/combat_pose"
+        },
+        {
+          "avg_ms": 0.0201663201663202,
+          "calls": 20,
+          "domain": "render",
+          "max_call_ms": 0.8,
+          "p95_ms": 0,
+          "scope": "external_observe"
+        },
+        {
+          "avg_ms": 0.0197505197505198,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.1,
+          "scope": "present/firearm_view"
+        },
+        {
+          "avg_ms": 0.0197505197505198,
+          "calls": 2405,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "present/death_presentation"
+        },
+        {
+          "avg_ms": 0.0193011647254576,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "simulate/augmentation"
+        },
+        {
+          "avg_ms": 0.0148086522462562,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "simulate/grenade"
+        },
+        {
+          "avg_ms": 0.0126455906821963,
+          "calls": 4207,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "sense/navigation"
+        },
+        {
+          "avg_ms": 0.0118136439267887,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.2,
+          "p95_ms": 0.1,
+          "scope": "observe/grenade"
+        },
+        {
+          "avg_ms": 0.0112266112266112,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "present/augmentation"
+        },
+        {
+          "avg_ms": 0.00665280665280665,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0.1,
+          "scope": "present/first_person_motion_view"
+        },
+        {
+          "avg_ms": 0.00499168053244592,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "simulate/echo"
+        },
+        {
+          "avg_ms": 0.00415800415800416,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "present/spool"
+        },
+        {
+          "avg_ms": 0.00382695507487521,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "simulate/carrying"
+        },
+        {
+          "avg_ms": 0.00374220374220374,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "present/resonance"
+        },
+        {
+          "avg_ms": 0.00374220374220374,
+          "calls": 481,
+          "domain": "render",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "present/echo"
+        },
+        {
+          "avg_ms": 0.00316139767054908,
+          "calls": 601,
+          "domain": "physics",
+          "max_call_ms": 0.1,
+          "p95_ms": 0,
+          "scope": "simulate/resonance"
+        }
+      ]
+    },
+    "recording": true,
+    "scene_context": {
+      "camera_position_m": [
+        30,
+        1.6,
+        64
+      ],
+      "player_position_m": [
+        30,
+        0,
+        64
+      ],
+      "render_inventory": {
+        "active_lights": 9,
+        "mesh_nodes": 855,
+        "multimesh_instances": 1008,
+        "scene_visible_mesh_nodes": 629,
+        "scene_visible_multimeshes": 29,
+        "scene_visible_shadow_casters": 565,
+        "shadow_lights": [],
+        "top_branches": [
+          [
+            "HydroponicsBlockout_CODE_BUILT_PROTO",
+            179
+          ],
+          [
+            "PairidaezaDressing_CODE_BUILT_PROTO",
+            60
+          ],
+          [
+            "CourseVisuals",
+            59
+          ],
+          [
+            "pair_graft_hound",
+            25
+          ],
+          [
+            "blockout_overlook",
+            25
+          ],
+          [
+            "blockout_settlement",
+            25
+          ],
+          [
+            "PhysicsProps",
+            21
+          ],
+          [
+            "pair_beetle_a",
+            19
+          ],
+          [
+            "pair_beetle_b",
+            19
+          ],
+          [
+            "pair_gallery_scavenger",
+            11
+          ]
+        ]
+      },
+      "visual_zone_roots": null,
+      "visual_zones": []
+    },
+    "selection": {
+      "budget": 240,
+      "level": "hydroponics-blockout",
+      "mode": "manual",
+      "model": "human",
+      "seed": 39,
+      "story_id": "PairidaezaPROTO"
+    },
+    "shadows": false,
+    "view": "first_person",
+    "vision_candidates": 5,
+    "vision_rays": 3
+  },
+  "occlusion_trial": {
+    "on": {
+      "draw_calls": 326,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 2267,
+      "occlusion_culling": true,
+      "physics_ms": 8.4,
+      "platform": "Web",
+      "primitives": 103401,
+      "process_ms": 12.6,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    },
+    "off": {
+      "draw_calls": 675,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 2267,
+      "occlusion_culling": false,
+      "physics_ms": 8.2,
+      "platform": "Web",
+      "primitives": 165139,
+      "process_ms": 18.2,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    }
+  },
+  "occlusion_quality_trial": [],
+  "smoke": false,
+  "errors": []
+}

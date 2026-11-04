@@ -1,0 +1,694 @@
+{
+	"command_line": [
+		"--script",
+		"C:/Godot Projects/sci-fi-imsim/Root/Story/Tests/ProfileHydroponics.gd"
+	],
+	"inventory": {
+		"by_branch": {
+			"CourseVisuals": {
+				"lights": 0,
+				"mesh_instances": 59,
+				"mesh_triangles": 1548,
+				"mesh_vertices": 3096,
+				"multimeshes": 0,
+				"nodes": 71,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"HydroponicsBlockout_CODE_BUILT_PROTO": {
+				"lights": 0,
+				"mesh_instances": 194,
+				"mesh_triangles": 29937,
+				"mesh_vertices": 21509,
+				"multimeshes": 0,
+				"nodes": 422,
+				"shadow_lights": 0,
+				"skeletons": 1,
+				"static_bodies": 36
+			},
+			"PairidaezaDressing_CODE_BUILT_PROTO": {
+				"lights": 0,
+				"mesh_instances": 31,
+				"mesh_triangles": 32431,
+				"mesh_vertices": 17622,
+				"multimeshes": 29,
+				"nodes": 93,
+				"shadow_lights": 0,
+				"skeletons": 4,
+				"static_bodies": 4
+			},
+			"PhysicsProps": {
+				"lights": 0,
+				"mesh_instances": 21,
+				"mesh_triangles": 252,
+				"mesh_vertices": 504,
+				"multimeshes": 0,
+				"nodes": 34,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"ScriptedRoutePreview": {
+				"lights": 0,
+				"mesh_instances": 94,
+				"mesh_triangles": 72192,
+				"mesh_vertices": 49068,
+				"multimeshes": 0,
+				"nodes": 95,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"blockout_overlook": {
+				"lights": 1,
+				"mesh_instances": 45,
+				"mesh_triangles": 8881,
+				"mesh_vertices": 7179,
+				"multimeshes": 0,
+				"nodes": 112,
+				"shadow_lights": 0,
+				"skeletons": 2,
+				"static_bodies": 0
+			},
+			"blockout_settlement": {
+				"lights": 1,
+				"mesh_instances": 45,
+				"mesh_triangles": 8881,
+				"mesh_vertices": 7179,
+				"multimeshes": 0,
+				"nodes": 112,
+				"shadow_lights": 0,
+				"skeletons": 2,
+				"static_bodies": 0
+			},
+			"pair_bank_hunter": {
+				"lights": 1,
+				"mesh_instances": 13,
+				"mesh_triangles": 14041,
+				"mesh_vertices": 10031,
+				"multimeshes": 0,
+				"nodes": 80,
+				"shadow_lights": 0,
+				"skeletons": 2,
+				"static_bodies": 0
+			},
+			"pair_beetle_a": {
+				"lights": 0,
+				"mesh_instances": 19,
+				"mesh_triangles": 12636,
+				"mesh_vertices": 8584,
+				"multimeshes": 0,
+				"nodes": 50,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"pair_beetle_b": {
+				"lights": 0,
+				"mesh_instances": 19,
+				"mesh_triangles": 12636,
+				"mesh_vertices": 8584,
+				"multimeshes": 0,
+				"nodes": 50,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"pair_gallery_scavenger": {
+				"lights": 1,
+				"mesh_instances": 12,
+				"mesh_triangles": 8485,
+				"mesh_vertices": 6387,
+				"multimeshes": 0,
+				"nodes": 82,
+				"shadow_lights": 0,
+				"skeletons": 2,
+				"static_bodies": 0
+			},
+			"pair_graft_hound": {
+				"lights": 0,
+				"mesh_instances": 25,
+				"mesh_triangles": 6972,
+				"mesh_vertices": 4904,
+				"multimeshes": 0,
+				"nodes": 54,
+				"shadow_lights": 0,
+				"skeletons": 0,
+				"static_bodies": 0
+			},
+			"player": {
+				"lights": 3,
+				"mesh_instances": 45,
+				"mesh_triangles": 126261,
+				"mesh_vertices": 66697,
+				"multimeshes": 0,
+				"nodes": 136,
+				"shadow_lights": 0,
+				"skeletons": 4,
+				"static_bodies": 0
+			}
+		},
+		"lights": 16,
+		"mesh_instances": 822,
+		"mesh_triangles": 347250,
+		"mesh_vertices": 222140,
+		"multimeshes": 29,
+		"nodes": 2243,
+		"shadow_lights": 3,
+		"skeletons": 18,
+		"static_bodies": 231
+	},
+	"inventory_note": "Includes hidden/debug MeshInstances; MultiMesh geometry is counted separately as instances, not expanded triangles.",
+	"label": "pair-overlook-after",
+	"platform": "Windows",
+	"renderer": "gl_compatibility",
+	"samples": [
+		{
+			"active_lights": [
+				"Sun",
+				"blockout_light_0",
+				"blockout_light_1",
+				"blockout_light_2",
+				"blockout_light_3",
+				"blockout_light_4",
+				"blockout_light_5",
+				"blockout_light_6",
+				"blockout_light_7"
+			],
+			"draw_calls": {
+				"mean": 1964.78,
+				"p50": 1962.0,
+				"p95": 1968.0
+			},
+			"frame_ms": {
+				"mean": 16.7279233333334,
+				"p50": 13.809,
+				"p95": 48.805
+			},
+			"measured_frames": 600,
+			"mode": "shipped",
+			"physics_ms": {
+				"mean": 5.61488166666669,
+				"p50": 4.204,
+				"p95": 12.387
+			},
+			"primitives": {
+				"mean": 544500.12,
+				"p50": 544489.0,
+				"p95": 544513.0
+			},
+			"process_ms": {
+				"mean": 16.2353099999999,
+				"p50": 13.609,
+				"p95": 26.095
+			},
+			"recording": false,
+			"warmup_frames": 120
+		}
+	],
+	"script_profile": {
+		"active": false,
+		"actors": [
+			{
+				"actor": "blockout_overlook",
+				"avg_ms": 0.676437185929648,
+				"domain": "physics"
+			},
+			{
+				"actor": "pair_gallery_scavenger",
+				"avg_ms": 0.593025125628141,
+				"domain": "physics"
+			},
+			{
+				"actor": "blockout_settlement",
+				"avg_ms": 0.545366834170854,
+				"domain": "physics"
+			},
+			{
+				"actor": "pair_bank_hunter",
+				"avg_ms": 0.531693467336683,
+				"domain": "physics"
+			},
+			{
+				"actor": "pair_beetle_a",
+				"avg_ms": 0.434371859296482,
+				"domain": "physics"
+			},
+			{
+				"actor": "pair_beetle_b",
+				"avg_ms": 0.349472361809045,
+				"domain": "physics"
+			},
+			{
+				"actor": "blockout_overlook",
+				"avg_ms": 0.344895833333333,
+				"domain": "render"
+			},
+			{
+				"actor": "pair_graft_hound",
+				"avg_ms": 0.312311557788945,
+				"domain": "physics"
+			},
+			{
+				"actor": "pair_gallery_scavenger",
+				"avg_ms": 0.294391666666667,
+				"domain": "render"
+			},
+			{
+				"actor": "blockout_settlement",
+				"avg_ms": 0.291691666666667,
+				"domain": "render"
+			},
+			{
+				"actor": "pair_bank_hunter",
+				"avg_ms": 0.260654166666667,
+				"domain": "render"
+			},
+			{
+				"actor": "pair_beetle_a",
+				"avg_ms": 0.0580125,
+				"domain": "render"
+			},
+			{
+				"actor": "pair_beetle_b",
+				"avg_ms": 0.0504958333333333,
+				"domain": "render"
+			},
+			{
+				"actor": "pair_graft_hound",
+				"avg_ms": 0.0484708333333333,
+				"domain": "render"
+			}
+		],
+		"bookkeeping_ms": 87.863,
+		"clock_probe_reads": 128,
+		"clock_step_observed_us": 1,
+		"debug_build": true,
+		"duration": 0.0,
+		"elapsed": 3.305902,
+		"frame_stats": {
+			"fps": 72.5974333177451,
+			"max_ms": 18.47,
+			"p50_ms": 14.116,
+			"p95_ms": 16.162,
+			"p99_ms": 17.894,
+			"samples": 240
+		},
+		"measurement_windows": {
+			"averages": "whole_capture",
+			"frame_stats": "whole_capture",
+			"p95": "last_256_ticks_or_frames"
+		},
+		"p95_window": 256,
+		"physics_ticks": 199,
+		"platform": "Windows",
+		"render_frames": 240,
+		"renderer": "gl_compatibility",
+		"rows": [
+			{
+				"avg_ms": 3.4426783919598,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.989,
+				"p95_ms": 3.9,
+				"scope": "actor_physics"
+			},
+			{
+				"avg_ms": 1.3486125,
+				"calls": 1680,
+				"domain": "render",
+				"max_call_ms": 0.65,
+				"p95_ms": 1.641,
+				"scope": "actor_present"
+			},
+			{
+				"avg_ms": 0.441608040201005,
+				"calls": 199,
+				"domain": "physics",
+				"max_call_ms": 0.565,
+				"p95_ms": 0.492,
+				"scope": "course_metrics"
+			},
+			{
+				"avg_ms": 0.291623115577889,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.095,
+				"p95_ms": 0.342,
+				"scope": "brain"
+			},
+			{
+				"avg_ms": 0.282542713567839,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.199,
+				"p95_ms": 0.362,
+				"scope": "sense/perception"
+			},
+			{
+				"avg_ms": 0.246437185929648,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.071,
+				"p95_ms": 0.279,
+				"scope": "simulate/motor"
+			},
+			{
+				"avg_ms": 0.199575,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.319,
+				"p95_ms": 0.298,
+				"scope": "present/animation"
+			},
+			{
+				"avg_ms": 0.190361809045226,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.075,
+				"p95_ms": 0.218,
+				"scope": "assess/alertness"
+			},
+			{
+				"avg_ms": 0.178482412060302,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.13,
+				"p95_ms": 0.201,
+				"scope": "observe/firearm"
+			},
+			{
+				"avg_ms": 0.1521875,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.197,
+				"p95_ms": 0.179,
+				"scope": "present/world_weapon"
+			},
+			{
+				"avg_ms": 0.143795833333333,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.146,
+				"p95_ms": 0.168,
+				"scope": "present/actor_audio_feedback"
+			},
+			{
+				"avg_ms": 0.130908333333333,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.071,
+				"p95_ms": 0.158,
+				"scope": "present/human_pose"
+			},
+			{
+				"avg_ms": 0.12678391959799,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.146,
+				"p95_ms": 0.136,
+				"scope": "simulate/loadout"
+			},
+			{
+				"avg_ms": 0.125824120603015,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.063,
+				"p95_ms": 0.153,
+				"scope": "sense/sound_perception"
+			},
+			{
+				"avg_ms": 0.124085427135678,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.058,
+				"p95_ms": 0.143,
+				"scope": "simulate/perceivable"
+			},
+			{
+				"avg_ms": 0.121916666666667,
+				"calls": 1680,
+				"domain": "render",
+				"max_call_ms": 0.058,
+				"p95_ms": 0.145,
+				"scope": "present/body"
+			},
+			{
+				"avg_ms": 0.120879396984925,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.077,
+				"p95_ms": 0.131,
+				"scope": "simulate/melee"
+			},
+			{
+				"avg_ms": 0.109729166666667,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.055,
+				"p95_ms": 0.129,
+				"scope": "present/melee_view"
+			},
+			{
+				"avg_ms": 0.0834625,
+				"calls": 1680,
+				"domain": "render",
+				"max_call_ms": 0.038,
+				"p95_ms": 0.098,
+				"scope": "present/swimming_audio"
+			},
+			{
+				"avg_ms": 0.0775375,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.044,
+				"p95_ms": 0.096,
+				"scope": "present/camera"
+			},
+			{
+				"avg_ms": 0.0764824120603015,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.055,
+				"p95_ms": 0.088,
+				"scope": "observe/perception"
+			},
+			{
+				"avg_ms": 0.0750333333333333,
+				"calls": 240,
+				"domain": "render",
+				"max_call_ms": 0.203,
+				"p95_ms": 0.09,
+				"scope": "course_present"
+			},
+			{
+				"avg_ms": 0.0705879396984925,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.109,
+				"p95_ms": 0.177,
+				"scope": "simulate/navigation"
+			},
+			{
+				"avg_ms": 0.06621608040201,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.038,
+				"p95_ms": 0.072,
+				"scope": "simulate/body"
+			},
+			{
+				"avg_ms": 0.0657537688442211,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.034,
+				"p95_ms": 0.071,
+				"scope": "simulate/unarmed"
+			},
+			{
+				"avg_ms": 0.065105527638191,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.023,
+				"p95_ms": 0.07,
+				"scope": "observe/body"
+			},
+			{
+				"avg_ms": 0.0579666666666667,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.107,
+				"p95_ms": 0.07,
+				"scope": "present/alertness_indicator"
+			},
+			{
+				"avg_ms": 0.0547587939698493,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.018,
+				"p95_ms": 0.059,
+				"scope": "observe/swimming"
+			},
+			{
+				"avg_ms": 0.0544723618090452,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.031,
+				"p95_ms": 0.06,
+				"scope": "simulate/alertness_indicator"
+			},
+			{
+				"avg_ms": 0.0536381909547739,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.026,
+				"p95_ms": 0.069,
+				"scope": "simulate/footsteps"
+			},
+			{
+				"avg_ms": 0.0503969849246231,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.04,
+				"p95_ms": 0.055,
+				"scope": "simulate/inventory"
+			},
+			{
+				"avg_ms": 0.0478341708542714,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.016,
+				"p95_ms": 0.054,
+				"scope": "sense/swimming"
+			},
+			{
+				"avg_ms": 0.0462311557788945,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.021,
+				"p95_ms": 0.05,
+				"scope": "observe/alertness"
+			},
+			{
+				"avg_ms": 0.0427688442211055,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.012,
+				"p95_ms": 0.048,
+				"scope": "observe/unarmed"
+			},
+			{
+				"avg_ms": 0.0403718592964824,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.013,
+				"p95_ms": 0.047,
+				"scope": "observe/navigation"
+			},
+			{
+				"avg_ms": 0.0381758793969849,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.05,
+				"p95_ms": 0.042,
+				"scope": "simulate/lean"
+			},
+			{
+				"avg_ms": 0.0363768844221106,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.019,
+				"p95_ms": 0.04,
+				"scope": "simulate/firearm"
+			},
+			{
+				"avg_ms": 0.0363015075376884,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.036,
+				"p95_ms": 0.041,
+				"scope": "simulate/posture"
+			},
+			{
+				"avg_ms": 0.0359195979899498,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.022,
+				"p95_ms": 0.047,
+				"scope": "assess/perception"
+			},
+			{
+				"avg_ms": 0.0338341708542714,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.017,
+				"p95_ms": 0.038,
+				"scope": "simulate/animation"
+			},
+			{
+				"avg_ms": 0.02925,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.04,
+				"p95_ms": 0.05,
+				"scope": "present/footstep_audio"
+			},
+			{
+				"avg_ms": 0.0287738693467337,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.035,
+				"p95_ms": 0.032,
+				"scope": "simulate/interaction"
+			},
+			{
+				"avg_ms": 0.0236884422110553,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.017,
+				"p95_ms": 0.029,
+				"scope": "simulate/swimming"
+			},
+			{
+				"avg_ms": 0.0205708333333333,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.105,
+				"p95_ms": 0.024,
+				"scope": "present/combat_pose"
+			},
+			{
+				"avg_ms": 0.0183969849246231,
+				"calls": 796,
+				"domain": "physics",
+				"max_call_ms": 0.011,
+				"p95_ms": 0.023,
+				"scope": "simulate/stamina"
+			},
+			{
+				"avg_ms": 0.0106083333333333,
+				"calls": 960,
+				"domain": "render",
+				"max_call_ms": 0.006,
+				"p95_ms": 0.013,
+				"scope": "present/death_presentation"
+			},
+			{
+				"avg_ms": 0.00712562814070352,
+				"calls": 1393,
+				"domain": "physics",
+				"max_call_ms": 0.003,
+				"p95_ms": 0.009,
+				"scope": "sense/navigation"
+			}
+		]
+	},
+	"script_profile_mode": "shipped",
+	"static_batch_trial": {
+		"batches": 0,
+		"sources": 0
+	},
+	"timing_note": "frame_ms is measured wall interval; engine process/physics monitors may retain earlier-phase samples. Script scopes are a separate instrumented capture after the last phase.",
+	"view": "overlook"
+}
