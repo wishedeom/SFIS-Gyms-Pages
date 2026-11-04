@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-a0c025181326882c.pck.gz",
-      "raw_bytes": 21758048,
-      "download_bytes": 13016271
+      "url": "game-40619e8f6b8f98c6.pck.gz",
+      "raw_bytes": 21758000,
+      "download_bytes": 13016245
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 409.975,
+  "build_seconds": 29.185,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -160,8 +160,8 @@
       "id": "hydroponics-blockout",
       "category": "story",
       "story_id": "PairidaezaPROTO",
-      "label": "NEW \u00b7 Pairidaeza \u00b7 Living gardens [PROTO]",
-      "description": "Escape an inhabited garden through settlement, irrigation or a concealed inside-wall ascent; reconnect the cross-passage, basin span and freight lift. Club fighters, two-spear hunters, finite-pistol scavengers, territorial beetles and one optional graft hound use the shared combat systems. Counter pulsing spore blooms with timing, feed valves, finite extractor power, respiratory protection or a shot to the stem. Discover Impulse Tendons, Rebreather / gas mask and Induction Grip; no implant is required for the main exit. Optional household favor, raised cache, flooded seed archive and later Engineering repair. Dressings work from Inventory. With a spear drawn, Fire thrusts; Reload throws. PROTO progress and finite supplies persist only for this host session; page reload starts fresh. Pairidaeza is the working name.",
+      "label": "NEW \u00b7 Vaults of Pairidaeza [PROTO]",
+      "description": "Escape an inhabited garden through settlement, irrigation or a concealed inside-wall ascent; reconnect the cross-passage, basin span and freight lift. Club fighters, two-spear hunters, finite-pistol scavengers, territorial beetles and one optional graft hound use the shared combat systems. Counter pulsing spore blooms with timing, feed valves, finite extractor power, respiratory protection or a shot to the stem. Discover Impulse Tendons, Rebreather / gas mask and Induction Grip; no implant is required for the main exit. Optional household favor, raised cache, flooded seed archive and later Engineering repair. Dressings work from Inventory. With a spear drawn, Fire thrusts; Reload throws. PROTO progress and finite supplies persist only for this host session; page reload starts fresh.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/HydroponicsBlockout/HydroponicsBlockout.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics-blockout.jpg"
