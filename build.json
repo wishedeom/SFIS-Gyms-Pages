@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-756e7fdcbbf3a899.pck.gz",
-      "raw_bytes": 21106448,
-      "download_bytes": 12402548
+      "url": "game-984acc3ac851da92.pck.gz",
+      "raw_bytes": 21115600,
+      "download_bytes": 12411934
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 539.902,
+  "build_seconds": 551.21,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -173,7 +173,7 @@
       "category": "story",
       "story_id": "AdvancementPROTO",
       "label": "NEW \u00b7 Recommissioning [PROTO]",
-      "description": "Recover a compatible core and its service procedure, then fit one active implant. Impulse Tendons give a powered leap to the 3 m gallery; Rebreather gives a view-directed dive jet in the immersion tank. Z / the mobile Augment button activates either, with resource costs and cooldowns. Refit freely at the clinic. Sprint the marked circuit and return recovered to learn Paced Recovery. Gains survive visits this session; reload starts fresh. All new presentation and advancement rules are PROTO.",
+      "description": "Recover a core and procedure, then fit an active implant. Impulse Tendons give a powered leap; Rebreather gives an underwater jet. The upper cache, also reached by ramp, unlocks Induction Grip: refit at the east bench, pull compatible cargo and release it onto the rear weight plate to open the lock. Ordinary carrying also works. Z / the mobile Augment button operates all three, with costs and cooldowns. Sprint the circuit to learn Paced Recovery. Gains survive visits this session; reload starts fresh. PROTO.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/Recommissioning/Recommissioning.tscn",
       "preview": "res://Root/Dev/Web/Previews/recommissioning.jpg"
