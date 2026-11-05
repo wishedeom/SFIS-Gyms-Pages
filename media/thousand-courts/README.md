@@ -26,3 +26,8 @@ Browser smoke: verified RTX 3060 / ANGLE D3D11, mobile-quality rendering
 unpopulated entry sample measured 60.1 FPS / 16.7 ms p95 with no runtime errors.
 This is a desktop diagnostic, not phone performance or a populated-area budget.
 Landscape touch UI and the existing portrait landscape-required gate were checked.
+
+The first population pass is now implemented. See ../thousand-courts-population/
+for the current tour, conversations and captures. Original unpopulated blockout
+captures are retained here as development history; the plan and topology above
+are maintained for the current implementation.

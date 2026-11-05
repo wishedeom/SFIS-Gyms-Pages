@@ -5,7 +5,7 @@
 - The user chose **Thousand Courts**, with no leading “The,” for the area after
   Vaults of Pairidaeza. Original ship function: crew habitation.
 - Areas express mechanics, a distinct visual identity, original and evolved use
-  after approximately 3,000 years, factions and individual characters.
+  after approximately 400 post-crisis years (revised 2026-11-04), factions and individual characters.
 - Complex interconnection, concealed passages, back shortcuts and geometry that
   gains a new meaning on return. Several approaches to major situations.
 - Combat should be costly enough to encourage alternatives. Finite supplies and
@@ -47,7 +47,7 @@ amber communal lights and teal maintenance infrastructure. Cloth, lamps, bedding
 water storage, repaired doors and old service labels are later dressing targets.
 The blockout uses distinct colors, schematic furniture and offset door openings.
 
-## Residents and conflict — proposed, not populated yet
+## Residents and conflict — proposed identities, first population implemented
 
 | Group / role | Interest | Gameplay expression to develop |
 | --- | --- | --- |
@@ -61,6 +61,21 @@ The blockout uses distinct colors, schematic furniture and offset door openings.
 Proper names, allegiance, cultural practices and responsibility remain open.
 Do not reuse garden cannibals as generic enemies for all residential households.
 
+The first playable population includes a stair-keeper, public warden, washhouse
+witness, copyist, two additional householders and two armed keepers. Four Talk
+conversations use offline PROTO voice clips. These are ordinary human actors;
+new work tunics distinguish household, record and guard roles. Names/affiliation
+remain proposals. There is no new claim about the external trigger or which AI
+was responsible for the crisis.
+
+Implemented social route: give one physical lamp cell to the household, obtain
+its vouch, request the warden's permission, then ask the copyist for the record.
+The testimony route substitutes a witness for the cell/favor. An independent
+service/stealth route still obtains the desk record without any conversation.
+Authorized keepers patrol without attacking; attacking a keeper ends protection.
+The public cache and keeper magazines are finite. Two portable dressings retain
+the existing Medicine grade and healing ceilings.
+
 ## Topology
 
 See [the two-layer diagram](THOUSAND_COURTS_TOPOLOGY.svg). It expresses connections,
@@ -69,7 +84,7 @@ gallery at +6 m; an unimplemented later-return reward shelf sits at +10.5 m.
 
 | Situation | First reading | Other approaches | Return / recontextualization |
 | --- | --- | --- | --- |
-| Lantern Court / threshold | Public gate bars the northward route | Thread the west household's offset doors; discover and crouch through screened east air return | Release public gate from north to turn a barrier into a direct return |
+| Lantern Court / threshold | Public gate bars the northward route | Obtain household consent/vouch or witness-based permission; discover and crouch through screened east air return | Permission or the rear latch turns the barrier into a direct return |
 | Hearth and Veil Courts | Separate residential territories behind privacy walls | Cross through open alleys or low service apertures; west household stair and east service stair lead upward | Lower spaces become recognizable destinations when viewed from above |
 | Counting Court / archive | Records visible at +6 m; public stair ends at a barred archive door | West household stair reaches the archive's open side; east stair reaches a hand-winched missing span | Release archive front door and descend the previously unusable public stair |
 | Upper residential ring | Distant gallery above the arrival court | Join from archive's west walk | Release a real passenger lift, reconnecting to Lantern Court |
@@ -78,24 +93,26 @@ gallery at +6 m; an unimplemented later-return reward shelf sits at +10.5 m.
 The two archive routes are independent: the household route needs neither duct
 nor bridge. The service route needs crouching and manual bridge operation.
 The low household-to-spine aperture is an additional local connection, not the
-only way out. Main traversal needs no weapon, implant, skill grade or consumable.
+only way out. At least one complete route needs no weapon, implant, skill grade,
+conversation or consumable; the optional household favor spends a real item.
 
-## Immersive-sim situations to implement after spatial review
+## Immersive-sim situations and remaining work
 
 1. **Admission:** negotiate using a household connection, do a useful favor,
    trespass through private rooms, crawl service circulation, or force a guarded
-   public approach. Avoid a universal pass that trivializes every later boundary.
+   public approach. The household favor, witness alternative, rear release and
+   service bypass are implemented. No pass is granted for future areas.
 2. **Access to records:** persuade the copyist, search quietly, use the alternate
    gallery approach, or confront its guards. The geometry already supports the
-   approaches; social checks, guards and consequences are not implemented yet.
+   approaches. The copyist's two evidence conditions, limited-weapon keepers,
+   permission and attack consequence are implemented in this pass.
 3. **The receiving house:** present ledger and optional testimony, investigate
    a rear access, negotiate with divided occupants, or prepare for a dangerous
    fight. Design the interior and outcome after reviewing this blockout.
 
 Reserve scarce ammunition and treatment for decisions rather than filling every
-room with loot. Combat opposition should be authored around these situations,
-not patrols scattered through neutral households. No tuning claim is made by
-the current empty blockout.
+room with loot. Combat opposition is concentrated at the records approaches,
+not scattered through neutral households. Current tuning needs human playtests.
 
 ## Capability assumptions and optional objectives
 
@@ -118,12 +135,18 @@ archive routes, low crawl passages, manually lowered colliding span, rear-releas
 doors, actual passenger lift, four readable notes, ledger/journal objective,
 evidence-gated local completion, Demo traversal, map preview and captures.
 
-Not implemented: inhabitants, dialogue/audio, combat balancing, holding-house
-interior/rescue, campaign travel, cross-map inventory/augment carryover or durable
+Now also implemented: first residents/dialogue/audio, evidence/favor approaches,
+keeper authorization and revocation, limited combat resources, and persistent
+host-session supply receipts and consequences.
+
+Not implemented: final combat balance, civilian schedules/protection reactions,
+holding-house interior/rescue, campaign travel, cross-map inventory/augment carryover or durable
 saves. Vaults of Pairidaeza's exit sign and route scrap name Thousand Courts;
 the actual travel connection remains a later integration task. Map selection
-starts a separate blockout session. Replay resets physical/objective state;
-the host-memory journal can retain notes until the host closes.
+starts a separate prototype session. Physical replay reapplies social/objective
+state and spent supplies; the host-memory journal/inventory and consequences
+last until page reload. The old empty-space acceptance remains available with
+population explicitly disabled.
 
 Acceptance uses the actual motor and normal Use: household route, low duct/east
 ascent, lowered span crossing, ledger recovery, central return, rear gate,
