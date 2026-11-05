@@ -3,12 +3,12 @@
     "game.wasm": {
       "url": "game-0f09ecee706f5db3.wasm.gz",
       "raw_bytes": 41967531,
-      "download_bytes": 9296574
+      "download_bytes": 9279586
     },
     "game.pck": {
-      "url": "game-2d73df86290bcf2d.pck.gz",
-      "raw_bytes": 22879056,
-      "download_bytes": 14077736
+      "url": "game-19435498aaa324bf.pck.gz",
+      "raw_bytes": 22868032,
+      "download_bytes": 14043861
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 29.533,
+  "build_seconds": 28.028,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -171,7 +171,7 @@
       "category": "story",
       "story_id": "ThousandCourtsPROTO",
       "label": "NEW \u00b7 Thousand Courts [PROTO]",
-      "description": "Trace the sleepers through inhabited crew quarters. Six residents, four PROTO-voiced conversations, two public keepers, a mechanical Court Inspector, an Induction Grip keeper and an Optical Veil runner. Obtain a household vouch or washhouse testimony for passage, or use the concealed service stair and hand-winched span. The bonded store adds roll-based admission, a low luggage return, finite knife/ammunition and a crate-reachable Optical Veil case; fit it at the household bench. Washhouse works offers movable cargo, an independent crouched bypass, a finite baton, corroborating handling tag and a return latch. Pressure machinery remains isolated. The inspector has a rear service shutdown and local feeder. Public permission does not authorize the store or private runner; the transfer ledger and handling tag permit receiving-side inspection. No implant or supply is needed for the main route. Find the Screened House frontage; the holding-house interior/rescue remains planned. The connected Crew Transit entrance returns to the gardens with the current inventory. Host-session consequences, fitted Veil and spent supplies persist through replay; page reload starts fresh.",
+      "description": "Trace the sleepers through inhabited crew quarters. Six residents, four PROTO-voiced conversations, two public keepers, a mechanical Court Inspector, an Induction Grip keeper and an Optical Veil runner. Obtain a household vouch or washhouse testimony for passage, or use the concealed service stair and hand-winched span. The bonded store adds roll-based admission, a low luggage return, finite knife/ammunition and a crate-reachable Optical Veil case; fit it at the household bench. Washhouse works offers movable cargo, an independent crouched bypass, a finite baton, corroborating handling tag and a return latch. Pressure machinery remains isolated. The inspector has a rear service shutdown and local feeder. Public permission does not authorize the store or private runner; the transfer ledger and handling tag permit receiving-side inspection. No implant or supply is needed for the main route. Choose either northern district first: isolate the damaged return and restore receiving-house air in Cistern Works, or recover release authority in the Dispatch Archive using its hand-cranked shutter or low service bypass. Both areas return to the Courts. A live checklist tracks the two independent objectives. With both complete and the transfer ledger read, Use the Screened House door and enter its receiving vestibule. Deeper holding rooms and rescue remain planned. The connected Crew Transit entrance returns to the gardens with the current inventory. Host-session consequences, fitted Veil and spent supplies persist through replay; page reload starts fresh.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/ThousandCourts/ThousandCourts.tscn",
       "preview": "res://Root/Dev/Web/Previews/thousand-courts.jpg"

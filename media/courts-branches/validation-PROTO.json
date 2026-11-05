@@ -1,0 +1,24 @@
+{
+  "asset_status": "AI-GENERATED PROCEDURAL VISUALS / SAMPLE NARRATIVE - PROTO ONLY",
+  "final_pack": "game-19435498aaa324bf.pck.gz",
+  "story_candidate_pack": "game-d439cf2202c8f0c2.pck.gz",
+  "story_candidate_native_checks": 2372,
+  "branch_gameplay_candidate_pack": "game-a3cb6ecc336efe1a.pck.gz",
+  "branch_checks": {
+    "checks": 51,
+    "failures": [],
+    "passed": true
+  },
+  "travel_checks": 47,
+  "final_menu_checks": 51,
+  "final_occlusion_checks": 3,
+  "final_browser_checks": 9,
+  "browser_errors": [],
+  "scope": "Both orders, actual motor traversal, crouched archive bypass, complete and partial revisits, duplicate Use, receiving interlock and actual garden round-trip persistence. Final presentation-only changes cover camera range, preview and checklist layout/telemetry; final browser checks cover viewport bounds and toolbar clearance. Portrait retains the existing rotate-to-landscape gate. Host-session persistence; page reload starts fresh.",
+  "tour": {
+    "file": "tour-mobile-PROTO.mp4",
+    "seconds": 25.7,
+    "bytes": 163604,
+    "provenance": "Arranged live native PROTO tour. Camera and body positions staged; objective controls use ordinary Use. Not a full-playthrough recording."
+  }
+}
