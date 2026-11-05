@@ -1,0 +1,789 @@
+{
+  "label": "thousand-courts-release",
+  "level": "thousand-courts",
+  "kind": "desktop-web-diagnostic",
+  "mode": "manual",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002503) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "requested_gpu": "hardware",
+  "cpu_slowdown": 1,
+  "recording": false,
+  "shadows": false,
+  "occlusion_rays_per_thread": null,
+  "viewport": "780x360",
+  "note": "Not a real mobile GPU, device emulation, or S24 FPS prediction.",
+  "manifest": {
+    "url": "game-b5dc4a9566e33f7b.pck.gz",
+    "raw_bytes": 21818144,
+    "download_bytes": 13074905
+  },
+  "frames": {
+    "fps": 60.06829341135655,
+    "samples": 241,
+    "p50_ms": 16.69999999999891,
+    "p95_ms": 16.700000000000728,
+    "p99_ms": 16.80000000000109,
+    "max_ms": 16.80000000000109
+  },
+  "engine": {
+    "draw_calls": 199,
+    "gpu_ms": -1,
+    "height": 720,
+    "nodes": 894,
+    "occlusion_culling": true,
+    "physics_ms": 0.901,
+    "platform": "Web",
+    "primitives": 4439,
+    "process_ms": 5.401,
+    "renderer": "gl_compatibility",
+    "scale": 0.5,
+    "timing_window": "last_1s_peak",
+    "width": 1280
+  },
+  "capture": {
+    "fps": 59.99400059994,
+    "max_ms": 2991,
+    "measurement_windows": {
+      "engine": "latest_snapshot",
+      "fps": "last_1s",
+      "frame_stats": "last_10s"
+    },
+    "now": 15.368301,
+    "p50_ms": 16.699,
+    "p95_ms": 17.3,
+    "p99_ms": 23.699,
+    "paused": false,
+    "samples": 540,
+    "slow": 271,
+    "very_slow": 4,
+    "capture_us": 599,
+    "engine": {
+      "draw_calls": 199,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 894,
+      "occlusion_culling": true,
+      "physics_ms": 0.901,
+      "platform": "Web",
+      "primitives": 4439,
+      "process_ms": 5.401,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    },
+    "gpu_capture": {
+      "active": false,
+      "avg_ms": null,
+      "elapsed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples": 0
+    },
+    "history": [
+      {
+        "fps": 0.334336342360415,
+        "gap": true,
+        "max_ms": 2991,
+        "time": 6.2201
+      },
+      {
+        "fps": 13.5408697300628,
+        "gap": false,
+        "max_ms": 84.301,
+        "time": 6.367801
+      },
+      {
+        "fps": 32.626427406199,
+        "gap": false,
+        "max_ms": 74.5,
+        "time": 6.490401
+      },
+      {
+        "fps": 66.1000944287063,
+        "gap": false,
+        "max_ms": 19.4,
+        "time": 6.596301
+      },
+      {
+        "fps": 60.1379736939321,
+        "gap": false,
+        "max_ms": 17,
+        "time": 6.7127
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 6.8127
+      },
+      {
+        "fps": 59.1133004926108,
+        "gap": false,
+        "max_ms": 18.2,
+        "time": 6.9142
+      },
+      {
+        "fps": 60.7111882046834,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 7.0295
+      },
+      {
+        "fps": 59.8802395209581,
+        "gap": false,
+        "max_ms": 17.2,
+        "time": 7.1297
+      },
+      {
+        "fps": 60.189165950129,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 7.246
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 7.3461
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.199,
+        "time": 7.4462
+      },
+      {
+        "fps": 59.9394611442443,
+        "gap": false,
+        "max_ms": 17,
+        "time": 7.546301
+      },
+      {
+        "fps": 60.0343053173242,
+        "gap": false,
+        "max_ms": 18.899,
+        "time": 7.662901
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 16.701,
+        "time": 7.779401
+      },
+      {
+        "fps": 60.0348201957135,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 7.896
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.601,
+        "time": 7.9961
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 8.0962
+      },
+      {
+        "fps": 60.189165950129,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 8.2125
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 17,
+        "time": 8.3126
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 8.4126
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.401,
+        "time": 8.5127
+      },
+      {
+        "fps": 59.982348051859,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 8.629401
+      },
+      {
+        "fps": 59.9320199659244,
+        "gap": false,
+        "max_ms": 16.901,
+        "time": 8.7462
+      },
+      {
+        "fps": 59.8796419197413,
+        "gap": false,
+        "max_ms": 17.3,
+        "time": 8.846401
+      },
+      {
+        "fps": 60.2933703132671,
+        "gap": false,
+        "max_ms": 23.699,
+        "time": 8.9625
+      },
+      {
+        "fps": 59.8802395209581,
+        "gap": false,
+        "max_ms": 18.5,
+        "time": 9.0627
+      },
+      {
+        "fps": 60.0858369098713,
+        "gap": false,
+        "max_ms": 16.701,
+        "time": 9.1792
+      },
+      {
+        "fps": 59.7609561752988,
+        "gap": false,
+        "max_ms": 17,
+        "time": 9.2796
+      },
+      {
+        "fps": 60.1374570446735,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 9.396
+      },
+      {
+        "fps": 58.9385173033664,
+        "gap": false,
+        "max_ms": 18.4,
+        "time": 9.497801
+      },
+      {
+        "fps": 60.9761409071508,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 9.6126
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.701,
+        "time": 9.7126
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.899,
+        "time": 9.8126
+      },
+      {
+        "fps": 60.0343053173242,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 9.9292
+      },
+      {
+        "fps": 59.7609561752988,
+        "gap": false,
+        "max_ms": 18.301,
+        "time": 10.0296
+      },
+      {
+        "fps": 60.1886484209078,
+        "gap": false,
+        "max_ms": 16.701,
+        "time": 10.145901
+      },
+      {
+        "fps": 60.0348201957135,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 10.2625
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 17,
+        "time": 10.3626
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 10.4626
+      },
+      {
+        "fps": 59.8796419197413,
+        "gap": false,
+        "max_ms": 18.4,
+        "time": 10.562801
+      },
+      {
+        "fps": 60.1379736939321,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 10.6792
+      },
+      {
+        "fps": 59.9394611442443,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 10.779301
+      },
+      {
+        "fps": 59.8808371341031,
+        "gap": false,
+        "max_ms": 16.901,
+        "time": 10.8795
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 10.996
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 18.3,
+        "time": 11.1125
+      },
+      {
+        "fps": 59.8802395209581,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 11.2127
+      },
+      {
+        "fps": 60.0337904477663,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 11.329301
+      },
+      {
+        "fps": 59.9833760357844,
+        "gap": false,
+        "max_ms": 16.899,
+        "time": 11.446
+      },
+      {
+        "fps": 59.1211222878185,
+        "gap": false,
+        "max_ms": 18.5,
+        "time": 11.564401
+      },
+      {
+        "fps": 60.8695652173913,
+        "gap": false,
+        "max_ms": 17.6,
+        "time": 11.679401
+      },
+      {
+        "fps": 60.1374570446735,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 11.795801
+      },
+      {
+        "fps": 60.0343053173242,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 11.912401
+      },
+      {
+        "fps": 59.8808371341031,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 12.0126
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 18.5,
+        "time": 12.1126
+      },
+      {
+        "fps": 59.982348051859,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 12.229301
+      },
+      {
+        "fps": 60.1379736939321,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 12.3457
+      },
+      {
+        "fps": 59.9394611442443,
+        "gap": false,
+        "max_ms": 17,
+        "time": 12.445801
+      },
+      {
+        "fps": 59.9320199659244,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 12.5626
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 18.6,
+        "time": 12.6791
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 12.7792
+      },
+      {
+        "fps": 60.0337904477663,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 12.895801
+      },
+      {
+        "fps": 60.0343053173242,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 13.012401
+      },
+      {
+        "fps": 58.9976302618511,
+        "gap": false,
+        "max_ms": 18.299,
+        "time": 13.1141
+      },
+      {
+        "fps": 60.8166811468288,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 13.2292
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 13.3457
+      },
+      {
+        "fps": 59.9394611442443,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 13.445801
+      },
+      {
+        "fps": 59.9833760357844,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 13.5625
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.5,
+        "time": 13.6626
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 13.7791
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 13.8791
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.8,
+        "time": 13.9792
+      },
+      {
+        "fps": 60.0337904477663,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 14.095801
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 18.5,
+        "time": 14.195801
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 14.295901
+      },
+      {
+        "fps": 60.0348201957135,
+        "gap": false,
+        "max_ms": 16.899,
+        "time": 14.4125
+      },
+      {
+        "fps": 59.9828620394173,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 14.5292
+      },
+      {
+        "fps": 60.0337904477663,
+        "gap": false,
+        "max_ms": 16.799,
+        "time": 14.645801
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 18.399,
+        "time": 14.745901
+      },
+      {
+        "fps": 59.9406587478396,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 14.846
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 16.801,
+        "time": 14.9625
+      },
+      {
+        "fps": 59.9400599400599,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 15.0626
+      },
+      {
+        "fps": 60,
+        "gap": false,
+        "max_ms": 16.9,
+        "time": 15.1626
+      },
+      {
+        "fps": 60.0858369098712,
+        "gap": false,
+        "max_ms": 18.201,
+        "time": 15.2791
+      }
+    ],
+    "history_reset": true,
+    "physics": {
+      "active_rigid_bodies": 1,
+      "collision_pairs": 4,
+      "islands": 1,
+      "max_steps_per_frame": 8,
+      "scene": {
+        "colliders": {
+          "animatable": 1,
+          "area": 0,
+          "character": 1,
+          "other": 0,
+          "rigid": 0,
+          "static": 115
+        },
+        "collision_masks": [
+          [
+            "animatable",
+            1,
+            1,
+            1
+          ],
+          [
+            "character",
+            2,
+            7,
+            1
+          ],
+          [
+            "static",
+            1,
+            0,
+            4
+          ],
+          [
+            "static",
+            1,
+            1,
+            111
+          ]
+        ],
+        "ray_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_cast_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_types": {
+          "BoxShape3D": 113,
+          "CapsuleShape3D": 1,
+          "ConvexPolygonShape3D": 3
+        },
+        "shapes": {
+          "disabled": 1,
+          "enabled": 116,
+          "polygons_disabled": 0,
+          "polygons_enabled": 0
+        },
+        "static_sources": [
+          {
+            "bodies": 17,
+            "disabled_shapes": 1,
+            "enabled_shapes": 16,
+            "shape_types": {
+              "BoxShape3D": 16
+            },
+            "source": "ThousandCourts_AI_GENERATED_PROTO",
+            "zero_shape_bodies": 1
+          },
+          {
+            "bodies": 98,
+            "disabled_shapes": 0,
+            "enabled_shapes": 98,
+            "shape_types": {
+              "BoxShape3D": 95,
+              "ConvexPolygonShape3D": 3
+            },
+            "source": "course_root",
+            "zero_shape_bodies": 0
+          }
+        ],
+        "zero_shape_bodies": {
+          "static": 1
+        }
+      },
+      "tick_hz": 60
+    },
+    "profile": {
+      "active": false,
+      "actors": [],
+      "bookkeeping_ms": 0,
+      "clock_probe_reads": 128,
+      "clock_step_observed_us": 0,
+      "debug_build": false,
+      "duration": 10,
+      "elapsed": 0,
+      "frame_stats": {
+        "fps": 0,
+        "max_ms": 0,
+        "p50_ms": 0,
+        "p95_ms": 0,
+        "p99_ms": 0,
+        "samples": 0
+      },
+      "measurement_windows": {
+        "averages": "whole_capture",
+        "frame_stats": "whole_capture",
+        "p95": "last_256_ticks_or_frames"
+      },
+      "p95_window": 256,
+      "physics_ticks": 1,
+      "platform": "Web",
+      "render_frames": 1,
+      "renderer": "gl_compatibility",
+      "rows": []
+    },
+    "recording": false,
+    "scene_context": {
+      "camera_position_m": [
+        0,
+        1.6,
+        47
+      ],
+      "player_position_m": [
+        0,
+        0,
+        47
+      ],
+      "render_inventory": {
+        "active_lights": 5,
+        "mesh_nodes": 251,
+        "multimesh_instances": 0,
+        "scene_visible_mesh_nodes": 200,
+        "scene_visible_multimeshes": 0,
+        "scene_visible_shadow_casters": 142,
+        "shadow_lights": [],
+        "top_branches": [
+          [
+            "CourseVisuals",
+            58
+          ],
+          [
+            "ThousandCourts_AI_GENERATED_PROTO",
+            43
+          ],
+          [
+            "ArchiveEastLip_PROTO",
+            1
+          ],
+          [
+            "EastWinchLanding_PROTO",
+            1
+          ],
+          [
+            "WestArchiveWalk_PROTO",
+            1
+          ],
+          [
+            "PublicUpperLanding_PROTO",
+            1
+          ],
+          [
+            "EastUpperLanding_PROTO",
+            1
+          ],
+          [
+            "WestUpperLanding_PROTO",
+            1
+          ],
+          [
+            "PublicStair_PROTO",
+            1
+          ],
+          [
+            "ServiceStair_PROTO",
+            1
+          ]
+        ]
+      },
+      "visual_zone_roots": null,
+      "visual_zones": []
+    },
+    "selection": {
+      "budget": 240,
+      "level": "thousand-courts",
+      "mode": "manual",
+      "model": "human",
+      "seed": 39,
+      "story_id": "ThousandCourtsPROTO"
+    },
+    "shadows": false,
+    "view": "first_person",
+    "vision_candidates": 0,
+    "vision_rays": 0
+  },
+  "occlusion_trial": null,
+  "occlusion_quality_trial": [],
+  "smoke": true,
+  "errors": []
+}

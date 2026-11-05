@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-40619e8f6b8f98c6.pck.gz",
-      "raw_bytes": 21758000,
-      "download_bytes": 13016245
+      "url": "game-b5dc4a9566e33f7b.pck.gz",
+      "raw_bytes": 21818144,
+      "download_bytes": 13074905
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 29.185,
+  "build_seconds": 25.877,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -165,6 +165,16 @@
       "featured": true,
       "autonomous_scene": "res://Root/Story/HydroponicsBlockout/HydroponicsBlockout.tscn",
       "preview": "res://Root/Dev/Web/Previews/hydroponics-blockout.jpg"
+    },
+    {
+      "id": "thousand-courts",
+      "category": "story",
+      "story_id": "ThousandCourtsPROTO",
+      "label": "NEW \u00b7 Thousand Courts [PROTO]",
+      "description": "First spatial blockout of former crew habitation. Trace the sleepers: read the transfer ledger above Counting Court, then locate the Screened House in Veil Court. Thread through a household and its west stair, or crouch through the east air return and hand-winch the gallery span. Release the public gate and archive door from behind; unlock a passenger lift back to Lantern Court. No implant, weapon or resource is required. Residents, combat and negotiations are planned, not implemented in this blockout. Select separately from Vaults of Pairidaeza; campaign travel and inventory carryover are not yet connected.",
+      "featured": true,
+      "autonomous_scene": "res://Root/Story/ThousandCourts/ThousandCourts.tscn",
+      "preview": "res://Root/Dev/Web/Previews/thousand-courts.jpg"
     },
     {
       "id": "silent-relay",

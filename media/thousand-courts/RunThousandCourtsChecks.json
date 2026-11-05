@@ -1,0 +1,27 @@
+{
+  "checks": 32,
+  "demo": {
+    "elapsed": 67.0999999999975,
+    "metrics": {
+      "alert_episodes": 0,
+      "alerted_seconds": 0.0,
+      "elapsed": 67.0999999999975,
+      "guard_seen_seconds": 0.0,
+      "peak_alertness": 0.0,
+      "per_guard": {},
+      "seen_seconds": 0.0,
+      "unseen_percent": 100.0
+    },
+    "objectives": {
+      "completed": [],
+      "events": [],
+      "extraction_unlocked": true
+    },
+    "peak_height": 6.00058078765869,
+    "reason": "courts_holding_house_located",
+    "scenario": "[PROTO] Trace the sleepers: recover the transfer ledger, then find the Screened House",
+    "success": true
+  },
+  "failures": [],
+  "passed": true
+}
