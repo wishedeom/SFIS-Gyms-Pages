@@ -1,0 +1,297 @@
+{
+  "label": "courts-challenges",
+  "level": "thousand-courts",
+  "kind": "desktop-web-diagnostic",
+  "mode": "manual",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002503) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "requested_gpu": "hardware",
+  "cpu_slowdown": 1,
+  "recording": false,
+  "shadows": false,
+  "occlusion_rays_per_thread": null,
+  "viewport": "780x360",
+  "note": "Not a real mobile GPU, device emulation, or S24 FPS prediction.",
+  "manifest": {
+    "url": "game-4d3466f52b268f2a.pck.gz",
+    "raw_bytes": 22803808,
+    "download_bytes": 14005861
+  },
+  "frames": {
+    "fps": 60.181875612086344,
+    "samples": 362,
+    "p50_ms": 16.69999999999709,
+    "p95_ms": 16.799999999999272,
+    "p99_ms": 16.799999999999272,
+    "max_ms": 16.80000000000291
+  },
+  "engine": {
+    "draw_calls": 374,
+    "gpu_ms": -1,
+    "height": 720,
+    "nodes": 1712,
+    "occlusion_culling": true,
+    "physics_ms": 5.5,
+    "platform": "Web",
+    "primitives": 67736,
+    "process_ms": 12.5,
+    "renderer": "gl_compatibility",
+    "scale": 0.5,
+    "timing_window": "last_1s_peak",
+    "width": 1280
+  },
+  "capture": {
+    "fps": 59.1835281207023,
+    "max_ms": 27.7,
+    "measurement_windows": {
+      "engine": "latest_snapshot",
+      "fps": "last_1s",
+      "frame_stats": "last_10s"
+    },
+    "now": 20.763801,
+    "p50_ms": 16.699,
+    "p95_ms": 17.5,
+    "p99_ms": 18.901,
+    "paused": false,
+    "samples": 599,
+    "slow": 301,
+    "very_slow": 0,
+    "capture_us": 1800,
+    "engine": {
+      "draw_calls": 374,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 1712,
+      "occlusion_culling": true,
+      "physics_ms": 5.5,
+      "platform": "Web",
+      "primitives": 67736,
+      "process_ms": 12.5,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    },
+    "gpu_capture": {
+      "active": false,
+      "avg_ms": null,
+      "elapsed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples": 0
+    },
+    "history": [
+      {
+        "fps": 53.9568345323741,
+        "gap": false,
+        "max_ms": 27.7,
+        "time": 20.726301
+      }
+    ],
+    "history_reset": false,
+    "physics": {
+      "active_rigid_bodies": 10,
+      "collision_pairs": 25,
+      "islands": 10,
+      "max_steps_per_frame": 8,
+      "scene": {
+        "colliders": {
+          "animatable": 1,
+          "area": 0,
+          "character": 10,
+          "other": 0,
+          "rigid": 9,
+          "static": 152
+        },
+        "collision_masks": [
+          [
+            "animatable",
+            1,
+            1,
+            1
+          ],
+          [
+            "character",
+            2,
+            7,
+            10
+          ],
+          [
+            "rigid",
+            1,
+            3,
+            9
+          ],
+          [
+            "static",
+            1,
+            0,
+            6
+          ],
+          [
+            "static",
+            1,
+            1,
+            146
+          ]
+        ],
+        "ray_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_cast_nodes": {
+          "disabled": 0,
+          "enabled": 0
+        },
+        "shape_types": {
+          "BoxShape3D": 159,
+          "CapsuleShape3D": 10,
+          "ConvexPolygonShape3D": 3
+        },
+        "shapes": {
+          "disabled": 1,
+          "enabled": 171,
+          "polygons_disabled": 0,
+          "polygons_enabled": 0
+        },
+        "static_sources": [
+          {
+            "bodies": 29,
+            "disabled_shapes": 1,
+            "enabled_shapes": 28,
+            "shape_types": {
+              "BoxShape3D": 28
+            },
+            "source": "ThousandCourts_AI_GENERATED_PROTO",
+            "zero_shape_bodies": 1
+          },
+          {
+            "bodies": 123,
+            "disabled_shapes": 0,
+            "enabled_shapes": 123,
+            "shape_types": {
+              "BoxShape3D": 120,
+              "ConvexPolygonShape3D": 3
+            },
+            "source": "course_root",
+            "zero_shape_bodies": 0
+          }
+        ],
+        "zero_shape_bodies": {
+          "static": 1
+        }
+      },
+      "tick_hz": 60
+    },
+    "profile": {
+      "active": false,
+      "actors": [],
+      "bookkeeping_ms": 0,
+      "clock_probe_reads": 128,
+      "clock_step_observed_us": 0,
+      "debug_build": false,
+      "duration": 10,
+      "elapsed": 0,
+      "frame_stats": {
+        "fps": 0,
+        "max_ms": 0,
+        "p50_ms": 0,
+        "p95_ms": 0,
+        "p99_ms": 0,
+        "samples": 0
+      },
+      "measurement_windows": {
+        "averages": "whole_capture",
+        "frame_stats": "whole_capture",
+        "p95": "last_256_ticks_or_frames"
+      },
+      "p95_window": 256,
+      "physics_ticks": 1,
+      "platform": "Web",
+      "render_frames": 1,
+      "renderer": "gl_compatibility",
+      "rows": []
+    },
+    "recording": false,
+    "scene_context": {
+      "camera_position_m": [
+        0,
+        1.6,
+        47
+      ],
+      "player_position_m": [
+        0,
+        0,
+        47
+      ],
+      "render_inventory": {
+        "active_lights": 5,
+        "mesh_nodes": 472,
+        "multimesh_instances": 0,
+        "scene_visible_mesh_nodes": 381,
+        "scene_visible_multimeshes": 0,
+        "scene_visible_shadow_casters": 320,
+        "shadow_lights": [],
+        "top_branches": [
+          [
+            "ThousandCourts_AI_GENERATED_PROTO",
+            162
+          ],
+          [
+            "CourseVisuals",
+            61
+          ],
+          [
+            "PhysicsProps",
+            14
+          ],
+          [
+            "courts_stair_keeper_guard",
+            8
+          ],
+          [
+            "courts_store_custodian",
+            6
+          ],
+          [
+            "courts_gallery_keeper",
+            6
+          ],
+          [
+            "ArchiveSide-10_0_-42_0_PROTO",
+            1
+          ],
+          [
+            "ArchiveSide-10_0_-30_0_PROTO",
+            1
+          ],
+          [
+            "ArchiveSide10_0_-42_0_PROTO",
+            1
+          ],
+          [
+            "ArchiveSide10_0_-30_0_PROTO",
+            1
+          ]
+        ]
+      },
+      "visual_zone_roots": null,
+      "visual_zones": []
+    },
+    "selection": {
+      "budget": 240,
+      "level": "thousand-courts",
+      "mode": "manual",
+      "model": "human",
+      "seed": 39,
+      "story_id": "ThousandCourtsPROTO"
+    },
+    "shadows": false,
+    "view": "first_person",
+    "vision_candidates": 4,
+    "vision_rays": 0
+  },
+  "occlusion_trial": null,
+  "occlusion_quality_trial": [],
+  "smoke": true,
+  "errors": []
+}

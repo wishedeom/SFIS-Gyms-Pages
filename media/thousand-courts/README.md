@@ -31,3 +31,5 @@ The first population pass is now implemented. See ../thousand-courts-population/
 for the current tour, conversations and captures. Original unpopulated blockout
 captures are retained here as development history; the plan and topology above
 are maintained for the current implementation.
+
+The next challenge increment adds a bonded store, dry washhouse loop and optional Optical Veil. See [current challenge captures and scope](../thousand-courts-challenges/README.md). Earlier images and videos remain development history.

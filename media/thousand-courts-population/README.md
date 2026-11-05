@@ -44,3 +44,5 @@ performance or a whole-level budget. Pack: `9df785f6a429eaf0`.
 - [Population acceptance result](RunCourtsPopulationChecks.json)
 - [Browser/performance diagnostic](courts-population.json)
 - [Browser landscape controls](courts-population-landscape-PROTO.png)
+
+The next challenge increment adds a bonded store, dry washhouse loop and optional Optical Veil. See [current challenge captures and scope](../thousand-courts-challenges/README.md). Earlier images and videos remain development history.

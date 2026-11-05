@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#ede7da}.title{font-size:30px;font-weight:bold}.name{font-size:22px;font-weight:bold}.body{font-size:17px}.small{font-size:15px;fill:#becad0}.old{fill:#293b46;stroke:#83949b;stroke-width:2}.new{fill:#3e3545;stroke:#d8b38a;stroke-width:2;stroke-dasharray:8 5}.edge{fill:none;stroke:#9daeb2;stroke-width:4;marker-start:url(#a);marker-end:url(#a)}.bypass{fill:none;stroke:#77c8bc;stroke-width:4;stroke-dasharray:8 5;marker-end:url(#a)}.evidence{fill:none;stroke:#e2ba72;stroke-width:3;stroke-dasharray:3 6;marker-end:url(#a)}</style>
+<rect width="1440" height="1120" fill="#121c25"/>
+<text x="40" y="49" class="title">THOUSAND COURTS / CHALLENGE EXPANSION</text>
+<text x="40" y="82" class="small">TARGET TOPOLOGY / 2026-11-05 / Store and dry washhouse loops prototyped; receiving rooms and pressure systems proposed.</text>
+<!-- Ordinary routes and proposed lasting connections. -->
+<path d="M720 880V780" class="edge"/>
+<path d="M570 920H220V780" class="edge"/><path d="M870 920H1220V780" class="bypass"/>
+<path d="M220 680V530" class="edge"/><path d="M1220 680V530" class="edge"/>
+<path d="M220 350V210H560" class="edge"/><path d="M1220 350V210H880" class="bypass"/>
+<path d="M720 680V530" class="edge"/><path d="M720 270V350" class="bypass"/>
+<path d="M380 435H560" class="bypass"/><path d="M1060 435H880" class="bypass"/>
+<path d="M380 725H430V570H660V530" class="evidence"/>
+<path d="M1060 725H1010V570H780V530" class="evidence"/>
+<text x="288" y="190" class="small">West stair / return ring + lift</text>
+<text x="940" y="190" class="small">Existing east service ascent</text>
+<text x="735" y="317" class="small">Long balcony approach</text>
+<text x="391" y="422" class="small">Sorting ledge loop</text>
+<text x="890" y="422" class="small">Service rear entry</text>
+<text x="235" y="606" class="small">Claim / low luggage return</text>
+<text x="1066" y="606" class="small">Dry utility / timing / cargo</text>
+<text x="464" y="624" class="small">Evidence changes options</text>
+<text x="733" y="652" class="small">Reception / observation</text>
+<!-- Existing anchors. -->
+<rect x="560" y="150" width="320" height="120" rx="12" class="old"/>
+<text x="585" y="186" class="name">Counting Court +6 m</text>
+<text x="585" y="217" class="body">Ledger / copyist / archive keepers</text>
+<text x="585" y="248" class="small">Address reinterprets the rooms below</text>
+<rect x="60" y="680" width="320" height="100" rx="12" class="old"/>
+<text x="85" y="716" class="name">Hearth / lower court</text>
+<text x="85" y="747" class="body">Household favor / disputed roll</text>
+<rect x="560" y="680" width="320" height="100" rx="12" class="old"/>
+<text x="585" y="716" class="name">Public spine</text>
+<text x="585" y="747" class="body">Keeper permission / direct return</text>
+<rect x="1060" y="680" width="320" height="100" rx="12" class="old"/>
+<text x="1085" y="716" class="name">Veil Court / witness</text>
+<text x="1085" y="747" class="body">Safe front room / testimony</text>
+<rect x="560" y="880" width="320" height="90" rx="12" class="old"/>
+<text x="585" y="915" class="name">Lantern Court / arrival</text>
+<text x="585" y="948" class="small">Local Optical Veil fitting bench</text>
+<!-- New situations. -->
+<rect x="60" y="350" width="320" height="180" rx="12" class="new"/>
+<text x="85" y="387" class="name">BONDED STORE</text>
+<text x="85" y="418" class="body">Claim / sneak / climb / fight</text>
+<text x="85" y="448" class="body">One baton custodian</text>
+<text x="85" y="478" class="body">Finite weapons + Optical Veil case</text>
+<text x="85" y="509" class="small">Rear latch reconnects the lower court</text>
+<rect x="560" y="350" width="320" height="180" rx="12" class="new"/>
+<text x="585" y="387" class="name">SCREENED HOUSE</text>
+<text x="585" y="418" class="body">Evidence / rear / balcony / fight</text>
+<text x="585" y="448" class="body">Pistol agent + mobile knife carrier</text>
+<text x="585" y="478" class="body">Record + physical exit release</text>
+<text x="585" y="509" class="small">Rescue needs its own implementation</text>
+<rect x="1060" y="350" width="320" height="180" rx="12" class="new"/>
+<text x="1085" y="387" class="name">WASHHOUSE WORKS</text>
+<text x="1085" y="418" class="body">Time / isolate / block / dry loop</text>
+<text x="1085" y="448" class="body">Machinery pressure, no extra guard</text>
+<text x="1085" y="478" class="body">Handling tag + service latch</text>
+<text x="1085" y="509" class="small">Grip and breathing gear have uses</text>
+<text x="60" y="829" class="small">Public permission covers public duties.</text>
+<text x="60" y="852" class="small">A store release concerns one package.</text>
+<text x="1000" y="829" class="small">Receiving agents have separate authority.</text>
+<text x="1000" y="852" class="small">Keep neutral homes out of combat lanes.</text>
+<path d="M48 1025H112" class="edge"/><text x="132" y="1031" class="body">Ordinary connection</text>
+<path d="M455 1025H519" class="bypass"/><text x="539" y="1031" class="body">Bypass / lasting shortcut</text>
+<path d="M970 1025H1034" class="evidence"/><text x="1054" y="1031" class="body">Evidence / leverage</text>
+<text x="40" y="1085" class="small">Every required objective retains a route without weapons, augments, special skill grades or expendable supplies.</text>
+</svg>

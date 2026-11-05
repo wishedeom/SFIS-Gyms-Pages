@@ -1,4 +1,4 @@
-# Thousand Courts — plan and first spatial blockout
+# Thousand Courts — plan and populated blockout
 
 ## Established direction
 
@@ -80,7 +80,8 @@ the existing Medicine grade and healing ceilings.
 
 See [the two-layer diagram](THOUSAND_COURTS_TOPOLOGY.svg). It expresses connections,
 not construction dimensions. Actual blockout: about 76 × 101 m, ground deck and
-gallery at +6 m; an unimplemented later-return reward shelf sits at +10.5 m.
+gallery at +6 m, now with an 18 × 24 m east service annex; an unimplemented
+later-return reward shelf sits at +10.5 m.
 
 | Situation | First reading | Other approaches | Return / recontextualization |
 | --- | --- | --- | --- |
@@ -97,6 +98,11 @@ only way out. At least one complete route needs no weapon, implant, skill grade,
 conversation or consumable; the optional household favor spends a real item.
 
 ## Immersive-sim situations and remaining work
+
+The [challenge expansion proposal](THOUSAND_COURTS_CHALLENGES.md) develops a
+washhouse utility loop, bonded store and receiving rooms, with weapons, finite
+items, augment alternatives and distinct enemy roles. These additions are
+proposals until their implementation is explicitly recorded below.
 
 1. **Admission:** negotiate using a household connection, do a useful favor,
    trespass through private rooms, crawl service circulation, or force a guarded
@@ -120,6 +126,10 @@ not scattered through neutral households. Current tuning needs human playtests.
   routes are validated with this baseline.
 - **Possible garden acquisitions:** Impulse Tendons, Rebreather/gas mask or
   Induction Grip. None is granted by this map or required by its current geometry.
+- **Optional district discovery:** the bonded-store case contains a compatible
+  core and Optical Veil procedure. A local household bench fits the existing
+  ability; baseline routes and the main objective do not require it. This is
+  isolated local host-session progression until campaign carryover exists.
 - **Later optional work:** a reachable elevated cache for Tendons, a breathable
   service alternative for Rebreather, movable service cargo for Grip, and a
   witness objective that changes negotiation. These need authored counterplay
@@ -138,6 +148,14 @@ evidence-gated local completion, Demo traversal, map preview and captures.
 Now also implemented: first residents/dialogue/audio, evidence/favor approaches,
 keeper authorization and revocation, limited combat resources, and persistent
 host-session supply receipts and consequences.
+
+The challenge increment adds the bonded store and dry washhouse service loop:
+one separately authorized baton custodian, disputed-roll admission, low luggage
+return, crate-reachable optical case, shared Veil fitting/activation, finite
+knife/baton/two-round rewards, actual movable cargo, a crouch bypass, corroborating
+handling tag and service return latch. Store authorization currently covers the
+room; package-specific ownership/theft reactions remain future work. Active
+washhouse pressure/water hazards and the receiving-house interior are unbuilt.
 
 Not implemented: final combat balance, civilian schedules/protection reactions,
 holding-house interior/rescue, campaign travel, cross-map inventory/augment carryover or durable
