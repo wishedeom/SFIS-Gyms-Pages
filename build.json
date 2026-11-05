@@ -6,9 +6,9 @@
       "download_bytes": 9296574
     },
     "game.pck": {
-      "url": "game-4d3466f52b268f2a.pck.gz",
-      "raw_bytes": 22803808,
-      "download_bytes": 14005861
+      "url": "game-229b31cd70d17ac3.pck.gz",
+      "raw_bytes": 22847872,
+      "download_bytes": 14045088
     },
     "game.js": {
       "url": "game-70e67d29f2171143.js",
@@ -26,7 +26,7 @@
       "download_bytes": 3149
     }
   },
-  "build_seconds": 506.48,
+  "build_seconds": 27.127,
   "seed": 39,
   "budget_seconds": 240,
   "rendering": {
@@ -171,7 +171,7 @@
       "category": "story",
       "story_id": "ThousandCourtsPROTO",
       "label": "NEW \u00b7 Thousand Courts [PROTO]",
-      "description": "Trace the sleepers through inhabited crew quarters. Six residents, four PROTO-voiced conversations, two public keepers and a separate store custodian. Obtain a household vouch or washhouse testimony for passage, or use the concealed service stair and hand-winched span. The bonded store adds roll-based admission, a low luggage return, finite knife/ammunition and a crate-reachable Optical Veil case; fit it at the household bench. Washhouse works offers movable cargo, an independent crouched bypass, a finite baton, corroborating handling tag and a return latch. Pressure machinery remains isolated. Public permission does not authorize the store. No implant or supply is needed for the main route. Find the Screened House frontage; receiving rooms/rescue and campaign travel remain planned. Host-session consequences, fitted Veil and spent supplies persist through replay; page reload starts fresh.",
+      "description": "Trace the sleepers through inhabited crew quarters. Six residents, four PROTO-voiced conversations, two public keepers, a mechanical Court Inspector, an Induction Grip keeper and an Optical Veil runner. Obtain a household vouch or washhouse testimony for passage, or use the concealed service stair and hand-winched span. The bonded store adds roll-based admission, a low luggage return, finite knife/ammunition and a crate-reachable Optical Veil case; fit it at the household bench. Washhouse works offers movable cargo, an independent crouched bypass, a finite baton, corroborating handling tag and a return latch. Pressure machinery remains isolated. The inspector has a rear service shutdown and local feeder. Public permission does not authorize the store or private runner; the transfer ledger and handling tag permit receiving-side inspection. No implant or supply is needed for the main route. Find the Screened House frontage; the holding-house interior/rescue and campaign travel remain planned. Host-session consequences, fitted Veil and spent supplies persist through replay; page reload starts fresh.",
       "featured": true,
       "autonomous_scene": "res://Root/Story/ThousandCourts/ThousandCourts.tscn",
       "preview": "res://Root/Dev/Web/Previews/thousand-courts.jpg"
