@@ -1,0 +1,163 @@
+{
+  "status": "passed",
+  "asset": {
+    "url": "game-2d73df86290bcf2d.pck.gz",
+    "raw_bytes": 22879056,
+    "download_bytes": 14077736
+  },
+  "raw_sha256": "2d73df86290bcf2d98777ef0837f3276799afbb5f916028ec0890e5c4bb9f2c2",
+  "native_final_reports": {
+    "RunCampaignTravelChecks": {
+      "checks": 45,
+      "failures": [],
+      "passed": true
+    },
+    "RunWebLauncherChecks": {
+      "checks": 230,
+      "failures": [],
+      "passed": true
+    }
+  },
+  "final_focused_build": {
+    "menu_checks": 51,
+    "occlusion_checks": 3,
+    "loader_and_proto_speech_checks": "passed"
+  },
+  "full_regression": {
+    "passed": true,
+    "asset": "game-c250cf665c870c29.pck.gz",
+    "note": "Full normal build passed before final input, camera, viewport-quality, shared-audio and one-bake/offscreen-warm optimizations. Final pack separately passed 45 travel, 230 launcher, 51 menu and 3 occlusion checks, loader/speech validation, and real browser crossing/input/orientation checks."
+  },
+  "capture": {
+    "file": "gear-gate-tour-mobile-PROTO.mp4",
+    "seconds": 31.4,
+    "bytes": 1477032,
+    "resolution": "854x480",
+    "kind": "arranged native tour",
+    "notes": "Reveal camera and starting position arranged; gate and traversal live. Capture predates final input/render-warm refinements; geometry and animation match."
+  },
+  "persistence": {
+    "scope": "host session",
+    "reload": "fresh",
+    "carried": [
+      "inventory grid, quantities, cell placement and quick slots",
+      "equipment, loaded/reserve ammunition and reload/cooldown timers",
+      "regional health and status",
+      "human skills, stamina, breath and augment configuration/cooldown",
+      "journal and area-specific discovery/supply receipts",
+      "opened route shortcuts"
+    ],
+    "limits": [
+      "Patrols and loose world props rebuild",
+      "Loose carried cargo must be put down",
+      "Temporary casts/tethers end at the door",
+      "No durable save"
+    ]
+  },
+  "streaming": {
+    "kind": "look-ahead area activation in isolated World3D",
+    "web": "single-thread activation from an already downloaded PCK; no per-area network bundles",
+    "geometry_batch_size": 12,
+    "retirement": "subtree per frame with immediate input retirement",
+    "performance_scope": "Desktop measurements only; finite setup/navigation/actor costs remain; no phone zero-hitch guarantee",
+    "limitations": "Loading-screen-free corridor handoff, not fully hitch-free: this desktop run measured 73.1 ms CPU handoff and a 116.6 ms boundary frame; preloading earlier in the gallery still had a 1050 ms worst frame. First-use graphics are warmed offscreen with the matching view/quality."
+  },
+  "provenance": "PROTO original procedural geometry and synthesized motor audio with AI coding assistance; no new imported bitmap art or recordings.",
+  "browser": {
+    "passed": true,
+    "campaign": {
+      "error": "",
+      "handoff_ms": 73.1,
+      "loading": false,
+      "session_only": true,
+      "stream": {
+        "error": "",
+        "last_build": {
+          "area": "thousand-courts",
+          "elapsed_ms": 2367,
+          "geometry_slices": 12,
+          "max_geometry_slice_ms": 2.7,
+          "render_warmed": true
+        },
+        "retiring": 1,
+        "status": "idle",
+        "target": "",
+        "threaded_resources": false
+      },
+      "transitions": 1,
+      "visited": {
+        "hydroponics-blockout": true,
+        "thousand-courts": true
+      },
+      "frame_trace": {
+        "samples": 4299,
+        "max_ms": 1050,
+        "p95_ms": 33.400000000001455,
+        "preparation_samples": 8,
+        "largest_gaps": [
+          {
+            "ms": 1050,
+            "status": "ready",
+            "transitions": 0,
+            "elapsed": 48.9666666666652
+          },
+          {
+            "ms": 416.6999999999971,
+            "status": "building",
+            "transitions": 0,
+            "elapsed": 48.3833333333319
+          },
+          {
+            "ms": 416.6999999999971,
+            "status": "building",
+            "transitions": 0,
+            "elapsed": 48.3833333333319
+          },
+          {
+            "ms": 116.60000000000582,
+            "status": "idle",
+            "transitions": 1,
+            "elapsed": 0
+          },
+          {
+            "ms": 66.79999999999927,
+            "status": "idle",
+            "transitions": 0,
+            "elapsed": 4.69999999999999
+          }
+        ]
+      },
+      "keyboard_inventory": true
+    },
+    "frames_after_arrival": {
+      "fps": 60.19759209574208,
+      "samples": 301,
+      "p50_ms": 16.69999999999709,
+      "p95_ms": 16.70000000001164,
+      "p99_ms": 16.80000000000291,
+      "max_ms": 16.80000000000291
+    },
+    "engine": {
+      "draw_calls": 408,
+      "gpu_ms": -1,
+      "height": 720,
+      "nodes": 2235,
+      "occlusion_culling": true,
+      "physics_ms": 5.599,
+      "platform": "Web",
+      "primitives": 58303,
+      "process_ms": 10.5,
+      "renderer": "gl_compatibility",
+      "scale": 0.5,
+      "timing_window": "last_1s_peak",
+      "width": 1280
+    },
+    "runtime_errors": [],
+    "orientation": [
+      "landscape",
+      "portrait"
+    ],
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002503) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "note": "Not a real mobile GPU, device emulation, or S24 FPS prediction."
+  }
+}
