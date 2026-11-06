@@ -1,0 +1,3 @@
+AI-GENERATED — PROTO ONLY. Procedurally generated six-legged crawler and eight-legged hulk meshes, custom rigs, baked flesh maps, and runtime gait.
+This 960×540 H.264 video and its stills capture the exported Vaults of Pairidaeza build. No sourced visual or animation asset is used for the beasts.
+The prototypes are not approved final art; source and topology notes are in assets/characters/meat_beasts_PROTO/README.md.
