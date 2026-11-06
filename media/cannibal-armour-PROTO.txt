@@ -1,0 +1,3 @@
+AI-GENERATED — PROTO ONLY. Original procedural scrap armour, straps, rivets, fitting and weathered shader. No external artwork is used for the kit.
+Inherited cannibal body meshes and generated textures remain AI-GENERATED — PROTO ONLY. Fitted user human rig; Quaternius UAL1 CC0 animation derivatives remain FREE-SOURCED — PROTO ONLY: https://quaternius.com/animviewer.html
+Actual Godot capture: four existing body variations, equipment toggle, walking/hunch fitting, and the Vaults of Pairidaeza overlook club carrier. H.264 960x540, ten seconds. No final-use art approval.
