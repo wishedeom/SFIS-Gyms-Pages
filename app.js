@@ -910,6 +910,44 @@ syncFullscreen = function() {
 syncFullscreen();
 for (const event of ['fullscreenchange', 'webkitfullscreenchange']) document.addEventListener(event, () => {touch.reset(); syncFullscreen();});
 window.addEventListener('resize', syncFullscreen);
+
+// Android browsers can resume the engine while leaving its canvas surface black.
+// Reallocate only the browser's drawing buffer and invalidate its compositor
+// layer. Godot keeps ownership of GL state, resources and the running scene.
+function installCanvasResumeRecovery(canvas, host = window, doc = document) {
+  let pending = false;
+  const diagnostics = {attempts: 0, contextLost: false};
+  function refresh() {
+    if (doc.hidden || pending || !window.stealthState?.ready) return;
+    pending = true;
+    host.requestAnimationFrame(() => {
+      if (doc.hidden) { pending = false; return; }
+      const gl = canvas.getContext('webgl2');
+      diagnostics.contextLost = !gl || gl.isContextLost();
+      // A lost context needs engine resource restoration; resizing cannot do it.
+      if (diagnostics.contextLost || !canvas.width || !canvas.height) { pending = false; return; }
+      diagnostics.attempts++;
+      const width = canvas.width;
+      const transform = canvas.style.transform;
+      canvas.style.transform = `${transform || ''} translateZ(0)`;
+      canvas.width = width + 1;
+      host.requestAnimationFrame(() => {
+        // Godot may already have restored its configured drawing-buffer size.
+        if (canvas.width === width + 1) canvas.width = width;
+        canvas.style.transform = transform;
+        pending = false;
+      });
+    });
+  }
+  doc.addEventListener('visibilitychange', refresh);
+  doc.addEventListener('fullscreenchange', refresh);
+  doc.addEventListener('webkitfullscreenchange', refresh);
+  host.addEventListener('focus', refresh);
+  host.addEventListener('pageshow', refresh);
+  host.addEventListener('orientationchange', refresh);
+  return diagnostics;
+}
+window.stealthGraphicsResume = installCanvasResumeRecovery($('canvas'));
 window.addEventListener('orientationchange', syncFullscreen);
 window.matchMedia('(orientation: portrait)').addEventListener?.('change', syncFullscreen);
 document.addEventListener('keydown', (event) => {
