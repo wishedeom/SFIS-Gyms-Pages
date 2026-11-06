@@ -1,0 +1,4 @@
+AI-GENERATED — PROTO ONLY. Procedural asymmetric bruiser mesh, flesh materials, baked textures, skeleton fitting and weights.
+FREE-SOURCED — PROTO ONLY animation derivatives: Quaternius Universal Animation Library 1, CC0 1.0; https://quaternius.com/animviewer.html
+Fitted copy of user human skeleton. No final-use approval.
+Actual exported-game capture: Vaults of Pairidaeza, permanent deep hunch, autonomous pursuit and shared unarmed combat.
