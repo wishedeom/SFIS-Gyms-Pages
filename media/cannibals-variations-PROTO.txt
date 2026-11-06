@@ -1,0 +1,5 @@
+AI-GENERATED — PROTO ONLY. Procedural infected humanoid visuals, materials, baked textures, rig fitting and weighting.
+FREE-SOURCED — PROTO ONLY animation derivatives: Quaternius Universal Animation Library 1, CC0 1.0.
+Creator/source: https://quaternius.com/animviewer.html
+User human skeleton adapted to the generated bodies. No final-use approval.
+Actual exported-game capture, four randomized cannibal variants, 3000 triangles each.
